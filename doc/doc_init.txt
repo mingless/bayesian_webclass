@@ -1,0 +1,35 @@
+Zadanie 1 - automatyczny klasyfikator stron internetowych
+
+Aplikacja do klasyfikacji stron internetowych bazująca na ich treści. Utworzyć zbiór stron trenujących i wykorzystać wybrany klasyfikator (np. Naiwny klasyfikator Bayesowski z biblioteki faif). Atrybutami mogą być wybrane wyrazy, znaczenia wyrazów utworzone z Wikipedii lub inne.
+
+
+Materiały pomocnicze:
+https://web.stanford.edu/class/cs124/lec/naivebayes.pdf
+http://software.ucv.ro/~cmihaescu/ro/teaching/AIR/docs/Lab4-NaiveBayes.pdf
+http://nlp.stanford.edu/IR-book/pdf/irbookonlinereading.pdf
+https://www.analyticsvidhya.com/blog/2015/09/naive-bayes-explained/
+http://www.iaeng.org/publication/IMECS2012/IMECS2012_pp519-523.pdf
+https://arxiv.org/pdf/1406.5616.pdf
+http://ieeexplore.ieee.org/stamp/stamp.jsp?arnumber=4142381
+
+Proponowany zbiór danych:
+1. https://dms.sztaki.hu/en/letoltes/ecmlpkdd-2010-discovery-challenge-data-set
+2. https://archive.ics.uci.edu/ml/datasets/Phishing+Websites
+
+Proponowane środowisko instalacji:
+CMake pod przykryciem catkin/catkin_tools/ament
+
+Proponowana kontrola wersji:
+git z wykorzystaniem github'a
+
+
+
+
+                            AUTOMATYCZNY KLASYFIKATOR STRON INTERNETOWYCH
+
+
+1.  Temat:
+        Aplikacja do klasyfikacji stron internetowych bazująca na ich treści. Utworzyć zbiór stron trenujących i wykorzystać wybrany klasyfikator. Atrybutami mogą być wybrane wyrazy, znaczenia wyrazó utworzone z Wikipedii lub inne.
+
+2.  Opis docelowej realizacji:
+        Klasyfikator zostanie zrealizowany z wykorzystaniem biblioteki faif jako naiwny klasyfikator Bayesowski. ... ... ... TBC
