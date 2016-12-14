@@ -5,6 +5,8 @@
 #include <curl/easy.h>
 #include <curl/curlbuild.h>
 #include <libxml++/libxml++.h>
+#include <fstream>
+#include <string>
 
 
 class HTTPDownloader {
@@ -56,23 +58,17 @@ std::string HTTPDownloader::download(const std::string& url) {
 }
 
 
-
-
 int main(void)
 {
   HTTPDownloader downloader;
 
+  // std::string content = downloader.download("http://libxmlplusplus.sourceforge.net/");
   std::string content = downloader.download("http://libxmlplusplus.sourceforge.net/");
-  int cnt = 0;
-  for (auto i : content){
-    if (cnt<10){
-      std::cout<<i;
-      cnt++;
-    }else 
-      break;
-  }
   
-
+  std::ofstream myfile;
+  myfile.open("kod_html.xml");
+  myfile << content;
+  myfile.close();
   
   return 0;
 }
