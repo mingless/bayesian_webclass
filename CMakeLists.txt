@@ -9,9 +9,16 @@ find_package(catkin REQUIRED)
 ## System dependencies are found with CMake's conventions
 # find_package(Boost REQUIRED COMPONENTS system)
 
-include(FindPkgConfig)
-pkg_check_modules(tidy REQUIRED tidy)
-find_package(tidy CONFIG REQUIRED)
+set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} "/home/m/catkin_ws/src/bayesian_webclass/cmake/Modules")
+find_package(Tidy REQUIRED)
+include_directories(${Tidy_INCLUDE_DIRS})
+set(LIBS ${LIBS} ${Tidy_LIBRARIES})
+
+if(Tidy)
+    message("Found tidy.")
+else()
+    message("Again...")
+endif()
 
 if(CMAKE_COMPILER_IS_GNUCXX)
     set( WARNING_FLAGS -Wall )
@@ -36,11 +43,11 @@ endif()
 ## CATKIN_DEPENDS: catkin_packages dependent projects also need
 ## DEPENDS: system dependencies of this project that dependent projects also need
 catkin_package(
-    #  INCLUDE_DIRS include
-    #  LIBRARIES bayesian_webclass
-    #  CATKIN_DEPENDS other_catkin_pkg
-    #  DEPENDS system_lib
-    )
+  INCLUDE_DIRS include
+  LIBRARIES bayesian_webclass
+  #  CATKIN_DEPENDS other_catkin_pkg
+  #  DEPENDS system_lib
+)
 
 ###########
 ## Build ##
@@ -61,16 +68,17 @@ catkin_package(
 # add_dependencies(bayesian_webclass ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
 
 ## Declare a C++ executable
-# add_executable(bayesian_webclass_node src/bayesian_webclass_node.cpp)
+add_executable(tidy src/tidy.cpp)
 
 ## Add cmake target dependencies of the executable
 ## same as for the library above
 # add_dependencies(bayesian_webclass_node ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
 
 ## Specify libraries to link a library or executable target against
-# target_link_libraries(bayesian_webclass_node
-#   ${catkin_LIBRARIES}
-# )
+target_link_libraries(tidy
+    ${LIBS}
+    /usr/lib/libtidy.so
+)
 
 #############
 ## Install ##
