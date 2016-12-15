@@ -11,9 +11,9 @@ int main(){
     std::string html_text,filename;
     std::string path_root("output/");
     int count = 1;
-    
+
     boost::filesystem::create_directories ("output"); //create a directory for results
- 	
+
     for (std::string i : addresses)
     {
 
@@ -26,8 +26,8 @@ int main(){
     	std::string output_of_parsing;
 
     	//false is you want to save output of parsing in string, else if you want to save it in file ,set true, and not set last parameter
-    	downloader.parse_html_and_save(html_text, "/html/body", count, false, output_of_parsing);  //parse html_text and save to file in /output directory text from "html/body" node, that means only the text between <body></body> 
-      	
+    	downloader.parse_html_and_save(html_text, "/html/body", count, false, output_of_parsing);  //parse html_text and save to file in /output directory text from "html/body" node, that means only the text between <body></body>
+
       	std::cout << output_of_parsing <<std::endl; //outputs to the console result of parsing
       	count++;
     }

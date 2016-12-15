@@ -33,13 +33,30 @@ std::string HTTPDownloader::download(const std::string& url) {
     return out.str();
 }
 
+std::string HTTPDownloader::download(const std::string& url, int &result) {
+    curl_easy_setopt(curl, CURLOPT_URL, url.c_str());
+    /* example.com is redirected, so we tell libcurl to follow redirection */
+    curl_easy_setopt(curl, CURLOPT_FOLLOWLOCATION, 1L);
+    curl_easy_setopt(curl, CURLOPT_NOSIGNAL, 1); //Prevent "longjmp causes uninitialized stack frame" bug
+    curl_easy_setopt(curl, CURLOPT_ACCEPT_ENCODING, "deflate");
+    std::stringstream out;
+    curl_easy_setopt(curl, CURLOPT_WRITEFUNCTION, write_data);
+    curl_easy_setopt(curl, CURLOPT_WRITEDATA, &out);
+    /* Perform the request, res will get the return code */
+    CURLcode res = curl_easy_perform(curl);
+    /* Check for errors */
+    if (res != CURLE_OK) {
+        result = res;
+        return curl_easy_strerror(res);
+    }
+    return out.str();
+}
 
-void HTTPDownloader::write_str_to_file(std::string filename, std::string str){    
+void HTTPDownloader::write_str_to_file(std::string filename, std::string str){
     std::ofstream myfile;
     myfile.open(filename);
     myfile << str;
     myfile.close();
-
 }
 
 std::string HTTPDownloader::cleanhtml(const std::string &html)
@@ -85,7 +102,7 @@ std::string HTTPDownloader::get_url_address_from_console(){
 std::vector<std::string> HTTPDownloader::get_urls_from_file(std::string filename){
     std::vector<std::string> http_address; //stores addresses of html
     std::string line;
-    std::ifstream http_address_file (filename); //in every line should be other http address 
+    std::ifstream http_address_file (filename); //in every line should be other http address
     if (http_address_file.is_open())
     {
         while (! http_address_file.eof() )
@@ -115,18 +132,18 @@ bool HTTPDownloader::parse_html_and_save(const std::string& html_text, const std
     //xmlpp::Node* rootNode = parser.get_document()->get_root_node();
 
     if (parser)
-    { 
+    {
        //Walk the tree
         const xmlpp::Node* pNode = parser.get_document()->get_root_node();
         xmlpp::NodeSet result = pNode->find(node_of_html_tree);         //find node given in function parameter
-        
+
         if(file_or_string) //jeżeli chcemy azpisywać wynik w pliku
         {
-        	filename = path_root + "raw_" + std::to_string(count) + ".txt";	
+        	filename = path_root + "raw_" + std::to_string(count) + ".txt";
   	      	body_text_file.open(filename);
         }
         for (auto i : result) //for every result print text from node to file
-        {   
+        {
         	if(file_or_string)
         	{
 				print_node_and_children(i,body_text_file);
@@ -142,10 +159,10 @@ bool HTTPDownloader::parse_html_and_save(const std::string& html_text, const std
         	body_text_file.close();
         }
     }
-} 
+}
 
 std::string print_node_and_children (const xmlpp::Node* node){
-	  //recursive function that prints to given ofstream (exp file) the text of give node from parsed xml file 
+	  //recursive function that prints to given ofstream (exp file) the text of give node from parsed xml file
     const xmlpp::ContentNode* nodeContent = dynamic_cast<const xmlpp::ContentNode*>(node);
     const xmlpp::TextNode* nodeText = dynamic_cast<const xmlpp::TextNode*>(node);
 
@@ -153,12 +170,12 @@ std::string print_node_and_children (const xmlpp::Node* node){
 
     if(nodeText && nodeText->is_white_space()) //Let's ignore the indenting - you don't always want to do this.
         return "";
- 	
+
     if(nodeText)
     {
-        output += nodeText->get_content(); 
+        output += nodeText->get_content();
     }
-      
+
     if(!nodeContent)
     {
         //Recurse through child nodes:
@@ -168,23 +185,23 @@ std::string print_node_and_children (const xmlpp::Node* node){
             output += print_node_and_children(*iter); //recursive
         }
     }
-    return output;	
+    return output;
 }
 
 void print_node_and_children(const xmlpp::Node* node, std::ofstream& text_from_body_file)
 {
-    //recursive function that prints to given ofstream (exp file) the text of give node from parsed xml file 
+    //recursive function that prints to given ofstream (exp file) the text of give node from parsed xml file
     const xmlpp::ContentNode* nodeContent = dynamic_cast<const xmlpp::ContentNode*>(node);
     const xmlpp::TextNode* nodeText = dynamic_cast<const xmlpp::TextNode*>(node);
 
     if(nodeText && nodeText->is_white_space()) //Let's ignore the indenting - you don't always want to do this.
         return;
- 	
+
     if(nodeText)
     {
-        text_from_body_file << nodeText->get_content() << std::endl; 
+        text_from_body_file << nodeText->get_content() << std::endl;
     }
-      
+
     if(!nodeContent)
     {
         //Recurse through child nodes:
