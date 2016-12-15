@@ -1,4 +1,4 @@
-#include "http_downloader.h"
+#include "bayesian_webclass/http_downloader.h"
 
 std::size_t write_data(void *ptr, std::size_t size, std::size_t nmemb, void *stream) {
     std::string data((const char*) ptr, (std::size_t) size * nmemb);

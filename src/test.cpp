@@ -1,4 +1,4 @@
-#include "http_downloader.h"
+#include "bayesian_webclass/http_downloader.h"
 #include <libxml++/libxml++.h>
 #include <cstdlib>
 #include <boost/filesystem.hpp>
@@ -15,7 +15,7 @@ int main(){
     int count = 1;
 
     boost::filesystem::path dir("xml");
- 
+
     for (std::string i : addresses)
     {
     	html_text = downloader.download(i); //for every link from file download html code
