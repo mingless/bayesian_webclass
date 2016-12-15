@@ -28,7 +28,7 @@ std::string HTTPDownloader::download(const std::string& url) {
     /* Check for errors */
     if (res != CURLE_OK) {
         fprintf(stderr, "curl_easy_perform() failed: %s\n",
-                curl_easy_strerror(res));
+            curl_easy_strerror(res));
     }
     return out.str();
 }
@@ -39,7 +39,7 @@ void HTTPDownloader::write_str_to_file(std::string filename, std::string str){
     myfile.open(filename);
     myfile << str;
     myfile.close();
-        
+
 }
 
 std::string HTTPDownloader::cleanhtml(const std::string &html)
@@ -47,31 +47,31 @@ std::string HTTPDownloader::cleanhtml(const std::string &html)
     // init a tidy document
     TidyDoc tidy_doc=tidyCreate();
     TidyBuffer output_buffer= {0};
- 
+
     // configure tidy
     // the flags tell tidy to output xml and disable warnings
     bool config_success=tidyOptSetBool(tidy_doc,TidyXmlOut,yes)
-                        && tidyOptSetBool(tidy_doc,TidyQuiet,yes)
-                        && tidyOptSetBool(tidy_doc,TidyNumEntities,yes)
-                        && tidyOptSetBool(tidy_doc,TidyShowWarnings,no);
- 
+    && tidyOptSetBool(tidy_doc,TidyQuiet,yes)
+    && tidyOptSetBool(tidy_doc,TidyNumEntities,yes)
+    && tidyOptSetBool(tidy_doc,TidyShowWarnings,no);
+
     int tidy_rescode=-1;
- 
+
     // parse input
     if(config_success)
         tidy_rescode=tidyParseString(tidy_doc,html.c_str());
- 
+
     // process html
     if(tidy_rescode>=0)
         tidy_rescode=tidySaveBuffer(tidy_doc,&output_buffer);
- 
+
     if(tidy_rescode<0)
         throw("tidy has a error: "+tidy_rescode);
- 
+
     std::string result=(char *)output_buffer.bp;
     tidyBufFree(&output_buffer);
     tidyRelease(tidy_doc);
- 
+
     return result;
 }
 
@@ -93,12 +93,68 @@ std::vector<std::string> HTTPDownloader::get_urls_from_file(std::string filename
             getline (http_address_file,line);
             http_address.push_back(line);
         }
-    http_address_file.close();
-  	}else{
-  		std::cout << "nie udalo sie otworzyc pliku" << std::endl;
-  	}
+        http_address_file.close();
+    }else{
+        std::cout << "nie udalo sie otworzyc pliku" << std::endl;
+    }
 
-  	return http_address;
+    return http_address;
+}
+
+void print_node_and_children(const xmlpp::Node* node, std::ofstream& text_from_body_file);
+
+bool HTTPDownloader::parse_html_and_save(const std::string& html_text, const std::string& node_of_html_tree, int count)
+{
+      //parse html_text and save to file only the text from given node_of_html_tree
+      //generated file is output/raw_'count'
+    xmlpp::DomParser parser;
+    std::ofstream body_text_file;
+    std::string path_root("output/"), filename;
+    parser.parse_memory(html_text);  //parse html code from string
+    xmlpp::Node* rootNode = parser.get_document()->get_root_node();
+
+    if (parser)
+    { 
+       //Walk the tree
+        const xmlpp::Node* pNode = parser.get_document()->get_root_node();
+        xmlpp::NodeSet result = pNode->find(node_of_html_tree);         //find node given in function parameter
+        filename = path_root + "raw_" + std::to_string(count) + ".txt";
+        body_text_file.open(filename);
+        
+        for (auto i : result) //for every result print text from node to file
+        {   
+            print_node_and_children(i,body_text_file);
+        }
+        std::cout << "Raw text from site " << count << " is in " << filename << std::endl;
+        body_text_file.close();
+    }
+
+
+} 
+
+void print_node_and_children(const xmlpp::Node* node, std::ofstream& text_from_body_file)
+{
+    //recursive function that prints to given ofstream (exp file) the text of give node from parsed xml file 
+    const xmlpp::ContentNode* nodeContent = dynamic_cast<const xmlpp::ContentNode*>(node);
+    const xmlpp::TextNode* nodeText = dynamic_cast<const xmlpp::TextNode*>(node);
+
+    if(nodeText && nodeText->is_white_space()) //Let's ignore the indenting - you don't always want to do this.
+        return;
+ 
+    if(nodeText)
+    {
+        text_from_body_file << nodeText->get_content() << std::endl; 
+    }
+      
+    if(!nodeContent)
+    {
+        //Recurse through child nodes:
+        xmlpp::Node::NodeList list = node->get_children();
+        for(xmlpp::Node::NodeList::iterator iter = list.begin(); iter != list.end(); ++iter)
+        {
+            print_node_and_children(*iter, text_from_body_file); //recursive
+        }
+    }
 }
 
 

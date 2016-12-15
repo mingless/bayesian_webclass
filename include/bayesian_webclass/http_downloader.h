@@ -26,6 +26,8 @@ public:
 	std::string get_url_address_from_console(); //lets user to enter url file in console
 
 	std::vector<std::string> get_urls_from_file(std::string filename); //gets list of html addresses from given file in every line should be one http_address 
+	bool parse_html_and_save(const std::string& html_text, const std::string& node_of_html_tree, int count); //parse html_text and save to file only the text from given node_of_html_tree
+	
 
 private:
     void* curl;
