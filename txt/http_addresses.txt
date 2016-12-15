@@ -1,0 +1,2 @@
+http://libxmlplusplus.sourceforge.net/
+http://ztm.waw.pl/
