@@ -12,8 +12,8 @@ find_package(catkin REQUIRED)
 find_package(Boost REQUIRED COMPONENTS filesystem system)
 find_package(CURL REQUIRED)
 find_package(LibXML++ REQUIRED)
-include_directories(${LibXML++_INCLUDE_DIRS} ${CURL_INCLUDE_DIRS})
-set(LIBS ${LIBS} ${LibXML++_LIBRARIES} ${CURL_LIBRARIES} /usr/lib/libtidy.so)
+include_directories(${LibXML++_INCLUDE_DIRS} ${CURL_INCLUDE_DIRS} ${Boost_INCLUDE_DIRS})
+set(LIBS ${LIBS} ${LibXML++_LIBRARIES} ${CURL_LIBRARIES} ${Boost_LIBRARIES} /usr/lib/libtidy.so)
 
 ## find_package(Tidy REQUIRED)
 ##include_directories(/usr/lib/ /usr/lib/x86_64/)
@@ -72,19 +72,20 @@ include_directories(include
 #add_dependencies(bayesian_webclass ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
 
 ## Declare a C++ executable
-add_executable(tidy src/tidy.cpp)
-target_link_libraries(tidy
-    ${LIBS}
-)
+# add_executable(tidy src/tidy.cpp)
+# target_link_libraries(tidy
+#     ${LIBS}
+# )
 
-add_executable(http_downloader src/http_downloader.cpp)
-target_link_libraries(http_downloader
+
+add_library(HTTP STATIC src/http_downloader.cpp)
+target_link_libraries(HTTP
     ${catkin_LIBRARIES}
     ${LIBS}
 )
-
 add_executable(test_p src/test.cpp)
 target_link_libraries(test_p
+	HTTP
     ${catkin_LIBRARIES}
     ${LIBS}
 )
@@ -104,7 +105,7 @@ target_link_libraries(test_p
 # )
 
 ## Mark executables and/or libraries for installation
-install(TARGETS tidy test_p
+install(TARGETS test_p
   ARCHIVE DESTINATION ${CATKIN_PACKAGE_LIB_DESTINATION}
   LIBRARY DESTINATION ${CATKIN_PACKAGE_LIB_DESTINATION}
   RUNTIME DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}

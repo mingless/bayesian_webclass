@@ -1,4 +1,4 @@
-#include "bayesian_webclass/http_downloader.h"
+#include <bayesian_webclass/http_downloader.h>
 #include <libxml++/libxml++.h>
 #include <cstdlib>
 #include <boost/filesystem.hpp>
@@ -8,14 +8,14 @@ int main(){
 
     //download html text from html_address
     //std::string content = downloader.download(html_address);
-    std::vector<std::string> addresses = downloader.get_urls_from_file("http_addresses.txt");
+    std::vector<std::string> addresses = downloader.get_urls_from_file("txt/http_addresses.txt");
   	xmlpp::DomParser parser;
     std::string html_text,filename;
     std::string path_root("xml/");
     int count = 1;
 
-    boost::filesystem::path dir("xml");
-
+    boost::filesystem::create_directories ("xml");
+ 	
     for (std::string i : addresses)
     {
     	html_text = downloader.download(i); //for every link from file download html code

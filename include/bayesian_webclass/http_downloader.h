@@ -22,12 +22,10 @@ public:
     
     std::string download(const std::string& url); //downloads html text from given url
 
-	std::string cleanhtml(const std::string &html); //makes html tidy, brackets are closed, makes
-													//sure that html code is ready to be parsed 
+	std::string cleanhtml(const std::string &html); //makes html tidy, brackets are closed and  that html code is ready to be parsed 
 	std::string get_url_address_from_console(); //lets user to enter url file in console
 
-	std::vector<std::string> get_urls_from_file(std::string filename); //gets list of html addresses from given file
-																		//in every line should be one http_address 
+	std::vector<std::string> get_urls_from_file(std::string filename); //gets list of html addresses from given file in every line should be one http_address 
 
 private:
     void* curl;
