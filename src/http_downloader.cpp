@@ -102,8 +102,9 @@ std::vector<std::string> HTTPDownloader::get_urls_from_file(std::string filename
 }
 
 void print_node_and_children(const xmlpp::Node* node, std::ofstream& text_from_body_file);
+std::string print_node_and_children (const xmlpp::Node* node);
 
-bool HTTPDownloader::parse_html_and_save(const std::string& html_text, const std::string& node_of_html_tree, int count)
+bool HTTPDownloader::parse_html_and_save(const std::string& html_text, const std::string& node_of_html_tree, int count, bool file_or_string, std::string& output)
 {
       //parse html_text and save to file only the text from given node_of_html_tree
       //generated file is output/raw_'count'
@@ -111,26 +112,64 @@ bool HTTPDownloader::parse_html_and_save(const std::string& html_text, const std
     std::ofstream body_text_file;
     std::string path_root("output/"), filename;
     parser.parse_memory(html_text);  //parse html code from string
-    xmlpp::Node* rootNode = parser.get_document()->get_root_node();
+    //xmlpp::Node* rootNode = parser.get_document()->get_root_node();
 
     if (parser)
     { 
        //Walk the tree
         const xmlpp::Node* pNode = parser.get_document()->get_root_node();
         xmlpp::NodeSet result = pNode->find(node_of_html_tree);         //find node given in function parameter
-        filename = path_root + "raw_" + std::to_string(count) + ".txt";
-        body_text_file.open(filename);
         
+        if(file_or_string) //jeżeli chcemy azpisywać wynik w pliku
+        {
+        	filename = path_root + "raw_" + std::to_string(count) + ".txt";	
+  	      	body_text_file.open(filename);
+        }
         for (auto i : result) //for every result print text from node to file
         {   
-            print_node_and_children(i,body_text_file);
+        	if(file_or_string)
+        	{
+				print_node_and_children(i,body_text_file);
+        	}
+        	else
+        	{
+        		output += print_node_and_children(i);
+        	}
         }
-        std::cout << "Raw text from site " << count << " is in " << filename << std::endl;
-        body_text_file.close();
+        if(file_or_string)
+        {
+        	std::cout << "Raw text from site " << count << " is in " << filename << std::endl;
+        	body_text_file.close();
+        }
     }
-
-
 } 
+
+std::string print_node_and_children (const xmlpp::Node* node){
+	  //recursive function that prints to given ofstream (exp file) the text of give node from parsed xml file 
+    const xmlpp::ContentNode* nodeContent = dynamic_cast<const xmlpp::ContentNode*>(node);
+    const xmlpp::TextNode* nodeText = dynamic_cast<const xmlpp::TextNode*>(node);
+
+    std::string output;
+
+    if(nodeText && nodeText->is_white_space()) //Let's ignore the indenting - you don't always want to do this.
+        return "";
+ 	
+    if(nodeText)
+    {
+        output += nodeText->get_content(); 
+    }
+      
+    if(!nodeContent)
+    {
+        //Recurse through child nodes:
+        xmlpp::Node::NodeList list = node->get_children();
+        for(xmlpp::Node::NodeList::iterator iter = list.begin(); iter != list.end(); ++iter)
+        {
+            output += print_node_and_children(*iter); //recursive
+        }
+    }
+    return output;	
+}
 
 void print_node_and_children(const xmlpp::Node* node, std::ofstream& text_from_body_file)
 {
@@ -140,7 +179,7 @@ void print_node_and_children(const xmlpp::Node* node, std::ofstream& text_from_b
 
     if(nodeText && nodeText->is_white_space()) //Let's ignore the indenting - you don't always want to do this.
         return;
- 
+ 	
     if(nodeText)
     {
         text_from_body_file << nodeText->get_content() << std::endl; 
