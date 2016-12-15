@@ -7,9 +7,11 @@ project(bayesian_webclass)
 find_package(catkin REQUIRED)
 
 ## System dependencies are found with CMake's conventions
-# find_package(Boost REQUIRED COMPONENTS system)
+find_package(Boost REQUIRED COMPONENTS filesystem system)
 
-set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} "/home/m/catkin_ws/src/bayesian_webclass/cmake/Modules")
+
+
+set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} "${CMAKE_SOURCE_DIR}/cmake/Modules")
 find_package(Tidy REQUIRED)
 include_directories(${Tidy_INCLUDE_DIRS})
 set(LIBS ${LIBS} ${Tidy_LIBRARIES})
@@ -49,6 +51,7 @@ catkin_package(
   #  DEPENDS system_lib
 )
 
+
 ###########
 ## Build ##
 ###########
@@ -69,7 +72,8 @@ catkin_package(
 
 ## Declare a C++ executable
 add_executable(tidy src/tidy.cpp)
-
+add_executable(http_downloader.cpp src/http_downloader.cpp)
+add_executable(test_p src/test.cpp)
 ## Add cmake target dependencies of the executable
 ## same as for the library above
 # add_dependencies(bayesian_webclass_node ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
@@ -95,18 +99,18 @@ target_link_libraries(tidy
 # )
 
 ## Mark executables and/or libraries for installation
-install(TARGETS tidy
+install(TARGETS tidy test_p
   ARCHIVE DESTINATION ${CATKIN_PACKAGE_LIB_DESTINATION}
   LIBRARY DESTINATION ${CATKIN_PACKAGE_LIB_DESTINATION}
   RUNTIME DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
 )
 
 ## Mark cpp header files for installation
-# install(DIRECTORY include/${PROJECT_NAME}/
-#   DESTINATION ${CATKIN_PACKAGE_INCLUDE_DESTINATION}
-#   FILES_MATCHING PATTERN "*.h"
-#   PATTERN ".svn" EXCLUDE
-# )
+ install(DIRECTORY include/bayesian_webclass/
+   DESTINATION ${CATKIN_PACKAGE_INCLUDE_DESTINATION}
+   FILES_MATCHING PATTERN "*.h"
+   PATTERN ".svn" EXCLUDE
+ )
 
 ## Mark txt files for installation
 install(DIRECTORY txt/

@@ -1,5 +1,5 @@
-#ifndef HTTP_DOWNLOADEr_H
-#define HTTP_DOWNLOADEr_H
+#ifndef HTTP_DOWNLOADER_H
+#define HTTP_DOWNLOADER_H
 
 #include <iomanip>
 #include <iostream>
@@ -18,7 +18,7 @@ class HTTPDownloader {
 public:
     HTTPDownloader();
     ~HTTPDownloader();
-    void write_html_to_file(std::string filename, std::string url);
+    void write_str_to_file(std::string filename, std::string str);
     
     std::string download(const std::string& url); //downloads html text from given url
 
@@ -28,6 +28,7 @@ public:
 
 	std::vector<std::string> get_urls_from_file(std::string filename); //gets list of html addresses from given file
 																		//in every line should be one http_address 
+
 private:
     void* curl;
 };
