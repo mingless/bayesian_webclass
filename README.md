@@ -7,6 +7,9 @@ g++ tidy.cpp -o tidy -ltidy `pkg-config --cflags --libs libxml++-2.6 libcurl` -s
 CMakeLists info:
 
 Since neither libtidy nor libxml++ have official CMake Modules added and found FindTidy.cmake isn't working it is recommended to add new libs with global path.
+Compilation may require exporting:
+    export CONFIGURE_ENV=LDFLAGS="${LDFLAGS}"
+    export LDFLAGS=-L/usr/local/lib
 
 
 On Unix:

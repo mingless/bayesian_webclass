@@ -10,9 +10,10 @@ find_package(catkin REQUIRED)
 
 ## System dependencies are found with CMake's conventions
 find_package(Boost REQUIRED COMPONENTS filesystem system)
+find_package(CURL REQUIRED)
 find_package(LibXML++ REQUIRED)
-include_directories(${LibXML++_INCLUDE_DIRS})
-set(LIBS ${LIBS} ${LibXML++_LIBRARIES})
+include_directories(${LibXML++_INCLUDE_DIRS} ${CURL_INCLUDE_DIRS})
+set(LIBS ${LIBS} ${LibXML++_LIBRARIES} ${CURL_LIBRARIES} /usr/lib/libtidy.so)
 
 ## find_package(Tidy REQUIRED)
 ##include_directories(/usr/lib/ /usr/lib/x86_64/)
@@ -24,6 +25,7 @@ set(LIBS ${LIBS} ${LibXML++_LIBRARIES})
 ##endif()
 
 if(CMAKE_COMPILER_IS_GNUCXX)
+    add_definitions(-std=c++11)
     set( WARNING_FLAGS -Wall )
 endif(CMAKE_COMPILER_IS_GNUCXX)
 
@@ -72,7 +74,7 @@ include_directories(include
 ## Declare a C++ executable
 add_executable(tidy src/tidy.cpp)
 target_link_libraries(tidy
-    /usr/lib/libtidy.so
+    ${LIBS}
 )
 
 add_executable(http_downloader src/http_downloader.cpp)
@@ -82,6 +84,10 @@ target_link_libraries(http_downloader
 )
 
 add_executable(test_p src/test.cpp)
+target_link_libraries(test_p
+    ${catkin_LIBRARIES}
+    ${LIBS}
+)
 
 #############
 ## Install ##
