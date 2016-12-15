@@ -1,0 +1,101 @@
+# -*- mode: Python; -*-
+
+## @file client/SConscript
+#  @brief scons build for client part (JavaScript, AngularJS)
+
+import os
+import file_include
+
+Import('env')
+
+Import('MYAPP_VER_MAJOR')
+Import('MYAPP_VER_MINOR')
+Import('MYAPP_VER_COMPILATION')
+Import('WEB_SRV_PREFIX WEB_SRV_HOST WEB_SRV_PORT WEB_CLIENT_HOST WEB_CLIENT_PORT')
+
+def build_client_version( target, source, env):
+   file=open(str(target[0]),'w')
+   file.write('client_ver_major = ' + MYAPP_VER_MAJOR + '\n')
+   file.write('client_ver_minor = "' + MYAPP_VER_MINOR + '"\n')
+   file.write('client_ver_compilation = ' + MYAPP_VER_COMPILATION + '\n')
+   file.write('client_server_prefix = "' + WEB_SRV_PREFIX + '"\n' )
+   file.close()
+   return
+
+def build_lighttpd_conf(target, source, env):
+    configText = """
+var.server_root = "{root_path}"
+var.log_root    = server_root
+var.state_dir   = server_root
+var.home_dir    = server_root
+var.conf_dir    = server_root
+
+server.port = {client_port}
+server.pid-file = state_dir + "/lighttpd.pid"
+server.errorlog = log_root + "/lighttpd.log"
+server.document-root = server_root
+
+index-file.names = ( "index.html" )
+
+mimetype.assign = (
+  ".html" => "text/html",
+  ".txt" => "text/plain",
+  ".jpg" => "image/jpeg",
+  ".png" => "image/png",
+  ".css" => "text/css",
+  ".svg" => "image/svg+xml",
+  ".js" => "text/javascript"
+)
+
+static-file.exclude-extensions = (".py")
+server.modules += ( "mod_proxy" )
+#server.modules += ( "mod_accesslog" )
+
+#### accesslog format (enable for using a proxy, like Pound, in front of Lighttpd)
+#accesslog.format       = "%h %t %r %>s %b time: %T [s]"
+#accesslog.filename       = log_root + "/access.log"
+
+$HTTP["url"] =~ "^/{prefix}" {{
+        proxy.balance = "hash"
+        proxy.server = ( "" => (
+                "{prefix}" => ( "host" => "{server_host}", "port" => {server_port} )
+        ))
+}}
+"""
+    with open(str(target[0]),'w') as file:
+       server_root_path = os.path.abspath('client')
+       clientConfig = configText.format(prefix=WEB_SRV_PREFIX,
+                                        server_host=WEB_SRV_HOST,
+                                        server_port=WEB_SRV_PORT,
+                                        client_host=WEB_CLIENT_HOST,
+                                        client_port=WEB_CLIENT_PORT,
+                                        root_path=server_root_path)
+       file.write(clientConfig)
+    return
+
+
+# #install client files
+client_ver_name = 'js/version.js'
+env.Command(client_ver_name, [], build_client_version )
+
+in_index = 'myapp.html'
+out_index = os.path.normpath('index.html')
+file_include.file_substitution(in_file=in_index,
+                               out_file=out_index,
+                               inc_dir=os.path.normpath('.'))
+env.SideEffect(out_index, in_index )
+env.SideEffect('file_include.pyc', in_index )
+
+in_test = 'unit_test.html'
+out_test = 'unit_test_out.html'
+file_include.file_substitution(in_file=in_test,
+                               out_file=out_test,
+                               inc_dir=os.path.normpath('.'))
+env.SideEffect(out_test, in_test )
+env.SideEffect('file_include.pyc', in_test )
+
+#build lighttpd config
+lighttd_conf = 'lighttpd.develop'
+env.Command(lighttd_conf, [], build_lighttpd_conf )
+env.SideEffect('lighttpd.log', lighttd_conf)
+env.SideEffect('lighttpd.pid', lighttd_conf)

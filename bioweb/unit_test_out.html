@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <meta charset="utf-8">
+        <title>QUnit tests</title>
+
+        <script src="bower_components/jquery/dist/jquery.min.js"></script>
+        <link rel="stylesheet" href="bower_components/qunit/qunit/qunit.css">
+        <script src="bower_components/qunit/qunit/qunit.js"></script>
+		<script src="bower_components/blanket/dist/qunit/blanket.js"></script>
+
+        <!-- below are elements copied automatically using file_include.py script -->
+<!-- this file contains sections included during build into html head of test and static html page" -->
+
+<script src="bower_components/angular/angular.min.js"></script>
+<script src="bower_components/angular-route/angular-route.min.js"></script>
+<script src="bower_components/angular-resource/angular-resource.min.js"></script>
+<script src="bower_components/angular-translate/angular-translate.min.js"></script>
+<script src="bower_components/angular-translate-loader-static-files/angular-translate-loader-static-files.min.js"></script>
+
+<script type="text/javascript" src="js/version.js" data-cover></script>
+<script type="text/javascript" src="js/app.js" data-cover></script>
+<script type="text/javascript" src="js/services.js" data-cover></script>
+<script type="text/javascript" src="js/controllers.js" data-cover></script>
+
+<link rel="stylesheet" type="text/css" href="css/styles.css" />
+
+
+        <!-- above are elements copied automatically using file_include.py script -->
+
+        <script src="tests/test01_basic.js" data-cover></script>
+        <script src="tests/test02_services.js" data-cover></script>
+
+         <STYLE type="text/css">
+            .hidden { display: block; }
+        </STYLE>
+
+    </head>
+
+    <body style="background: gray;">
+        <div id="qunit"></div>
+        <div id="qunit-fixture"></div>
+
+        <!-- below are elements copied automatically using file_include.py script -->
+<!-- this file contains sections included during build into html body of test and static html page" -->
+
+<div class="container" ng-controller="settingsController">
+  <ul id="icons_ul">
+	<li ng-repeat="lang in langs">
+	  <a id="a_lang_{{lang}}" ng-click="changeLanguage(lang)"><img ng-src="pict/{{lang}}.png" /></a>
+	</li>
+  </ul>
+</div>
+
+<div id="content" class="container" ng-view>
+</div>
+        <!-- above are elements copied automatically using file_include.py script -->
+
+    </body>
+
+</html>

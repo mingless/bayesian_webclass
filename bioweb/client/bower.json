@@ -1,0 +1,25 @@
+{
+  "name": "sweetspot-client",
+  "version": "0.0.0",
+  "description": "SweetSpot",
+  "private": true,
+  "dependencies": {
+      "angular": "",
+      "angular-resource" : "",
+      "angular-route" : "",
+      "angular-translate" : "",
+	  "angular-translate-loader-static-files" : "",
+	  "jquery": "",
+      "qunit": "",
+      "blanket": ""
+  },
+  "main": "build_client/index.html",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+
+}

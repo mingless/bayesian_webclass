@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <meta charset="utf-8">
+        <title>QUnit tests</title>
+
+        <script src="bower_components/jquery/dist/jquery.min.js"></script>
+        <link rel="stylesheet" href="bower_components/qunit/qunit/qunit.css">
+        <script src="bower_components/qunit/qunit/qunit.js"></script>
+		<script src="bower_components/blanket/dist/qunit/blanket.js"></script>
+
+        <!-- below are elements copied automatically using file_include.py script -->
+        <!-- #include "myapp_include.html" -->
+        <!-- above are elements copied automatically using file_include.py script -->
+
+        <script src="tests/test01_basic.js" data-cover></script>
+        <script src="tests/test02_services.js" data-cover></script>
+
+         <STYLE type="text/css">
+            .hidden { display: block; }
+        </STYLE>
+
+    </head>
+
+    <body style="background: gray;">
+        <div id="qunit"></div>
+        <div id="qunit-fixture"></div>
+
+        <!-- below are elements copied automatically using file_include.py script -->
+		<!-- #include "myapp_body.html" -->
+        <!-- above are elements copied automatically using file_include.py script -->
+
+    </body>
+
+</html>

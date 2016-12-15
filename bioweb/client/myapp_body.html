@@ -1,0 +1,30 @@
+<!-- this file contains sections included during build into html body of test and static html page" -->
+
+<!--<div class="container" ng-controller="settingsController">
+  <ul id="icons_ul">
+	<li ng-repeat="lang in langs">
+	  <a id="a_lang_{{lang}}" ng-click="changeLanguage(lang)"><img ng-src="pict/{{lang}}.png" /></a>
+	</li>
+  </ul>
+</div>
+
+
+<div class = "container" ng-controller="settingsController">
+</div>
+	
+<div id="content" class="container" ng-view>
+</div>-->
+
+<div ng-controller="controller1">
+	<p><span>Enter the address of a page you would like to classify</span></p>
+	<p><input type="text" ng-model="link" /></p>
+	<p><button ng-click="sendWebAddress()">Run!</button></p>
+	<br><br>
+	{{response}}
+	<p></p>
+	
+</div>
+<div ng-controller="cppController">
+	<p>{{dataFromServer}}</p>
+</div>
+
