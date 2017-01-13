@@ -1,6 +1,14 @@
 #ifndef HTTP_DOWNLOADER_H
 #define HTTP_DOWNLOADER_H
 
+
+/*TODO
+    *tworzenie mapy słów gdzie kluczem jest słowo a wartością ilość jego wystąpień
+    *pobieranie linków z bazy danych i sprawdzanie czy się uruchamiają
+    *dopasowywanie atrybutów do mapy -> dodawanie wystąpień danego słowa w tekście na podstawie mapy
+ */
+
+
 #include <iomanip>
 #include <iostream>
 #include <curl/curl.h>
@@ -20,7 +28,7 @@ public:
     ~HTTPDownloader();
     void write_str_to_file(std::string filename, std::string str);
     
-    std::string download(const std::string& url); //downloads html text from given url
+    std::string download(const std::string& url, bool& is_downloadable); //downloads html text from given url
 
 	std::string cleanhtml(const std::string &html); //makes html tidy, brackets are closed and  that html code is ready to be parsed 
 	std::string get_url_address_from_console(); //lets user to enter url file in console
