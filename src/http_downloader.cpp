@@ -18,7 +18,8 @@ std::size_t write_data(void *ptr, std::size_t size, std::size_t nmemb, void *str
     return size * nmemb;
 }
 
-std::string HTTPDownloader::download(const std::string &url, bool& is_downloadable) //TODO prawdopodobnie będzie jednak jeszcze potrzebna wersja nie uzywajaca flagi i po prostu zwracajaca stringa
+std::string HTTPDownloader::download(const std::string &url,
+                                     bool &is_downloadable) //TODO prawdopodobnie będzie jednak jeszcze potrzebna wersja nie uzywajaca flagi i po prostu zwracajaca stringa
 {
     curl_easy_setopt(curl, CURLOPT_URL, url.c_str());
 
@@ -33,7 +34,7 @@ std::string HTTPDownloader::download(const std::string &url, bool& is_downloadab
     /* Check for errors */
     if (res != CURLE_OK)
     {
-        is_downloadable=false;
+        is_downloadable = false;
     }
     return out.str();
 }
@@ -188,14 +189,12 @@ std::string print_node_and_children(const xmlpp::Node *node)
 
 
     if (nodeText)
-
     {
         output += nodeText->get_content();
     }
 
 
     if (!nodeContent)
-
     {
         //Recurse through child nodes:
         xmlpp::Node::NodeList list = node->get_children();
@@ -220,14 +219,12 @@ void print_node_and_children(const xmlpp::Node *node, std::ofstream &text_from_b
 
 
     if (nodeText)
-
     {
         text_from_body_file << nodeText->get_content() << std::endl;
     }
 
 
     if (!nodeContent)
-
     {
         //Recurse through child nodes:
         xmlpp::Node::NodeList list = node->get_children();

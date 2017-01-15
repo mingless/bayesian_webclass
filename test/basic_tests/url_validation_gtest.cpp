@@ -1,6 +1,6 @@
-//#include <bayesian_webclass/http_downloader.h>
-#include <gtest/gtest.h>
 #include <bayesian_webclass/http_downloader.h>
+#include <gtest/gtest.h>
+
 
 // Test declaration
 TEST(HTTPDownloaderTestSuite, urlValidCase) {

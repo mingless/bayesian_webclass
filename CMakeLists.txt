@@ -12,8 +12,9 @@ find_package(catkin REQUIRED)
 find_package(Boost REQUIRED COMPONENTS filesystem system)
 find_package(CURL REQUIRED)
 find_package(LibXML++ REQUIRED)
+find_package(Threads REQUIRED)
 include_directories(${LibXML++_INCLUDE_DIRS} ${CURL_INCLUDE_DIRS} ${Boost_INCLUDE_DIRS})
-set(LIBS ${LIBS} ${LibXML++_LIBRARIES} ${CURL_LIBRARIES} ${Boost_LIBRARIES} /usr/lib/libtidy.so)
+set(LIBS ${LIBS} ${LibXML++_LIBRARIES} ${CURL_LIBRARIES} ${Boost_LIBRARIES} ${Threads_LIBRARIES} /usr/lib/libtidy.so)
 
 ## find_package(Tidy REQUIRED)
 ##include_directories(/usr/lib/ /usr/lib/x86_64/)
@@ -79,13 +80,12 @@ include_directories(include
 
 
 add_library(HTTP STATIC src/http_downloader.cpp)
-target_link_libraries(HTTP
-    ${catkin_LIBRARIES}
-    ${LIBS}
-)
+add_library(CSV STATIC src/csv.cpp)
+
 add_executable(test_p src/test.cpp)
 target_link_libraries(test_p
-	HTTP
+    CSV
+    HTTP
     ${catkin_LIBRARIES}
     ${LIBS}
 )
@@ -128,6 +128,10 @@ install(DIRECTORY xml/
   DESTINATION ${CATKIN_PACKAGE_LIB_DESTINATION}/${PROJECT_NAME}
   FILES_MATCHING PATTERN "*.xml"
 )
+install(DIRECTORY csv/
+  DESTINATION ${CATKIN_PACKAGE_LIB_DESTINATION}/${PROJECT_NAME}
+  FILES_MATCHING PATTERN "*.csv"
+)
 
 #############
 ## Testing ##
@@ -136,9 +140,12 @@ install(DIRECTORY xml/
 ## Add gtest based cpp test target and link libraries
 #catkin_add_gtest(${PROJECT_NAME}-test test/test_bayesian_webclass.cpp)
 catkin_add_gtest(url_validation_gtest test/url_validation_gtest.cpp WORKING_DIRECTORY ${PROJECT_SOURCE_DIR}/test)
+catkin_add_gtest(csv_gtest test/csv_gtest.cpp WORKING_DIRECTORY ${PROJECT_SOURCE_DIR}/test)
 if(TARGET url_validation_gtest)
     target_link_libraries(url_validation_gtest HTTP)
 endif()
-
+if(TARGET csv_gtest)
+    target_link_libraries(csv_gtest CSV)
+endif()
 ## Add folders to be run by python nosetests
 # catkin_add_nosetests(test)

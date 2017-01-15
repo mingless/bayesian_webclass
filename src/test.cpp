@@ -1,8 +1,5 @@
 #include <bayesian_webclass/http_downloader.h>
-#include <boost/filesystem.hpp>
-#include "utilities.cpp"
-#include <map>
-#include <string>
+#include <bayesian_webclass/csv.h>
 int main(){
 //	HTTPDownloader downloader;
 //
@@ -33,27 +30,35 @@ int main(){
 //
 //    }
     std::unique_ptr<HTTPDownloader> ptr_http(new HTTPDownloader());
-    std::map<int,std::string> id_domain_map(tokenizeCsv());
-    int i = 0;
-    std::map<int,std::string>::iterator map_it;
+    std::unique_ptr<Csv> ptr_csv(new Csv());
+    int csv_columns[2] = {0,1};
+
+    Csv::map id_domain_map(ptr_csv->get2ColumnsFromCsv("csv/dns.csv",csv_columns));
+    Csv::map::iterator map_it;
     bool is_downloadable = true;
     int good_links = 0,all_links = 0; //counter of usable links
-//    for ( i = 0, map_it= id_domain_map.begin(); i<30; ++i,++map_it)
-    for (map_it= id_domain_map.begin(); map_it!=id_domain_map.end(); ++map_it)
+    std::ofstream valid_domains_file;
+    valid_domains_file.open("valid_domains.csv");
+    int i = 0;
+    for (i = 0, map_it= id_domain_map.begin(); i<30; ++i,++map_it)
+//      for (map_it= id_domain_map.begin(); map_it!=id_domain_map.end();++map_it)
     {
+
         all_links++;
-        std::cout << map_it->first << "=>" << map_it->second;
         ptr_http->download(map_it->second,is_downloadable);
+
         if (is_downloadable)
         {
-            std::cout << "<== IS GOOOD" << std::endl;
+            valid_domains_file << map_it->first <<";"<< map_it->second<<"\n";
             ++good_links;
         }
         is_downloadable = true; //renew flag
         std::cout << all_links << std::endl;
     }
+    valid_domains_file.close();
     double prc = good_links/(double)all_links;
     prc = prc*100;
-    std::cout << "All links: " << all_links << "\nGood links: " << good_links << "\nPercentage: " << prc << "%" << std::endl;
-    return 0;
+    std::cout << "All links: " << all_links << "\nGood links: " << good_links << "\nPercentage: " << prc << "%" << std::endl << std::flush;
+
+   return 0;
 }

@@ -22,7 +22,8 @@
 #include <tidy/buffio.h>
 #include <vector>
 
-class HTTPDownloader {
+class HTTPDownloader
+{
 public:
     HTTPDownloader();
     ~HTTPDownloader();
