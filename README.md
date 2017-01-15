@@ -27,7 +27,8 @@ Current installation folders and rules:
     files from bayesian_webclass/xml/ matching pattern "*.xml"
 
 Executables:
-    src/test.cpp - opens csv/dns.csv file, saves its content to map: id -> domain_name  and checks wheather all these links can be opened. Valid links saves to file valid_links.csv. (no checks only 30, comment for loop and uncomment another version to download all)
+    
+`src/test.cpp` - opens csv/dns.csv file, saves its content to map: id -> domain_name  and checks wheather all these links can be opened. Valid links saves to file `valid_domains.csv` (no checks only 30, comment for loop and uncomment another version to download all)
    
 Libraries:
     
