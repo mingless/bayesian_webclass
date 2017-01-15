@@ -1,4 +1,11 @@
-#include <bayesian_webclass/http_downloader.h>
+#include <iostream>
+#include <sstream>
+#include <fstream>
+#include "bayesian_webclass/http_downloader.h"
+#include "curl/curl.h"
+#include <tidy/tidy.h>
+#include <tidy/buffio.h>
+#include <libxml++/libxml++.h>
 
 HTTPDownloader::HTTPDownloader()
 {
@@ -18,45 +25,30 @@ std::size_t write_data(void *ptr, std::size_t size, std::size_t nmemb, void *str
     return size * nmemb;
 }
 
-std::string HTTPDownloader::download(const std::string &url,
-                                     bool &is_downloadable) //TODO prawdopodobnie będzie jednak jeszcze potrzebna wersja nie uzywajaca flagi i po prostu zwracajaca stringa
+
+bool HTTPDownloader::download(const std::string &url,
+                              std::string &output) //TODO prawdopodobnie będzie jednak jeszcze potrzebna wersja nie uzywajaca flagi i po prostu zwracajaca stringa
 {
     curl_easy_setopt(curl, CURLOPT_URL, url.c_str());
 
+    curl_easy_setopt(curl, CURLOPT_TIMEOUT, 5L); //wait for website response max 5s
+
+    std::stringstream out;
     curl_easy_setopt(curl, CURLOPT_FOLLOWLOCATION, 1L);
     curl_easy_setopt(curl, CURLOPT_NOSIGNAL, 1); //Prevent "longjmp causes uninitialized stack frame" bug
     curl_easy_setopt(curl, CURLOPT_ACCEPT_ENCODING, "deflate");
-    std::stringstream out;
-    curl_easy_setopt(curl, CURLOPT_WRITEFUNCTION, write_data);
     curl_easy_setopt(curl, CURLOPT_WRITEDATA, &out);
-    /* Perform the request, res will get the return code */
+    curl_easy_setopt(curl, CURLOPT_WRITEFUNCTION, write_data);
     CURLcode res = curl_easy_perform(curl);
-    /* Check for errors */
+    output += out.str();
     if (res != CURLE_OK)
     {
-        is_downloadable = false;
+        return false;
+    } else
+    {
+        return true;
     }
-    return out.str();
 }
-//
-//std::string HTTPDownloader::download(const std::string& url, int &result) {
-//    curl_easy_setopt(curl, CURLOPT_URL, url.c_str());
-//    /* example.com is redirected, so we tell libcurl to follow redirection */
-//    curl_easy_setopt(curl, CURLOPT_FOLLOWLOCATION, 1L);
-//    curl_easy_setopt(curl, CURLOPT_NOSIGNAL, 1); //Prevent "longjmp causes uninitialized stack frame" bug
-//    curl_easy_setopt(curl, CURLOPT_ACCEPT_ENCODING, "deflate");
-//    std::stringstream out;
-//    curl_easy_setopt(curl, CURLOPT_WRITEFUNCTION, write_data);
-//    curl_easy_setopt(curl, CURLOPT_WRITEDATA, &out);
-//    /* Perform the request, res will get the return code */
-//    CURLcode res = curl_easy_perform(curl);
-//    /* Check for errors */
-//    if (res != CURLE_OK) {
-//        result = res;
-//        return curl_easy_strerror(res);
-//    }
-//    return out.str();
-//}
 
 void HTTPDownloader::write_str_to_file(std::string filename, std::string str)
 {
@@ -133,14 +125,14 @@ void print_node_and_children(const xmlpp::Node *node, std::ofstream &text_from_b
 
 std::string print_node_and_children(const xmlpp::Node *node);
 
-bool HTTPDownloader::parse_html_and_save(const std::string &html_text, const std::string &node_of_html_tree, int count,
-                                         bool file_or_string, std::string &output)
+void HTTPDownloader::parse_html_and_save(const std::string &html_text, const std::string &node_of_html_tree,
+                                         std::string &output)
 {
     //parse html_text and save to file only the text from given node_of_html_tree
     //generated file is output/raw_'count'
     xmlpp::DomParser parser;
-    std::ofstream body_text_file;
-    std::string path_root("output/"), filename;
+    //std::ofstream body_text_file;
+    // std::string path_root("output/"), filename;
     parser.parse_memory(html_text);  //parse html code from string
     //xmlpp::Node* rootNode = parser.get_document()->get_root_node();
 
@@ -151,27 +143,27 @@ bool HTTPDownloader::parse_html_and_save(const std::string &html_text, const std
         const xmlpp::Node *pNode = parser.get_document()->get_root_node();
         xmlpp::NodeSet result = pNode->find(node_of_html_tree);         //find node given in function parameter
 
-        if (file_or_string) //jeżeli chcemy azpisywać wynik w pliku
-        {
-            filename = path_root + "raw_" + std::to_string(count) + ".txt";
-            body_text_file.open(filename);
-        }
+//        if (file_or_string) //jeżeli chcemy azpisywać wynik w pliku
+//        {
+//            filename = path_root + "raw_" + std::to_string(count) + ".txt";
+//            body_text_file.open(filename);
+//        }
         for (auto i : result) //for every result print text from node to file
         {
-            if (file_or_string)
-            {
-                print_node_and_children(i, body_text_file);
-            } else
-            {
-                output += print_node_and_children(i);
-            }
+//            if (file_or_string)
+//            {
+//                print_node_and_children(i, body_text_file);
+//            } else
+//            {
+            output += print_node_and_children(i);
+//            }
 
         }
-        if (file_or_string)
-        {
-            std::cout << "Raw text from site " << count << " is in " << filename << std::endl;
-            body_text_file.close();
-        }
+//        if (file_or_string)
+//        {
+//            std::cout << "Raw text from site " << count << " is in " << filename << std::endl;
+//            body_text_file.close();
+//        }
     }
 }
 
@@ -209,7 +201,7 @@ std::string print_node_and_children(const xmlpp::Node *node)
 void print_node_and_children(const xmlpp::Node *node, std::ofstream &text_from_body_file)
 {
 
-    //recursive function that prints to given ofstream (exp file) the text of give node from parsed xml file 
+    //recursive function that prints to given ofstream (exp file) the text of give node from parsed xml file
     const xmlpp::ContentNode *nodeContent = dynamic_cast<const xmlpp::ContentNode *>(node);
     const xmlpp::TextNode *nodeText = dynamic_cast<const xmlpp::TextNode *>(node);
 

@@ -6,11 +6,11 @@
 #include <fstream>
 #include <iostream>
 
-Csv::map Csv::get2ColumnsFromCsv(const std::string &filename, const int columns_numbers[2])
+bool Csv::get_2_columns_from_csv(const std::string &filename, const int *columns_numbers)
 {
     std::ifstream domain_csv(filename); //in every line should be other http address
     std::string::size_type sz; //needed to stoi -> string to int
-    map id_domain_map; //key -> id of record in csv, value domain name
+    //key -> id of record in csv, value domain name
 
     if (domain_csv.is_open())
     {
@@ -19,26 +19,32 @@ Csv::map Csv::get2ColumnsFromCsv(const std::string &filename, const int columns_
 
         getline(domain_csv, line); //in first line are identifiers, don't need them
         int s = *std::max_element(columns_numbers, columns_numbers + 2);
-        int counter_invalid_id = 10; //number of tries to check if ids in following rows are valid
+        int counter_invalid_id = _max_invalid_ids; //number of ommited invalid ids
         while (!domain_csv.eof())
         {
             //tokenizing csv file line by line
             getline(domain_csv, line);
-            if (line == ""){
+            if (line == "")
+            {
                 break;
             }
             t_tokenizer tok{line, sep};
 
             int column_num = 0, id = 0;
             std::string domain_address;
-            for (auto &t : tok)
+            if (counter_invalid_id < 0)
             {
-                try
+                std::cerr << "Too many invalid ids" << std::endl;
+                return false;
+            }
+            try
+            {
+                for (auto &t : tok)
                 {
+
                     if (column_num == columns_numbers[0]) //id column
                     {
                         id = std::stoi(t, &sz);
-                        counter_invalid_id = 10;
                     } else if (column_num == columns_numbers[1]) //domain name column
                     {
                         domain_address = t;
@@ -49,33 +55,37 @@ Csv::map Csv::get2ColumnsFromCsv(const std::string &filename, const int columns_
                     }
                     ++column_num;
                 }
-                catch (std::invalid_argument &) //if std::stoi throws exeption, we ignore this row with invalid id
-                {
-                    --counter_invalid_id;
-                    continue;
-                }
             }
-            if (counter_invalid_id < 0)
+            catch (std::invalid_argument &) //if std::stoi throws exeption, we ignore this row with invalid id
             {
-                break;
+             //   std::cerr << "invalid id, counter:" << counter_invalid_id<< std::endl;
+                --counter_invalid_id;
+                continue;
             }
-            if (column_num < s)
+
+            if (column_num <= s)
             {   //data from column_numbers and csv file doesn't match, csv hasn't enough columns
                 std::cerr << "Number of columns from csv file is smaller than values wanted" << std::endl;
-                return id_domain_map; //TODO jakos tu rzucac wyjatek
+              //  std::cerr << "cols: " << column_num << "s: " << s << std::endl;
+                return false; //TODO jakos tu rzucac wyjatek
             } else
             {
-                id_domain_map.insert(std::pair<int, std::string>(id, domain_address));
+                _id_domain_map->insert(std::pair<int, std::string>(id, domain_address));
             }
         }
     } else
     {
         std::cerr << "Cannot open file: " << filename
                   << std::endl; //TODO jakis plik z logami czy cos, nie wypisywanie bledow na konsole, ewentualnie wyjatek
-        //return NULL; //TODO jakos tu rzucac wyjatek
+        return false; //TODO jakos tu rzucac wyjatek
     }
+    domain_csv.close();
+    return true;
+}
 
-    return id_domain_map;
+const std::unique_ptr<Csv::map, std::default_delete<Csv::map>> &Csv::getId_domain_map() const
+{
+    return _id_domain_map;
 }
 
 //void Csv::delete_disabled_domains(Csv::map &id_domain_map) //delets from map records which domains cannot be opened

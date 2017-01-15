@@ -79,17 +79,18 @@ include_directories(include
 # )
 
 
-add_library(HTTP STATIC src/http_downloader.cpp)
-add_library(CSV STATIC src/csv.cpp)
+add_library(CSV STATIC include/bayesian_webclass/csv.h src/csv.cpp)
+add_library(HTTP STATIC include/bayesian_webclass/http_downloader.h src/http_downloader.cpp )
+add_library(DataPrep STATIC include/bayesian_webclass/data_preprocessor.h src/data_preprocessor.cpp)
 
 add_executable(test_p src/test.cpp)
 target_link_libraries(test_p
-    CSV
-    HTTP
-    ${catkin_LIBRARIES}
-    ${LIBS}
-)
-
+        DataPrep
+        CSV
+        HTTP
+        ${catkin_LIBRARIES}
+        ${LIBS}
+        )
 #############
 ## Install ##
 #############
@@ -145,7 +146,7 @@ if(TARGET url_validation_gtest)
     target_link_libraries(url_validation_gtest HTTP)
 endif()
 if(TARGET csv_gtest)
-    target_link_libraries(csv_gtest CSV)
+    target_link_libraries(csv_gtest CSV HTTP DataPrep)
 endif()
 ## Add folders to be run by python nosetests
 # catkin_add_nosetests(test)
