@@ -16,20 +16,20 @@ class Csv
         typedef boost::tokenizer<boost::char_separator<char>> t_tokenizer;
         typedef std::map<int, std::string> map;
     private:
-        std::unique_ptr<map> _id_domain_map;
+        std::unique_ptr<map> _id_url_map;
         const int _max_invalid_ids; //default 6
     public:
 
-        Csv(): _id_domain_map(new map()), _max_invalid_ids(6){};
-        Csv(const int max_invalid_ids): _id_domain_map(new map()), _max_invalid_ids(max_invalid_ids){};
+        Csv(): _id_url_map(new map()), _max_invalid_ids(6){};
+        Csv(const int max_invalid_ids): _id_url_map(new map()), _max_invalid_ids(max_invalid_ids){};
 
-        //    Csv(map_ptr id_domain_map) : _id_domain_map(id_domain_map)
+        //    Csv(map_ptr id_url_map) : _id_url_map(id_url_map)
         //    {};
 
-        const std::unique_ptr<map> &getId_domain_map() const;
+        const std::unique_ptr<map> &getId_url_map() const;
 
         bool csv2map(const std::string &filename,
-                const int col1, const int col2);
+                     const int col1, const int col2);
         /*  Parses csv file given with the filename to a map (int-string).
          *  Takes name of the csv file and numbers of the columns in the csv
          *  that will be used respectively as keys and values od the map.
@@ -39,7 +39,7 @@ class Csv
          *  @return Boolean, true if function succeded.
          */
 
-        void delete_disabled_domains(map &id_domain_map);  // Remove invalid urls from a domain map.
+        void delete_disabled_urls(map &id_url_map);  // Remove invalid urls from a url map.
         void match_values();
 
 };

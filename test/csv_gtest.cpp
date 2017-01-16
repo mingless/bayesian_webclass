@@ -28,11 +28,8 @@ struct CsvTest : ::testing::Test, ::testing::WithParamInterface<csv_content>
 TEST_P(CsvTest, ValidCsvs)
 {
     auto as = GetParam();
-    int column_numbers[2];
-    column_numbers[0] = as.col1;
-    column_numbers[1] = as.col2;
-    bool res = csv->get_2_columns_from_csv(as.filename, column_numbers);
-    auto rec = csv->getId_domain_map()->begin(); //each testing csv has one line
+    bool res = csv->csv2map(as.filename, as.col1, as.col2);
+    auto rec = csv->getId_url_map()->begin(); //each testing csv has one line
     if (!as.success)
     {
         EXPECT_EQ(as.success, res);
