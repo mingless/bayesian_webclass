@@ -7,12 +7,14 @@
 #include <boost/filesystem/operations.hpp>
 #include "bayesian_webclass/data_preprocessor.h"
 
-DataPreprocessor::DataPreprocessor(std::string curl_out_folder) : ptr_csv(new Csv()), ptr_http(new HTTPDownloader()), _curl_output_folder(curl_out_folder){}
+DataPreprocessor::DataPreprocessor(std::string curl_out_folder) :
+    ptr_http(new HTTPDownloader()),
+    ptr_csv(new Csv()),
+    _curl_output_folder(curl_out_folder){}
 
 bool DataPreprocessor::filter_valid_domains(const std::string& input_filename,const std::string& output_filename)
 {
-    int csv_columns[2] = {0,1};
-    bool success = this->ptr_csv->get_2_columns_from_csv(input_filename, csv_columns);
+    bool success = this->ptr_csv->csv2map(input_filename, 0, 1);
     Csv::map::iterator map_it;
     bool is_downloadable = true;
     int good_links = 0,all_links = 0; //counter of usable links
@@ -41,7 +43,7 @@ bool DataPreprocessor::filter_valid_domains(const std::string& input_filename,co
         prc = prc * 100;
 
         std::cout << "All links: " << all_links << "\nGood links: " << good_links << "\nPercentage: " << prc << "%"
-                  << std::endl << std::flush;
+            << std::endl << std::flush;
     }
     return success;
 }
