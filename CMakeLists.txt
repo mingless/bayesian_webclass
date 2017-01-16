@@ -50,7 +50,7 @@ endif()
 ## DEPENDS: system dependencies of this project that dependent projects also need
 catkin_package(
   INCLUDE_DIRS include
-  LIBRARIES bayesian_webclass
+  #  LIBRARIES bayesian_webclass
   #  CATKIN_DEPENDS other_catkin_pkg
   #  DEPENDS system_lib
 )
@@ -82,15 +82,16 @@ include_directories(include
 add_library(CSV STATIC include/bayesian_webclass/csv.h src/csv.cpp)
 add_library(HTTP STATIC include/bayesian_webclass/http_downloader.h src/http_downloader.cpp )
 add_library(DataPrep STATIC include/bayesian_webclass/data_preprocessor.h src/data_preprocessor.cpp)
+add_library(Dict STATIC include/bayesian_webclass/dictionary.h src/dictionary.cpp)
 
 add_executable(test_p src/test.cpp)
 target_link_libraries(test_p
-        DataPrep
-        CSV
-        HTTP
+        Dict
         ${catkin_LIBRARIES}
         ${LIBS}
         )
+    #add_dependencies(test_p ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
+
 #############
 ## Install ##
 #############

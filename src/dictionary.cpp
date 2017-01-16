@@ -1,4 +1,4 @@
-#include <bayesian_webclass/dictionary.h>
+#include "bayesian_webclass/dictionary.h"
 
 struct letter_only : std::ctype<char> {
     letter_only() : std::ctype<char>(get_table()) {}
@@ -20,18 +20,13 @@ void Dictionary::write_str_to_file(std::string filename, std::string str) {
 }
 
 void Dictionary::fetch_from_file(std::string filename) {
-    std::vector<std::string> word_list; //stores addresses of html
-    std::string line;
-    std::ifstream word_list_file (filename); //in every line should be other http address
-    if (word_list_file.is_open()) {
-        while (! word_list_file.eof()) {
-            std::getline(word_list_file,line,"="); // delimitation with "=", line format is "word=freq"
-            // only word is needed here
-            word_list.push_back(line);
-        }
-        word_list_file.close();
-    } else {
-        std::cout << "Failed to open the file." << std::endl;
+    std::vector<std::string> word_list;
+    std::ifstream input;
+    input.open(filename);
+    std::string word;
+
+    while(input >> word) {
+        word_list.push_back(word);
     }
     this->_word_list = word_list;
 }
@@ -39,7 +34,6 @@ void Dictionary::fetch_from_file(std::string filename) {
 int Dictionary::compare(const std::string& filename) {
     std::map<std::string, int> wordCnt;
     std::ifstream input;
-    input.imbue(std::locale(std::locale(), new letter_only()));
     input.open(filename);
     std::string word;
 
@@ -47,9 +41,11 @@ int Dictionary::compare(const std::string& filename) {
         ++wordCnt[word];
     }
 
-    int matchedCnt;
+    int matchedCnt = 0;
     for(auto w : _word_list) {
-        matchedCnt += wordCnt[w]
+        if(wordCnt.count(w))
+            ++matchedCnt;
     }
+
     return matchedCnt;
 }

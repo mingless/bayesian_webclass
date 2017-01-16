@@ -1,9 +1,9 @@
 #include <bayesian_webclass/data_preprocessor.h>
 #include <iostream>
 #include "bayesian_webclass/http_downloader.h"
+#include "bayesian_webclass/dictionary.h"
 #include <boost/filesystem/operations.hpp>
 
-int main(){
 //	HTTPDownloader downloader;
 //
 //    //get html addresses from textfile to vector of string
@@ -33,5 +33,11 @@ int main(){
 //
 //    }
 
-   return 0;
+int main() {
+    Dictionary dict;
+    dict.fetch_from_file("/home/m/catkin_ws/src/bayesian_webclass/txt/attributes/attrib_EN.txt");
+    int cnt = dict.compare("/home/m/catkin_ws/src/bayesian_webclass/txt/attributes/attrib_PL.txt");
+
+    std::cout << "Cnt: " << cnt << std::endl;
+    return cnt;
 }
