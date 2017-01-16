@@ -14,17 +14,41 @@
 <script src="bower_components/angular-translate/angular-translate.min.js"></script>
 <script src="bower_components/angular-translate-loader-static-files/angular-translate-loader-static-files.min.js"></script>
 
-<!--
+
 <script type="text/javascript" src="js/version.js" data-cover></script>
+<!--
 <script type="text/javascript" src="js/app.js" data-cover></script>
 <script type="text/javascript" src="js/services.js" data-cover></script>
 <script type="text/javascript" src="js/controllers.js" data-cover></script>
 -->
 
 <script type="text/javascript" src="js/controller1.js" data-cover></script>
+<!-- 
+<script type="text/javascript" src="js/service.js" data-cover></script>
+-->
 
-<link rel="stylesheet" type="text/css" href="css/styles.css" />
+<link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+<style>
+body,h1,h2{font-family: "Raleway", sans-serif}
+body, html {height: 100%}
+p {line-height: 2}
 
+.bgimg, .bgimg2 {
+    min-height: 100%;
+    background-position: center;
+    background-size: cover;
+    background-image: url("/home/apiotro/Obrazy/Screenshot from 2016-12-30 22-14-34.png")
+    
+}
+
+.bgimg {background-image: url("/home/apiotro/Obrazy/Screenshot from 2016-12-30 22-14-34.png")}
+.bgimg2 {background-image: url("/home/apiotro/Obrazy/Screenshot from 2016-12-30 22-14-34.png")}
+</style>
+
+
+<!-- <link rel="stylesheet" type="text/css" href="css/styles.css" />
+-->	
 
         <!-- above are elements copied automatically using file_include.py script -->
     </head>
@@ -48,8 +72,18 @@
 <div id="content" class="container" ng-view>
 </div>-->
 
+
+<div class="w3-display-container bgimg2">
+  <div class="w3-display-middle w3-text-white w3-center">
+    <img class="w3-round w3-grayscale-min" src="/w3images/wedding_couple2.jpg" style="width:100%;margin:32px 0">
+    <h1 class="w3-jumbo">dupa</h1><br>
+    <h2>ale java najlepsza xD	</h2>
+  </div>
+</div>
+
+
 <div ng-controller="controller1">
-	<p><span>Enter the address of a page you would like to classify</span></p>
+	<p><h1 class="w3-jumbo">Enter the address of a page you would like to classify</h1></p>
 	<p><input type="text" ng-model="link" /></p>
 	<p><button ng-click="sendWebAddress()">Run!</button></p>
 	<br><br>
@@ -59,6 +93,7 @@
 </div>
 <div ng-controller="cppController">
 	<p>{{dataFromServer}}</p>
+	<p><button ng-click="getData()">DawajxD</button></p>
 </div>
 
         <!-- above are elements copied automatically using file_include.py script -->

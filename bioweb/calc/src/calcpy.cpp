@@ -17,6 +17,8 @@
 #include <boost/python/suite/indexing/vector_indexing_suite.hpp>
 
 #include "calc.hpp"
+#include <string>
+//#include <system>
 
 using namespace boost::python;
 
@@ -38,6 +40,11 @@ public:
     double getProgress(long id) { return CommandManager::getInstance().findCommandDesc(id).progress_; }
 };
 
+std::string greet(const std::string word)
+{   
+   return word + " response from server";  
+}
+
 /**
  * Python wrapper using Boost.Python
  */
@@ -45,6 +52,9 @@ BOOST_PYTHON_MODULE( calc )
 {
     //! exports getNumber to Python
     boost::python::def( "getNumber", getNumber );
+
+    using namespace boost::python;
+    def("greet", greet);
 
     boost::python::enum_<mt4cpp::CommandDesc::State>("CommandState")
         .value("NONE",mt4cpp::CommandDesc::NONE)
@@ -68,4 +78,8 @@ BOOST_PYTHON_MODULE( calc )
         .def( "getProgress", &CommandManagerPy::getProgress )
         ;
 
+
+
+
 }
+

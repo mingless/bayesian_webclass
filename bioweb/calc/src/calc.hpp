@@ -10,8 +10,6 @@
 //msvc disable warnings for sheduler_ and history_ member
 #pragma warning(disable:4251)
 #endif
-
-
 #ifdef CALC_EXPORTS
 /** Workaround for Windows DLL library exports */
 #define CALC_DLL(X) __declspec(dllexport)X
