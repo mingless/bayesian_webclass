@@ -26,8 +26,6 @@ class HTTPDownloader
 	bool check_link(const std::string& url);
 
 
-        bool download(const std::string& url, std::string& output); //downloads html text from given url
-        bool check_link(const std::string& url);
 
         //    std::string download(const std::string& url); //downloads html text from given url
         //    std::string download(const std::string& url, int &result); //downloads html text from given url and allows retrieval of any error code
@@ -38,11 +36,6 @@ class HTTPDownloader
 
 	std::vector<std::string> get_urls_from_file(std::string filename); //gets list of html addresses from given file in every line should be one http_address
 	void parse_html_and_save(const std::string& html_text, const std::string& node_of_html_tree, std::string& output,std::set<std::string> &unique_attribs); //parse html_text and save to file only the text from given node_of_html_tree
-
-
-        std::vector<std::string> get_urls_from_file(std::string filename); //gets list of html addresses from given file in every line should be one http_address
-        void parse_html_and_save(const std::string& html_text, const std::string& node_of_html_tree, std::string& output); //parse html_text and save to file only the text from given node_of_html_tree
-
 
     private:
         void* curl;
