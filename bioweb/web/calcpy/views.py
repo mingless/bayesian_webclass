@@ -11,8 +11,6 @@ import calc
 def greet(params):
     """testestest params is instance of querydict"""
     query = dict(params.iterlists())
-    #print query
-    #print calc.greet("dupa")
 
     return{
         "pozdrowienie":calc.greet(query['word'][0].encode('ascii', 'ignore'))
