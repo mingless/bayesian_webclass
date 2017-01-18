@@ -12,38 +12,34 @@ apk.service('srvCommands', //commands
                 	this.serverData =  $http.get(this.baseURL + 'greet?word=' + value).success(callback);
                 	return this.serverData; 
                 };
-            })
-
-
-.controller('controller1', function($scope) {
-
-	$scope.link='';
-	$scope.response = 'placeholder1';
-	$scope.sendWebAddress = function(){
-
-		link = $scope.link;
-		$scope.response = 'placeholder2';			
-	};
-
-})
+    }
+)
 .controller('cppController',
 	['$scope', 	
 	'srvCommands',
 	function($scope, srvCommands ) {
-				$scope.dataFromServer = 'no data!';	//to biore w htmlu
+
+				$scope.link = "en.wikipedia.org/";
+				$scope.dataFromServer = "None";
 
 				$scope.getData = function() {
-					
+
+					link = $scope.link;
+					if(!link.toLowerCase().startsWith("en.wikipedia.org")){
+						$scope.dataFromServer="wrong address!";
+						return;
+					}
+
 					return srvCommands.getDataServer(
 						function(data){
 							$scope.dataFromServer=data.pozdrowienie;
 						}
 						,link
-						);
+					);
 				};
 				
 				
 			}
-			]		
+	]		
 
 			);
