@@ -1,0 +1,13 @@
+{
+    "MAIN" : "Ekran główny",
+
+   	"TIME" : "czas serwera",
+   	"SRV_VER" : "wersja serwera",
+   	"DB_VER" : "wersja bazy danych",
+   	"CLI_VER" : "wersja klienta",
+	"COMMANDS_NUMBER" : "liczba komend",
+	"START_NEW_COMMAND" : "nowa komenda",
+	"CPP_COMMANDS" : "lista komend c++",
+	"STATE": "stan",
+	"PROGRESS": "postęp"
+}

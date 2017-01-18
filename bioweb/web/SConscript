@@ -1,0 +1,46 @@
+# -*- mode: Python; -*- scons script
+
+## @file web/SConscript
+#  @brief scons build for server part (Python django)
+
+import os, platform, re, shutil
+
+Import('env')
+
+Import('MYAPP_VER_MAJOR')
+Import('MYAPP_VER_MINOR')
+Import('MYAPP_VER_COMPILATION')
+Import('WEB_SRV_PREFIX WEB_SRV_HOST WEB_SRV_PORT WEB_CLIENT_HOST WEB_CLIENT_PORT')
+Import('DB_NAME DB_USER DB_PASSWORD')
+
+def build_websrv_version( target, source, env):
+   file=open(str(target[0]),'w')
+   file.write('web_srv_prefix = "' + WEB_SRV_PREFIX + '"\n')
+   file.write('major = ' + MYAPP_VER_MAJOR + '\n')
+   file.write('minor = "' + MYAPP_VER_MINOR + '"\n')
+   file.write('compilation = ' + MYAPP_VER_COMPILATION + '\n')
+   file.write('DB_NAME = "' + DB_NAME + '"\n')
+   file.write('DB_USER = "' + DB_USER + '"\n')
+   file.write('DB_PASSWORD = "' + DB_PASSWORD + '"\n')
+
+   file.close()
+   return
+
+out_dir = '../build_web/'
+file_ver_name = out_dir + 'version/version_gen.py'
+env.Command(file_ver_name, [], build_websrv_version )
+
+#install web
+app_src = '../web'
+for root, dirs, files in os.walk(app_src):
+   p = os.path.relpath(root, app_src) #relative path
+   for name in files:
+      filename = os.path.join(root, name)
+      inst_file = env.Install(out_dir + p, filename)
+      if re.match('.*\.py$', filename):
+         pyc = env.File( str(filename) + 'c' )
+         env.SideEffect( pyc, inst_file)
+
+
+env.Clean('.',out_dir)
+

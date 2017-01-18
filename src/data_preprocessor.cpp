@@ -7,50 +7,51 @@
 #include <boost/filesystem/operations.hpp>
 #include "bayesian_webclass/data_preprocessor.h"
 
-DataPreprocessor::DataPreprocessor(std::string curl_out_folder) : ptr_csv(new Csv()), ptr_http(new HTTPDownloader()),
-                                                                  _curl_output_folder(curl_out_folder)
-{}
 
-bool DataPreprocessor::filter_valid_domains(const std::string &input_filename, const std::string &output_filename)
-{
-    int csv_columns[2] = {0, 1};
-    bool success = this->ptr_csv->get_2_columns_from_csv(input_filename, csv_columns);
+DataPreprocessor::DataPreprocessor(std::string curl_out_folder) :
+    ptr_http(new HTTPDownloader()),
+    ptr_csv(new Csv()),
+    _curl_output_folder(curl_out_folder){}
+
+bool DataPreprocessor::filter_valid_urls(
+        const std::string& input_filename,
+        const std::string& output_filename) {
+    bool success = this->ptr_csv->csv2map(input_filename, 0, 1);
     Csv::map::iterator map_it;
     bool is_downloadable = true;
     int good_links = 0, all_links = 0; //counter of usable links
-    std::ofstream valid_domains_file;
-    valid_domains_file.open(output_filename);
-    if (!valid_domains_file.is_open()) //invalid file
-    {
+    std::ofstream valid_urls_file;
+    valid_urls_file.open(output_filename);
+    if (!valid_urls_file.is_open()) { //invalid file
+
         return false;
-    } else
-    {
-        for (map_it = ptr_csv->getId_domain_map()->begin(); map_it != ptr_csv->getId_domain_map()->end(); ++map_it)
-        {
+    } else {
+        for (map_it = ptr_csv->getId_url_map()->begin(); map_it != ptr_csv->getId_url_map()->end(); ++map_it) {
             std::cout << map_it->first << "  " << map_it->second << std::endl << std::flush;
             all_links++;
             std::string a;
             is_downloadable = this->ptr_http->download(map_it->second, a);
 
-            if (is_downloadable)
-            {
-                valid_domains_file << map_it->first << ";" << map_it->second << "\n";
+            if (is_downloadable) {
+                valid_urls_file << map_it->first << ";" << map_it->second << "\n";
                 ++good_links;
             }
         }
-        valid_domains_file.close();
+        valid_urls_file.close();
         double prc = good_links / (double) all_links;
         prc = prc * 100;
 
         std::cout << "All links: " << all_links << "\nGood links: " << good_links << "\nPercentage: " << prc << "%"
-                  << std::endl << std::flush;
+            << std::endl << std::flush;
     }
     return success;
 }
 
-bool DataPreprocessor::parse_htmls(const std::string &filename,
-                                   const std::string &from_which_tags) //TODO eg. "/html/body" which tags
-{
+
+bool DataPreprocessor::parse_htmls(
+        const std::string &filename,
+        const std::string& from_which_tags) { //TODO eg. "/html/body" which tags
+
     //get html addresses from textfile to vector of string
     string_vec addresses = ptr_http->get_urls_from_file(filename);
     std::string html_text, file_path;

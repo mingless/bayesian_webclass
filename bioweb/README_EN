@@ -1,0 +1,129 @@
+Sample application using PostgreSQL, Python ( django ), C++ (boost) + Java Script(AngularJS)
+
+SETTING DEVELOPMENT ENVIRONMENT FOR UBUNTU
+-------------------------------------------------- -----------
+
+1) sudo apt-get install postgresql g++ python-dev python-pip scons lighttpd nodejs nodejs-legacy npm git mercurial libpq-dev
+2) create database
+
+$ sudo -u postgres createuser --no-superuser --createdb --no-createrole mydb
+$ sudo -u postgres createdb -O mydb mydb
+$ sudo -u postgres psql -c "alter user mydb with encrypted password 'mydb';"
+
+test connection to the database: psql mydb -U mydb
+If failed with error: "psql: FATAL:  Peer authentication failed for user "mydb"" you should e.g. edit /etc/postgresql/9.1/main/pg_hba.conf and
+in line "local all all peer" change 'peer' to 'md5'. Restert server #/etc/init.d/postgresql restart (or sudo service postgresql restart)
+
+3) install python packages
+sudo pip install -r pip_dev.requirements
+
+4) install bower
+
+sudo npm install -g bower
+
+5) download and unzip www.boost.org, then 'bootstrap.sh', then './b2'
+6) copy the subdirectory 'boost' to '/usr/local/include', copy all the files from the 'stage/lib' to '/usr/local/lib' and put the line 'export LD_LIBRARY_PATH=/usr/local/lib' into /etc/bash.profile
+
+7) install 'mt4cpp' library http://mt4cpp.sourcefore.net,  version at least 0.03:
+ 'sudo dpkg -i mt4cpp_0.3.71-1_amd64.deb' (for 64 bit) or 'sudo dpkg -i mt4cpp_0.3.71-1_i386.deb' or unzip mt4cpp source into '/usr/local/include'
+
+8) install javascript packages
+
+cd client
+bower install
+
+
+SETTING DEVELOPMENT ENVIRONMENT FOR DEBIAN
+-------------------------------------------------- -----------
+
+1a) sudo apt-get install postgresql g++ python-dev python-pip scons lighttpd git
+1b) You need also packages: nodejs nodejs-legacy npm
+	There are not included in current main repository, so you need add testing repository:
+	Edit /etc/apt/sources.list and add repository:
+		deb http://ftp.de.debian.org/debian sid main to /etc/apt/sources.list
+	Update database
+		sudo apt-get update
+	And install them
+		sudo apt-get install nodejs nodejs-legacy npm
+	Of course it is possible to download them manually too.
+	Remember to remove testing repository after installation!
+
+	The rest (points 2 - 8) is the same as for ubuntu.
+
+
+SETTING DEVELOPMENT ENVIRONMENT FOR WINDOWS (XP, 7)
+-------------------------------------------------- -----------
+
+1) install PostgreSQL
+2) install the Microsoft Visual Studio
+3) install Python 2.7 (NOT 3.X): https://www.python.org/download/releases/ (for example, in the default path C:\Python27\)
+4) add the path where you installed Python to Path, restart console
+5) open new terminal and run: python --version (should be 2.7), if command failed, add C:\Python27\;C:\Python27\Scripts to the PATH, restart console
+6) install pip: download get-pip.py, e.g.  https://raw.github.com/pypa/pip/master/contrib/get-pip.py, then run 'python get-pip.py'
+7) pip install --egg scons
+8) pip install -r pip_dev_win.requirements
+9) install psycopg: http://www.stickpeople.com/projects/python/win-psycopg/
+10) download and unzip http://www.boost.org, then run in a terminal window of Visual Studio the 'bootstrap', then 'bjam.exe --build-type = complete' .
+11) 'bjam.exe --build-type=complete install' (it copies headers and libraries to C:/boost)
+12) instal mt4cpp (http://mt4cpp.sourcefore.net), version at least 0.03: run mt4cpp_VERSION.exe installer or unzip mt4cpp source into 'C:/usr/local/include'
+13) install lighttpd (.exe from: http://en.wlmp-project.net/downloads.php, homepage: www.lighttpd.net)
+14)	 add 'C:\Program Files\LightTPD' (or C:\Program Files (x86)\LightTPD) to PATH, restart console
+15) install node.js, http://nodejs.org/download/
+16) install bower, npm install -g bower
+17) install git: http://msysgit.github.io/  During install on first tab select "use git from the windows command...",
+    on the second tab "Check-out as is commit unix style"
+18) create database, user, password, e.g. mydb, mydb, mydb
+19) add directory containing chrome.exe to Path (C:\Program Files\Google\Chrome\Application for version 34.0.1847.131 m)
+20) install javascript packages
+
+cd client
+bower install
+
+SETTING DEVELOPMENT ENVIRONMENT FOR WINDOWS 7 64 bit
+-------------------------------------------------- -----------
+1) install PostgreSQL
+2) install the Microsoft Visual Studio 2013
+3) install Python 2.7 (NOT 3.X): https://www.python.org/download/releases/ (for example, in the default path C:\Python27\) in 64 bit
+4) add the path where you installed Python to Path, restart console
+5) open new terminal and run: python --version (should be 2.7 64 bit), if command failed, add C:\Python27\;C:\Python27\Scripts to the PATH, restart console
+6) install pip: download get-pip.py, e.g.  https://raw.github.com/pypa/pip/master/contrib/get-pip.py, then run 'python get-pip.py'
+7) download scons.zip in version at least 2.3.3 (support for msvc12) http://www.scons.org, unzip then install: python setup.py install
+8) pip install -r pip_dev_win.requirements
+9) install psycopg: http://www.stickpeople.com/projects/python/win-psycopg/
+10) download and unzip http://www.boost.org, then run in a 64 bit terminal window of Visual Studio the commands 'bootstrap.bat', then
+bjam.exe --address-model=64 link=static link=shared variant=release variant=debug threading=multi stage
+11) install boost in C:\Boost
+bjam.exe --address-model=64 link=static link=shared variant=release variant=debug threading=multi install
+12) instal mt4cpp (http://mt4cpp.sourcefore.net), version at least 0.03: run mt4cpp_VERSION.exe installer or unzip mt4cpp source into 'C:/usr/local/include'
+13) install lighttpd (.exe from: http://en.wlmp-project.net/downloads.php, homepage: www.lighttpd.net)
+14)	 add 'C:\Program Files\LightTPD' (or C:\Program Files (x86)\LightTPD) to PATH, restart console
+15) install node.js, http://nodejs.org/download/
+16) install bower, npm install -g bower
+17) install git: http://msysgit.github.io/  During install on first tab select "use git from the windows command...",
+    on the second tab "Check-out as is commit unix style"
+18) create database, user, password, e.g. mydb, mydb, mydb
+19) add directory containing chrome.exe to Path (C:\Program Files\Google\Chrome\Application for version 34.0.1847.131 m)
+20) install javascript packages
+
+FIRST COMPILATION
+-----------------
+
+1) create database schema
+
+scons
+scons syncdb=1
+
+
+COMPILATION
+----------
+compilation under Linux:
+
+scons
+
+compilation under Windows (compilation should be run in a terminal window Visual Studio):
+
+scons
+
+OTHER COMMANDS (run application in localhost, execute unit tests, check test coverage):
+---------------
+scons -h

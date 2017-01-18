@@ -1,6 +1,11 @@
 #include <bayesian_webclass/data_preprocessor.h>
 
-int main(){
+#include <iostream>
+#include "bayesian_webclass/http_downloader.h"
+#include "bayesian_webclass/dictionary.h"
+#include <boost/filesystem/operations.hpp>
+
+
 //	HTTPDownloader downloader;
 //
 //    //get html addresses from textfile to vector of string
@@ -29,9 +34,16 @@ int main(){
 //      	count++;
 //
 //    }
-    DataPreprocessor dataPreprocessor;
+ 
+
+
+int main() {
+	DataPreprocessor dataPreprocessor;
     dataPreprocessor.get_attribs("linki.txt");
+    Dictionary dict;
+    dict.fetch_from_file("/home/m/catkin_ws/src/bayesian_webclass/txt/attributes/attrib_EN.txt");
+    int cnt = dict.compare("/home/m/catkin_ws/src/bayesian_webclass/txt/attributes/attrib_PL.txt");
 
-
-   return 0;
+    std::cout << "Cnt: " << cnt << std::endl;
+    return cnt;
 }

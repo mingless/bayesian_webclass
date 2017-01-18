@@ -1,0 +1,9 @@
+/**
+\mainpage bioweb
+
+Bioweb is framework for building software to analyze genetic data, which uses PostgreSQL database, C++, Python (django), JavaScript (angularJS) and several libraries.
+
+To build this application install software as described in <code>README_EN</code>
+and run <code>scons</code> command in the directory where you placed the bioweb.
+To start the client and server locally run <code>scons r=l</code>.
+*/

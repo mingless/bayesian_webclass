@@ -1,0 +1,68 @@
+# -*- mode: Python; -*- 
+
+## @file calc/SConscript
+#  @brief scons build for calc C++ library
+
+import os, platform, shutil
+
+Import('env')
+
+Import('MYAPP_VER_MAJOR')
+Import('MYAPP_VER_MINOR')
+Import('MYAPP_VER_COMPILATION')
+
+def copyLibBuilder( target, source, env):
+   '''kopiuje biblioteke'''
+   shutil.copy( str(source[0]), str(target[0]) )
+   return
+
+#sciezki
+env.Append( ENV = {'PATH' : os.environ['PATH'] })
+
+if(platform.system() == "Linux"):
+   env.Append( CPPPATH = ['/usr/include/python2.7'] )
+   env.Append( LIBPATH = [Dir('/usr/lib/python2.7'),
+                          Dir('.') ] )
+
+   env.Append( CPPFLAGS = '-Wall -pedantic -pthread --std=c++11 ' )
+   env.Append( LINKFLAGS = '-Wall -pthread --std=c++11  ' )
+
+   env.Append( LIBS = [ 'boost_python', 'boost_thread',  'boost_chrono',  'boost_system' ] )
+elif(platform.system() == "Windows"):
+   env.Append( CPPPATH = [ Dir('C:/Boost/include/boost-1_59'), #path to boost include
+                           Dir('C:/Python27/include'), #path to python include
+                           Dir('C:/usr/local/include') ] ) #path to mt4cpp include
+   env.Append( LIBPATH = [ Dir('C:/Boost/lib'), #path to boost libs
+                           Dir('C:/Python27/libs'),
+                           Dir('.') ] ) #path to python libs
+
+   env.Append( CPPFLAGS = ' /EHsc /MD /D "WIN32" /D "_CONSOLE" /W4  ' )
+   env.Append( LINKFLAGS = ' /SUBSYSTEM:CONSOLE ' )
+else:
+   print platform.system() + " not supported"
+
+#add export flag to DLL build environment
+env_dll = env.Clone()
+if(platform.system() == "Linux"):
+   pass
+elif(platform.system() == "Windows"):
+   env_dll.Append( CPPFLAGS = ' /D "CALC_EXPORTS" ')
+
+#build C++ library
+cpplib = env_dll.SharedLibrary( target = 'calc', source = ['../calc/src/calc.cpp', '../calc/src/calcpy.cpp'])
+if(platform.system() == "Linux"):
+   target = '../build_web/calcpy/calc.so'
+elif(platform.system() == "Windows"):
+   target = '../build_web/calcpy/calc.pyd'
+env_dll.Command(target, cpplib, copyLibBuilder )
+
+#build tests
+env_test = env.Clone()
+
+if(platform.system() == "Linux"):
+   env_test.Append( LIBS = [ 'python2.7', 'boost_unit_test_framework' ] )
+   env_test.Prepend( LIBS = 'calc' )
+elif(platform.system() == "Windows"):
+   env_test.Prepend( LIBS = 'calc' )
+env_test.Program( target = "calc_test", source = 'tests/calc_test.cpp')
+
