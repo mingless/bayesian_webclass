@@ -1,19 +1,18 @@
 var apk = angular.module('apk',	[]);
 
-var link = ""
-;
+var link = "";
 apk.service('srvCommands', //commands
 
-        function($http) {
+	function($http) {
                 this.baseURL = client_server_prefix + '/ajax/calcpy/'; //the prefix is defined in version.js
-		
-		this.serverData = "";
+                
+                this.serverData = "";
                 this.getDataServer = function(callback, value) {
-                      	   
-					this.serverData =  $http.get(this.baseURL + 'greet?word=' + value).success(callback);
-					return this.serverData; 
-                 };
-         })
+                	
+                	this.serverData =  $http.get(this.baseURL + 'greet?word=' + value).success(callback);
+                	return this.serverData; 
+                };
+            })
 
 
 .controller('controller1', function($scope) {
@@ -28,23 +27,23 @@ apk.service('srvCommands', //commands
 
 })
 .controller('cppController',
-		['$scope', 	
-			'srvCommands',
-			function($scope, srvCommands ) {
+	['$scope', 	
+	'srvCommands',
+	function($scope, srvCommands ) {
 				$scope.dataFromServer = 'no data!';	//to biore w htmlu
 
 				$scope.getData = function() {
-				
+					
 					return srvCommands.getDataServer(
 						function(data){
 							$scope.dataFromServer=data.pozdrowienie;
 						}
-					,link
-					);
+						,link
+						);
 				};
 				
-			
+				
 			}
-		]		
+			]		
 
-);
+			);
