@@ -1,0 +1,38 @@
+
+var.server_root = "/home/apiotro/zpr/bayesian_webclass/bioweb/client"
+var.log_root    = server_root
+var.state_dir   = server_root
+var.home_dir    = server_root
+var.conf_dir    = server_root
+
+server.port = 9000
+server.pid-file = state_dir + "/lighttpd.pid"
+server.errorlog = log_root + "/lighttpd.log"
+server.document-root = server_root
+
+index-file.names = ( "index.html" )
+
+mimetype.assign = (
+  ".html" => "text/html",
+  ".txt" => "text/plain",
+  ".jpg" => "image/jpeg",
+  ".png" => "image/png",
+  ".css" => "text/css",
+  ".svg" => "image/svg+xml",
+  ".js" => "text/javascript"
+)
+
+static-file.exclude-extensions = (".py")
+server.modules += ( "mod_proxy" )
+#server.modules += ( "mod_accesslog" )
+
+#### accesslog format (enable for using a proxy, like Pound, in front of Lighttpd)
+#accesslog.format       = "%h %t %r %>s %b time: %T [s]"
+#accesslog.filename       = log_root + "/access.log"
+
+$HTTP["url"] =~ "^/srvmyapp" {
+        proxy.balance = "hash"
+        proxy.server = ( "" => (
+                "srvmyapp" => ( "host" => "127.0.0.1", "port" => 50007 )
+        ))
+}
