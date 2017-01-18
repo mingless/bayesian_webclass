@@ -9,10 +9,7 @@
 #include "faif/learning/NaiveBayesian.hpp"
 #include "faif/learning/Validator.hpp"
 
-using namespace faif;
-using namespace faif::ml;
-
-typedef NaiveBayesian<ValueNominal<std::string>> NB;
+typedef faif::ml::NaiveBayesian<faif::ValueNominal<std::string>> NB;
 typedef NB::AttrDomain AttrDomain;
 typedef NB::Domains Domains;
 typedef NB::ExampleTest ExampleTest;
@@ -29,7 +26,6 @@ class Classifier {
     private:
         Domains _attribs;
         ExamplesTrain _ex;
-        NaiveBayesian* _nb;
 };
 
 
