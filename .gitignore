@@ -1,4 +1,5 @@
 bioweb/build_web/
-.sconsign.dblite
+bioweb/.sconsign.dblite
+bioweb/client/lighttpd.log
+bioweb/client/file_include.pyc
 
-/bioweb/client/file_include.pyc
