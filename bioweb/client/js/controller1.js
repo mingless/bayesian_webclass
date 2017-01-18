@@ -19,13 +19,17 @@ apk.service('srvCommands', //commands
 	'srvCommands',
 	function($scope, srvCommands ) {
 
-				$scope.link = "";
+				$scope.link = "en.wikipedia.org/";
 				$scope.dataFromServer = "None";
 
 				$scope.getData = function() {
 
 					link = $scope.link;
-					
+					if(!link.toLowerCase().startsWith("en.wikipedia.org")){
+						$scope.dataFromServer="wrong address!";
+						return;
+					}
+
 					return srvCommands.getDataServer(
 						function(data){
 							$scope.dataFromServer=data.pozdrowienie;

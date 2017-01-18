@@ -1,2 +1,3 @@
-/bioweb/build_web/
-/bioweb/.sconsign.dblite
+bioweb/build_web/
+bioweb/.sconsign.dblite
+bioweb/client/lighttpd.log
