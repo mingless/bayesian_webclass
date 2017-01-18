@@ -13,9 +13,7 @@ class Dictionary {
         void write_str_to_file(std::string filename, std::string str);
         void fetch_from_file(std::string filename);  // fetches a list of words from given file with one word per line assumed
         int compare(const std::string& filename);
-
-    private:
-        std::vector<std::string> _word_list;
+        std::vector<std::string> word_list;
 };
 
 

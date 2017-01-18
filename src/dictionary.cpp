@@ -20,7 +20,7 @@ void Dictionary::write_str_to_file(std::string filename, std::string str) {
 }
 
 void Dictionary::fetch_from_file(std::string filename) {
-    std::vector<std::string> word_list;
+    word_list.clear();
     std::ifstream input;
     input.open(filename);
     std::string word;
@@ -28,7 +28,6 @@ void Dictionary::fetch_from_file(std::string filename) {
     while(input >> word) {
         word_list.push_back(word);
     }
-    this->_word_list = word_list;
 }
 
 int Dictionary::compare(const std::string& filename) {
@@ -42,7 +41,7 @@ int Dictionary::compare(const std::string& filename) {
     }
 
     int matchedCnt = 0;
-    for(auto w : _word_list) {
+    for(auto w : word_list) {
         if(wordCnt.count(w))
             ++matchedCnt;
     }

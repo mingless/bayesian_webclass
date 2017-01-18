@@ -15,6 +15,7 @@ find_package(LibXML++ REQUIRED)
 find_package(Threads REQUIRED)
 include_directories(${LibXML++_INCLUDE_DIRS} ${CURL_INCLUDE_DIRS} ${Boost_INCLUDE_DIRS})
 set(LIBS ${LIBS} ${LibXML++_LIBRARIES} ${CURL_LIBRARIES} ${Boost_LIBRARIES} ${Threads_LIBRARIES} /usr/lib/libtidy.so)
+set(faif_INCLUDE_DIRS ${PROJECT_SOURCE_DIR}/)
 
 ## find_package(Tidy REQUIRED)
 ##include_directories(/usr/lib/ /usr/lib/x86_64/)
@@ -65,6 +66,7 @@ catkin_package(
 
 include_directories(include
     ${catkin_INCLUDE_DIRS}
+    ${faif_INCLUDE_DIRS}
 )
 
 ## Add cmake target dependencies of the library
@@ -83,6 +85,7 @@ add_library(CSV STATIC include/bayesian_webclass/csv.h src/csv.cpp)
 add_library(HTTP STATIC include/bayesian_webclass/http_downloader.h src/http_downloader.cpp )
 add_library(DataPrep STATIC include/bayesian_webclass/data_preprocessor.h src/data_preprocessor.cpp)
 add_library(Dict STATIC include/bayesian_webclass/dictionary.h src/dictionary.cpp)
+add_library(Classifier STATIC include/bayesian_webclass/classifier.h src/classifier.cpp)
 
 add_executable(test_p src/test.cpp)
 target_link_libraries(test_p
