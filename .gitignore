@@ -1,2 +1,3 @@
 /bioweb/build_web/
 .sconsign.dblite
+/bioweb/client/file_include.pyc
