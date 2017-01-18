@@ -1,7 +1,4 @@
 #include <bayesian_webclass/data_preprocessor.h>
-#include <iostream>
-#include "bayesian_webclass/http_downloader.h"
-#include <boost/filesystem/operations.hpp>
 
 int main(){
 //	HTTPDownloader downloader;
@@ -32,6 +29,9 @@ int main(){
 //      	count++;
 //
 //    }
+    DataPreprocessor dataPreprocessor;
+    dataPreprocessor.get_attribs("linki.txt");
+
 
    return 0;
 }

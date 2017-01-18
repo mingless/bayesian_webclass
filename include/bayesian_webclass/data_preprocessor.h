@@ -11,6 +11,7 @@
 
 class DataPreprocessor
 {
+
     typedef std::vector<std::string> string_vec;
 private:
     std::unique_ptr<HTTPDownloader> ptr_http;
@@ -22,7 +23,9 @@ public:
     bool filter_valid_domains (const std::string& input_file,const std::string& output_file);
     bool parse_htmls(const std::string& filename,const std::string& from_which_tags);
 
-};
 
+//interface
+    void get_attribs(const std::string& filename);
+};
 
 #endif //BAYESIAN_WEBCLASS_DATAPREPROCESSOR_H
