@@ -1,47 +1,21 @@
-#include "bayesian_webclass/data_preprocessor.h"
-
+#include <bayesian_webclass/data_preprocessor.h>
 #include <iostream>
-#include "bayesian_webclass/dictionary.h"
-#include <boost/filesystem/operations.hpp>
-
-
-//	HTTPDownloader downloader;
-//
-//    //get html addresses from textfile to vector of string
-//    std::vector<std::string> addresses = downloader.get_urls_from_file("html/http_addresses.txt");
-//    std::string html_text,filename;
-//    std::string path_root("output/");
-//    int count = 1;
-//
-//    boost::filesystem::create_directories ("output"); //create a directory for results
-//
-//    for (std::string i : addresses)
-//    {
-//
-//    	html_text = downloader.download(i); //for every link from file download the html code
-//    	filename = path_root + "kod_html" + std::to_string(count) + ".txt";
-//    	downloader.write_str_to_file(filename, html_text);
-//    	html_text = downloader.cleanhtml(html_text); //clean downloaded html code
-//    	filename = path_root + "kod_html" + std::to_string(count) + "_clean.txt";
-//    	downloader.write_str_to_file(filename, html_text); //writo to file cleaned html code
-//    	std::string output_of_parsing;
-//
-//    	//false is you want to save output of parsing in string, else if you want to save it in file ,set true, and not set last parameter
-//    	downloader.parse_html_and_save(html_text, "/html/body", count, false, output_of_parsing);  //parse html_text and save to file in /output directory text from "html/body" node, that means only the text between <body></body>
-//
-//      	std::cout << output_of_parsing <<std::endl; //outputs to the console result of parsing
-//      	count++;
-//
-//    }
-
 
 int main() {
-	DataPreprocessor dataPreprocessor;
-    dataPreprocessor.get_attribs("linki.txt");
-    Dictionary dict;
-    dict.fetch_from_file("/home/m/catkin_ws/src/bayesian_webclass/txt/attributes/attrib_EN.txt");
-    int cnt = dict.compare("/home/m/catkin_ws/src/bayesian_webclass/txt/attributes/attrib_PL.txt");
+    DataPreprocessor dataPreprocessor;
+    std::vector<std::string> categories = dataPreprocessor.ptr_http->get_lines_from_file("categories/list_of_categories.txt");
+   // dataPreprocessor.choose_train_data("categories/Gravitational_lensing");
 
-    std::cout << "Cnt: " << cnt << std::endl;
-    return cnt;
+    for (auto i : categories)
+    {
+        std::cout << i <<std::endl;
+        //dataPreprocessor.choose_train_data("categories/"+i);
+        dataPreprocessor.get_attribs("train_data/" +i);
+    }
+    dataPreprocessor.ptr_http->write_set_to_file("all_atributes", dataPreprocessor.getAll_atribs());
+
+//    dataPreprocessor.parse_htmls("kategorie.txt", "/html/body/div[@id='content']/div[@id='bodyContent']/div[@id='mw-content-text']");
+//    dataPreprocessor.parse_htmls("pages.txt", "/html/body/div[@id='content']/div[@id='bodyContent']/div[@id='mw-content-text']/div[@class='mw-category-generated']/div[@id='mw-pages']");
+
+    return 0;
 }
