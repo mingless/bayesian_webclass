@@ -1,4 +1,4 @@
-train_data/Gravitational_lensing_train
+Gravitational_lensing
 AXAF_CCD_Imaging_Spectrometer
 Accretion_disk
 Active_galactic_nucleus

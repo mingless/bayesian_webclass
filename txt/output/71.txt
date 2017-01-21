@@ -1,4 +1,4 @@
-train_data/Frames_of_reference_train
+Frames_of_reference
 Active_galactic_nuclei
 Albert_Einstein
 Angular_momentum

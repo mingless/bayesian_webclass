@@ -1,4 +1,4 @@
-train_data/black_hole_train
+black_hole
 Black_hole
 Degeneracy_pressure
 Einstein-Maxwell-Dirac_equations

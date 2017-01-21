@@ -1,4 +1,4 @@
-train_data/black_hole_train
+black_hole
 Astronomical_object
 Black_hole
 Centrifugal_force

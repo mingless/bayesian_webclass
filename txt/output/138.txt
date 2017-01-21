@@ -1,4 +1,4 @@
-train_data/Lorentzian_manifolds_train
+Lorentzian_manifolds
 Isotropic_coordinates
 Line_element
 Schwarzschild_coordinates

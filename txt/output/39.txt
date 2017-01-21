@@ -1,4 +1,4 @@
-train_data/effects_of_gravitation_train
+effects_of_gravitation
 Altitude
 Atmosphere
 Atmospheric_entry

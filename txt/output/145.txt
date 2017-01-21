@@ -1,4 +1,4 @@
-train_data/Lorentzian_manifolds_train
+Lorentzian_manifolds
 Black_hole
 Event_horizon
 Hypersurface

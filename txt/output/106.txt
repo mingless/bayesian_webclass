@@ -1,4 +1,4 @@
-train_data/Gravitational_lensing_train
+Gravitational_lensing
 Accretion_disc
 Acta_Astronomica
 All_Sky_Automated_Survey

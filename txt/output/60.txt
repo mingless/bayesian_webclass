@@ -1,4 +1,4 @@
-train_data/Exact_solutions_in_general_relativity_train
+Exact_solutions_in_general_relativity
 Big_Bang
 Big_Bang_nucleosynthesis
 Cosmic_microwave_background

@@ -1,4 +1,4 @@
-train_data/Lorentzian_manifolds_train
+Lorentzian_manifolds
 Abuse_of_notation
 Classical_mechanics
 Conservation_laws

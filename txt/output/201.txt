@@ -1,4 +1,4 @@
-train_data/relativity_theorists_train
+relativity_theorists
 433_Eros
 Albert_Einstein
 Arthur_Schuster

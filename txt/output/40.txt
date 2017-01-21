@@ -1,4 +1,4 @@
-train_data/effects_of_gravitation_train
+effects_of_gravitation
 Albert_the_Great
 Algoman_orogeny
 Alleghenian_orogeny

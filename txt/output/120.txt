@@ -1,4 +1,4 @@
-train_data/Gravitational_lensing_train
+Gravitational_lensing
 Astronomical_unit
 Binary_star
 Cerro_Tololo_Inter-American_Observatory

@@ -1,4 +1,4 @@
-train_data/Exact_solutions_in_general_relativity_train
+Exact_solutions_in_general_relativity
 Axis_of_rotation
 B%C3%A4cklund_transformation
 Belinski-Zakharov_transform

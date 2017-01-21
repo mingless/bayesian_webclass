@@ -1,4 +1,4 @@
-train_data/Lorentzian_manifolds_train
+Lorentzian_manifolds
 Angular_momentum
 Big_Bang
 Black_hole

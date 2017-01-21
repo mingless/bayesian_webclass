@@ -1,4 +1,4 @@
-train_data/effects_of_gravitation_train
+effects_of_gravitation
 %CE%9BCDM_model
 1,000,000,000_(number)
 21_centimeter_radiation

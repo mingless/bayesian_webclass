@@ -1,4 +1,4 @@
-train_data/Lorentzian_manifolds_train
+Lorentzian_manifolds
 Allvar_Gullstrand
 Einstein_field_equations
 Geometrized_unit_system

@@ -1,4 +1,4 @@
-train_data/Lorentzian_manifolds_train
+Lorentzian_manifolds
 Annulus_(mathematics)
 Ansatz
 Bel_decomposition

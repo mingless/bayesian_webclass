@@ -1,4 +1,4 @@
-train_data/Lorentzian_manifolds_train
+Lorentzian_manifolds
 Cauchy_horizon
 Cauchy_surface
 Causality

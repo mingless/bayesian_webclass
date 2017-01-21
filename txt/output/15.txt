@@ -1,4 +1,4 @@
-train_data/black_hole_train
+black_hole
 3C_273
 3C_454.3
 Accretion_disc

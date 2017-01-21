@@ -1,4 +1,4 @@
-train_data/Gravitational-wave_astronomy_train
+Gravitational-wave_astronomy
 Abhay_Ashtekar
 Department_of_Atomic_Energy
 Department_of_Science_and_Technology_(India)

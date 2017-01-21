@@ -1,4 +1,4 @@
-train_data/Relativity_theorists_train
+Relativity_theorists
 Binary_pulsar
 California_Institute_of_Technology
 Canada

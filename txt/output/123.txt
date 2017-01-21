@@ -1,4 +1,4 @@
-train_data/Gravitational_lensing_train
+Gravitational_lensing
 Astronomical_unit
 Astronomy_and_Astrophysics
 Caustic_(optics)

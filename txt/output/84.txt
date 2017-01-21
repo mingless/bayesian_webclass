@@ -1,4 +1,4 @@
-train_data/Gravitational-wave_astronomy_train
+Gravitational-wave_astronomy
 American_Physical_Society#Joseph_F_Keithley_Award_for_Advances_in_Measurement_Science
 Australian_Research_Council
 The_Australian_National_University

@@ -1,4 +1,4 @@
-train_data/Gravitational-wave_astronomy_train
+Gravitational-wave_astronomy
 Accretion_(astrophysics)
 Accretion_disk
 Active_galactic_nuclei

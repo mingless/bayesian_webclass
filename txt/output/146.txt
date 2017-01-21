@@ -1,4 +1,4 @@
-train_data/Lorentzian_manifolds_train
+Lorentzian_manifolds
 Asymptotically_flat_spacetime
 Black_holes
 Blue-shift

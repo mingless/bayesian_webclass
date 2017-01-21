@@ -1,4 +1,4 @@
-train_data/Gravitational_lensing_train
+Gravitational_lensing
 Abell_1689
 Big_Bang
 Earth

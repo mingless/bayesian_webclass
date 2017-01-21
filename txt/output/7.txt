@@ -1,4 +1,4 @@
-train_data/black_hole_train
+black_hole
 ADM_mass
 APM_08279%2B5255
 Absolute_zero

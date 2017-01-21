@@ -1,4 +1,4 @@
-train_data/Lorentzian_manifolds_train
+Lorentzian_manifolds
 Ansatz
 Coframe_fields_in_general_relativity
 Congruence_(general_relativity)

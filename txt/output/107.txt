@@ -1,4 +1,4 @@
-train_data/Gravitational_lensing_train
+Gravitational_lensing
 Gravitational_lens
 Quasar
 Redshift

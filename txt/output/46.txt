@@ -1,4 +1,4 @@
-train_data/Exact_solutions_in_general_relativity_train
+Exact_solutions_in_general_relativity
 Big_bang
 Black_hole
 Black_hole_complementarity

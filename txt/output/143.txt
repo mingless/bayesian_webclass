@@ -1,4 +1,4 @@
-train_data/Lorentzian_manifolds_train
+Lorentzian_manifolds
 Lorentzian_manifold
 Mathematical_physics
 Optical_scalars

@@ -1,4 +1,4 @@
-train_data/Gravitational_lensing_train
+Gravitational_lensing
 A1689-zD1
 Celestial_coordinate_system
 Dark_matter

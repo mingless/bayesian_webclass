@@ -1,4 +1,4 @@
-train_data/Tests_of_general_relativity_train
+Tests_of_general_relativity
 Albert_Einstein
 BoPET
 Conservation_of_momentum

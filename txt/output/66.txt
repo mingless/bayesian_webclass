@@ -1,4 +1,4 @@
-train_data/Faster-than-light_travel_train
+Faster-than-light_travel
 %C4%8Cerenkov_radiation
 Arnold_Sommerfeld
 BCS_theory

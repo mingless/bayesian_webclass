@@ -1,4 +1,4 @@
-train_data/relativity_theorists_train
+relativity_theorists
 Accademia_dei_Lincei
 Carlos_Aragone
 Consiglio_Nazionale_delle_Ricerche

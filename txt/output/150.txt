@@ -1,4 +1,4 @@
-train_data/Lorentzian_manifolds_train
+Lorentzian_manifolds
 Aleksandr_Danilovich_Aleksandrov
 Alexandrov_topology
 Base_(topology)

@@ -1,4 +1,4 @@
-train_data/black_hole_train
+black_hole
 Black_hole
 Einstein%27s_field_equation
 Electric_charge

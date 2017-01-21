@@ -1,4 +1,4 @@
-train_data/black_hole_train
+black_hole
 Carter_constant
 General_relativity
 Kerr%E2%80%93Newman_metric

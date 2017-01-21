@@ -1,4 +1,4 @@
-train_data/Mathematical_methods_in_general_relativity_train
+Mathematical_methods_in_general_relativity
 Christoffel_symbols
 Coherent_state
 Covariant_derivative

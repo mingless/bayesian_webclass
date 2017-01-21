@@ -1,4 +1,4 @@
-train_data/relativity_theorists_train
+relativity_theorists
 Al-Khw%C4%81rizm%C4%AB
 Albert_Einstein
 Applied_mathematics

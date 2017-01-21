@@ -1,4 +1,4 @@
-train_data/Gravitational_waves_train
+Gravitational_waves
 15_Eunomia
 Acoustics
 Age_of_the_Universe

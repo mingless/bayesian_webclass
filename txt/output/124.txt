@@ -1,4 +1,4 @@
-train_data/Gravitational_waves_train
+Gravitational_waves
 %CE%9BCDM_model
 1,000,000,000_(number)
 21_centimeter_radiation

@@ -1,4 +1,4 @@
-train_data/Gravitational_waves_train
+Gravitational_waves
 Astrophysics
 Big_Bang
 Black_hole

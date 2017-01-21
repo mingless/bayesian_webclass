@@ -1,4 +1,4 @@
-train_data/Lorentzian_manifolds_train
+Lorentzian_manifolds
 Cauchy_surface
 Causal_curve
 Causal_structure#Causal_relations

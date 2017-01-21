@@ -1,4 +1,4 @@
-train_data/black_hole_train
+black_hole
 Antimatter
 Artificial_black_hole
 Hawking_radiation

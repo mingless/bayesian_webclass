@@ -1,4 +1,4 @@
-train_data/Faster-than-light_travel_train
+Faster-than-light_travel
 BCS_theory
 Bosonic_string_theory
 Canonical_commutation_relation

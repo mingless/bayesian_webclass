@@ -1,4 +1,4 @@
-train_data/relativity_theorists_train
+relativity_theorists
 Anthropic_Principle
 Cosmology
 General_Theory_of_Relativity

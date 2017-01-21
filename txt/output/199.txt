@@ -1,4 +1,4 @@
-train_data/relativity_theorists_train
+relativity_theorists
 Einstein_field_equation
 France
 General_relativity

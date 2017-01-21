@@ -1,4 +1,4 @@
-train_data/Frames_of_reference_train
+Frames_of_reference
 Albert_Einstein
 Coordinate_system
 Frame_of_reference

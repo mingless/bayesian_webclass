@@ -1,4 +1,4 @@
-train_data/Frames_of_reference_train
+Frames_of_reference
 Center_of_mass
 Conservation_of_momentum
 Electromagnetic_wave

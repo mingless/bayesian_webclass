@@ -1,4 +1,4 @@
-train_data/black_hole_train
+black_hole
 ADM_mass
 Angular_momentum
 Binary_star

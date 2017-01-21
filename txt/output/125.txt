@@ -1,4 +1,4 @@
-train_data/Gravitational_waves_train
+Gravitational_waves
 Accretion_disc
 Advanced_LIGO
 Advanced_VIRGO

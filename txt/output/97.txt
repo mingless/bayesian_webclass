@@ -1,4 +1,4 @@
-train_data/Gravitational-wave_astronomy_train
+Gravitational-wave_astronomy
 2010_United_States_Census
 African_American_(U.S._Census)
 Asian_(U.S._Census)

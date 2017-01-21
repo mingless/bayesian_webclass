@@ -1,4 +1,4 @@
-train_data/Lorentzian_manifolds_train
+Lorentzian_manifolds
 Analytic_function
 Black_hole
 Coordinate_system

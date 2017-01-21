@@ -1,4 +1,4 @@
-train_data/Relativity_theorists_train
+Relativity_theorists
 Absolute_differential_calculus
 Albert_Einstein
 Christoffel_symbols

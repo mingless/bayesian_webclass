@@ -1,4 +1,4 @@
-train_data/Faster-than-light_travel_train
+Faster-than-light_travel
 2D_plane
 3D_space
 Affine_connection

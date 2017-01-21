@@ -1,4 +1,4 @@
-train_data/Lorentzian_manifolds_train
+Lorentzian_manifolds
 Bel_decomposition
 Covariant_derivative
 Dirac_delta_function

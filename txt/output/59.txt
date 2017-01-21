@@ -1,4 +1,4 @@
-train_data/Exact_solutions_in_general_relativity_train
+Exact_solutions_in_general_relativity
 Einstein%27s_field_equations
 Friedmann%E2%80%93Lema%C3%AEtre%E2%80%93Robertson%E2%80%93Walker_metric
 Georges_Lema%C3%AEtre

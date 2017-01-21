@@ -1,4 +1,4 @@
-train_data/Lorentzian_manifolds_train
+Lorentzian_manifolds
 Algebraic_geometry
 Classical_electromagnetism
 De_Sitter-Schwarzschild_metric

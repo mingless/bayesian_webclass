@@ -1,4 +1,4 @@
-train_data/black_hole_train
+black_hole
 Black_holes
 David_Finkelstein
 Event_horizon

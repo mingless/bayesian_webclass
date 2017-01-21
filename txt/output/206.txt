@@ -1,4 +1,4 @@
-train_data/relativity_theorists_train
+relativity_theorists
 Albert_Einstein
 Astrophysics
 GEO600

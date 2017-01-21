@@ -1,4 +1,4 @@
-train_data/relativity_theorists_train
+relativity_theorists
 %C3%89amon_de_Valera
 Abstract_algebra
 Biquaternion

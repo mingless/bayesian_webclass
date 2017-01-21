@@ -1,4 +1,4 @@
-train_data/Lorentzian_manifolds_train
+Lorentzian_manifolds
 Anti-de_Sitter_space
 Augustin_Louis_Cauchy
 Cauchy_horizon

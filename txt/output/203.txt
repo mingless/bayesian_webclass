@@ -1,4 +1,4 @@
-train_data/relativity_theorists_train
+relativity_theorists
 Abdus_Salam
 Academic_department
 Associate_of_the_Royal_College_of_Science

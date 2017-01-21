@@ -1,4 +1,4 @@
-train_data/Relativity_theorists_train
+Relativity_theorists
 Albert_Einstein
 Carl_Friedrich_Gauss
 Closed_timelike_curve

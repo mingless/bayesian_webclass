@@ -1,4 +1,4 @@
-train_data/Lorentzian_manifolds_train
+Lorentzian_manifolds
 0_(number)
 Affine_connection
 Basis_of_a_vector_space

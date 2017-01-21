@@ -1,4 +1,4 @@
-train_data/black_hole_train
+black_hole
 Accretion_disk
 Black_hole
 Boundary_layer

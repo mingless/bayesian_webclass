@@ -1,4 +1,4 @@
-train_data/black_hole_train
+black_hole
 Accretion_disk
 Active_galactic_nucleus
 Astronomy

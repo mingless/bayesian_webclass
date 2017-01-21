@@ -1,4 +1,4 @@
-train_data/Tests_of_general_relativity_train
+Tests_of_general_relativity
 Atomic_clock
 Auckland
 GPS

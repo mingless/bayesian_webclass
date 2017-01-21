@@ -1,4 +1,4 @@
-train_data/Gravitational_waves_train
+Gravitational_waves
 AGILE_(satellite)
 ANTARES_(telescope)
 Age_of_the_universe

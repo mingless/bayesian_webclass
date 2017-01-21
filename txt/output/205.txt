@@ -1,4 +1,4 @@
-train_data/relativity_theorists_train
+relativity_theorists
 CERN
 California_Institute_of_Technology
 Enrico_Fermi_Prize

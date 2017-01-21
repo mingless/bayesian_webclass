@@ -1,4 +1,4 @@
-train_data/relativity_theorists_train
+relativity_theorists
 Astroparticle_physics
 Baylor_University
 Cosmology

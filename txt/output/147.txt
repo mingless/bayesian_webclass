@@ -1,4 +1,4 @@
-train_data/Lorentzian_manifolds_train
+Lorentzian_manifolds
 Additive_identity
 Additive_inverse
 Affine_geometry

@@ -1,4 +1,4 @@
-train_data/Gravitational_lensing_train
+Gravitational_lensing
 Albert_Einstein
 Cosmic_microwave_background_radiation
 Cosmological_constant

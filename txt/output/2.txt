@@ -1,4 +1,4 @@
-train_data/black_hole_train
+black_hole
 AdS/CFT_correspondence
 AdS/QCD
 Anti-de_Sitter_space

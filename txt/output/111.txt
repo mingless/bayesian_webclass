@@ -1,4 +1,4 @@
-train_data/Gravitational_lensing_train
+Gravitational_lensing
 Arcminutes
 Arcseconds
 Celestial_coordinate_system
