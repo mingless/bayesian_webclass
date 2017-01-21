@@ -24,9 +24,10 @@ apk.service('srvCommands', //commands
 
 				$scope.getData = function() {
 
+					$scope.dataFromServer = "Processing...";
 					link = $scope.link;
 					if(!link.toLowerCase().startsWith("en.wikipedia.org")){
-						$scope.dataFromServer="wrong address!";
+						$scope.dataFromServer="Wrong address!";
 						return;
 					}
 
