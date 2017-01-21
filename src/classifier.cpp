@@ -3,13 +3,18 @@
 
 void Classifier::init(std::string attributes,
                       std::string categories,
-                      std::string examples) {
+                      std::string examples_dir,
+                      int examples_num) {
     loadAttributes(attributes);
     loadCategories(categories);
 
     _nb = new NBint(_attribs, _cat);
 
-    loadExamples(examples);
+    std::string example;
+    for(int i = 0; i <= examples_num; ++i) {
+        example = examples_dir + std::to_string(i) + ".txt";
+        loadExample(example);
+    }
 
     _nb->train(_ex);
 }
@@ -57,9 +62,9 @@ void Classifier::loadCategories(std::string categories) {
     _cat = faif::createDomain("", C, C+_cat_list.size());
 }
 
-void Classifier::loadExamples(std::string examples) {
+void Classifier::loadExample(std::string example) {
     std::ifstream input;
-    input.open(examples);
+    input.open(example);
     std::string word;
     int cat;
     if(!(input >> word)) {
@@ -67,10 +72,11 @@ void Classifier::loadExamples(std::string examples) {
     }
     cat = _cat_index.at(word);
 
-    int E[_attrib_index.size()];
+    int E[_attrib_index.size()]{};
     while(input >> word) {
-        if(_attrib_index.find(word) != _attrib_index.end())
-            ++E[_attrib_index.at(word)];
+        if(_attrib_index.find(word) != _attrib_index.end()) {
+            E[_attrib_index.at(word)] = 1;
+        }
     }
     _ex.push_back(faif::ml::createExample(E, E+_attrib_index.size(), cat, *_nb));
 }
@@ -80,10 +86,10 @@ std::string Classifier::classify(std::string example) {
     input.open(example);
     std::string word;
 
-    int E[_attrib_index.size()];
+    int E[_attrib_index.size()]{};
     while(input >> word) {
         if(_attrib_index.find(word) != _attrib_index.end())
-            ++E[_attrib_index.at(word)];
+            E[_attrib_index.at(word)] = 1;
     }
     ExampleTest et = createExample(E, E+_attrib_index.size(), *_nb);
 

@@ -29,6 +29,7 @@ set(faif_INCLUDE_DIRS ${PROJECT_SOURCE_DIR}/)
 if(CMAKE_COMPILER_IS_GNUCXX)
     add_definitions(-std=c++11)
     set( WARNING_FLAGS -Wall )
+    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -g")
 endif(CMAKE_COMPILER_IS_GNUCXX)
 
 if (CMAKE_CXX_COMPILER_ID STREQUAL "Clang")
@@ -89,6 +90,7 @@ add_library(Classifier STATIC include/bayesian_webclass/classifier.h src/classif
 
 add_executable(test_p src/test.cpp)
 target_link_libraries(test_p
+        Classifier
         Dict
         DataPrep
         HTTP

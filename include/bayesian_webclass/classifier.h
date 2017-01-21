@@ -20,10 +20,11 @@ class Classifier {
     public:
         void init(std::string attributes,
                   std::string categories,
-                  std::string examples);
+                  std::string examples_dir,
+                  int examples_num);
         void loadAttributes(std::string attributes);
         void loadCategories(std::string categories);
-        void loadExamples(std::string examples);
+        void loadExample(std::string example);
         std::string classify(std::string example);
 
     private:

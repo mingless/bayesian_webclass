@@ -13,8 +13,7 @@ DataPreprocessor::DataPreprocessor(std::string curl_out_folder) : ptr_csv(new Cs
 
 
 bool DataPreprocessor::filter_valid_domains(const std::string &input_filename, const std::string &output_filename) {
-    int csv_columns[2] = {0, 1};
-    bool success = this->ptr_csv->get_2_columns_from_csv(input_filename, csv_columns);
+    bool success = this->ptr_csv->csv2map(input_filename, 0, 1);
     Csv::map::iterator map_it;
     bool is_downloadable = true;
     int good_links = 0, all_links = 0; //counter of usable links
@@ -24,7 +23,7 @@ bool DataPreprocessor::filter_valid_domains(const std::string &input_filename, c
     {
         return false;
     } else {
-        for (map_it = ptr_csv->getId_domain_map()->begin(); map_it != ptr_csv->getId_domain_map()->end(); ++map_it) {
+        for (map_it = ptr_csv->getId_url_map()->begin(); map_it != ptr_csv->getId_url_map()->end(); ++map_it) {
             std::cout << map_it->first << "  " << map_it->second << std::endl << std::flush;
             all_links++;
             std::string a;
