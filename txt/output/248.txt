@@ -1,0 +1,17 @@
+train_data/Lorentzian_manifolds_train
+Ansatz
+Coframe_fields_in_general_relativity
+Congruence_(general_relativity)
+Einstein_field_equation
+Euclidean_space
+General_relativity
+Irrotational
+Killing_vector_field
+Lie_algebra
+Line_element
+Lorentzian_manifold
+Metric_theory_of_gravitation
+Minkowski_spacetime
+Schwarzschild_coordinates
+Spherically_symmetric_spacetime
+Static_spacetime

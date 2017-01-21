@@ -1,0 +1,13 @@
+train_data/black_hole_train
+Black_hole
+Degeneracy_pressure
+Einstein-Maxwell-Dirac_equations
+Event_horizon
+General_relativity
+Gravitational_singularity
+Hawking_radiation
+Semiclassical_gravity
+Spacetime
+Star
+Vacuum_energy
+Vacuum_polarization

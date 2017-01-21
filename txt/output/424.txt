@@ -1,0 +1,9 @@
+train_data/relativity_theorists_train
+Brownsville,_Oregon
+Charles_Misner
+Closed_manifold
+Constraint_(mathematics)
+General_relativity
+Mean_curvature
+University_of_Maryland,_College_Park
+University_of_Oregon

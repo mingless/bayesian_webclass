@@ -1,0 +1,15 @@
+train_data/Relativity_theorists_train
+Albert_Einstein
+Bologna
+Cesare_Arzel%C3%A0
+Congruence_(manifolds)
+Infinitesimal_calculus
+Italians
+Mathematics
+Modena
+Paris
+Salvatore_Pincherle
+Sapienza_University_of_Rome
+Sicily
+Teleparallelism
+University_of_Bologna

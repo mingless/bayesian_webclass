@@ -1,0 +1,5 @@
+train_data/black_hole_train
+AdS
+BTZ_black_hole
+Black_hole
+Scalar_field

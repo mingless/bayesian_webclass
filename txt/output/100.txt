@@ -1,0 +1,13 @@
+train_data/effects_of_gravitation_train
+Bureau_des_Longitudes
+DE200
+DE405
+Jean_Meeus
+Jet_Propulsion_Laboratory_Development_Ephemeris
+Lunar_Laser_Ranging_experiment
+Lunar_theory
+Moon
+Numerical_integration
+Orbital_elements
+Partial_derivatives
+Series_expansion

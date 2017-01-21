@@ -1,0 +1,15 @@
+train_data/Relativity_theorists_train
+Anthropic_Principle
+Cosmology
+General_Theory_of_Relativity
+India
+Joseph_Stalin
+Judaic
+Kabbalah
+Moscow
+Moscow_University
+Russian_Empire
+Space-time
+Sternberg_Astronomical_Institute
+Torah
+Yogi

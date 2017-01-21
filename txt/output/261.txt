@@ -1,0 +1,6 @@
+train_data/Lorentzian_manifolds_train
+Asymptotically_flat
+Causal_curve
+General_relativity
+Globally_hyperbolic
+Null_energy_condition

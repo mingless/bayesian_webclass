@@ -1,0 +1,16 @@
+train_data/Gravitational_lensing_train
+4-velocity
+Dielectric_permittivity
+Friedmann%E2%80%93Lema%C3%AEtre%E2%80%93Robertson%E2%80%93Walker_metric
+Hubble%27s_law
+J%C3%BCrgen_Ehlers
+Luminosity_distance
+Magnetic_permeability
+Metric_signature
+Metric_tensor
+Optical_scalars
+Radiative_transfer
+Redshift
+Refractive_index
+Ronald_Kantowski
+Walter_Gordon_(physicist)

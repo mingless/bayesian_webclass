@@ -1,0 +1,14 @@
+train_data/relativity_theorists_train
+American_Physical_Society
+Conformal_geometry
+Dannie_Heineman_Prize_for_Mathematical_Physics
+Einstein_field_equation
+Field_equation
+General_relativity
+Mathematical_physicist
+North_Carolina_State_University
+Partial_differential_equation
+Raleigh,_North_Carolina
+Well-posed_problem
+York_time
+Yvonne_Choquet-Bruhat

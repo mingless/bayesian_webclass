@@ -1,0 +1,11 @@
+train_data/Relativity_theorists_train
+Abhay_Ashtekar
+Akron,_Ohio
+Category_theory
+Doctor_of_Philosophy
+General_relativity
+John_Archibald_Wheeler
+Mathematical_physics
+Princeton_University
+Theoretical_physicist
+University_of_Chicago

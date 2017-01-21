@@ -1,0 +1,14 @@
+train_data/Lorentzian_manifolds_train
+Anti-de_Sitter_space
+Augustin_Louis_Cauchy
+Cauchy_horizon
+Causal_curve
+Curve
+Event_horizon
+Hypersurface
+Initial_conditions
+Lorentzian_manifold
+Manifold
+Minkowski_space-time
+Space-time
+Spacelike

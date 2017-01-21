@@ -1,0 +1,10 @@
+train_data/Mathematical_methods_in_general_relativity_train
+Bargmann%E2%80%93Michel%E2%80%93Telegdi_equation
+Coordinate_system
+Curvature
+Frame_of_reference
+General_relativity
+Larmor_precession
+Minkowski_spacetime
+Riemannian_manifold
+Thomas_precession

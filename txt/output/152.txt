@@ -1,0 +1,15 @@
+train_data/Exact_solutions_in_general_relativity_train
+Einstein_field_equation
+Einstein_tensor
+Energy
+General_relativity
+Gravitational_plane_wave
+Lorentzian_manifold
+Pp-wave_spacetimes
+Ricci_decomposition
+Ricci_tensor
+Riemann_curvature_tensor
+Stress%E2%80%93energy_tensor
+Trace_(linear_algebra)
+Weyl_curvature
+Work_(physics)

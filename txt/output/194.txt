@@ -1,0 +1,15 @@
+train_data/Gravitational-wave_astronomy_train
+Bachelor_of_Science
+California_Institute_of_Technology
+First_observation_of_gravitational_waves
+Glasgow
+Gravitational_wave
+LIGO
+Laser
+PhD
+Physicist
+Postdoctoral_research
+Pound%E2%80%93Drever%E2%80%93Hall_technique
+Scottish_people
+United_State_of_America
+University_of_Glasgow

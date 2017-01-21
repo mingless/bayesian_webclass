@@ -1,0 +1,14 @@
+train_data/Lorentzian_manifolds_train
+Black_hole
+Event_horizon
+Hypersurface
+Killing_horizon
+Light_cone
+Metric_tensor
+Normal_vector
+Null_vector
+Pseudo-Riemannian_geometry
+Pullback_(differential_geometry)
+Tangent_space
+Theory_of_relativity
+Worldline

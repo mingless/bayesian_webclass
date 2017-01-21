@@ -1,0 +1,15 @@
+train_data/black_hole_train
+Accretion_disc
+Binary_black_hole
+Binary_black_hole#The_final_parsec_problem
+Catalina_Real-Time_Transient_Survey
+Celestial_coordinate_system
+Elliptical_galaxy
+OJ_287
+Oort_cloud
+Quasar
+Solar_System
+Sun
+Supermassive_black_hole
+Supernova
+Virgo_constellation

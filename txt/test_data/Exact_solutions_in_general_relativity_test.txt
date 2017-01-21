@@ -1,0 +1,12 @@
+https://en.wikipedia.org/wiki/AdS_black_hole
+https://en.wikipedia.org/wiki/Belinski%E2%80%93Zakharov_transform
+https://en.wikipedia.org/wiki/De_Sitter_universe
+https://en.wikipedia.org/wiki/Electrovacuum_solution
+https://en.wikipedia.org/wiki/G%C3%B6del_metric
+https://en.wikipedia.org/wiki/Kerr%E2%80%93Newman_metric
+https://en.wikipedia.org/wiki/Lema%C3%AEtre_coordinates
+https://en.wikipedia.org/wiki/Monochromatic_electromagnetic_plane_wave
+https://en.wikipedia.org/wiki/Pp-wave_spacetime
+https://en.wikipedia.org/wiki/Schwarzschild_geodesics
+https://en.wikipedia.org/wiki/Taub%E2%80%93NUT_space
+https://en.wikipedia.org/wiki/Vaidya_metric

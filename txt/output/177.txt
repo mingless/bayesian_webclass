@@ -1,0 +1,7 @@
+train_data/Gravitational-wave_astronomy_train
+Evolved_Laser_Interferometer_Space_Antenna
+Gravitational_wave_detector
+Gravitational_wave_observatory
+Japan
+LIGO
+Zero-drag_satellite

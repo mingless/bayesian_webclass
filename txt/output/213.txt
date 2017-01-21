@@ -1,0 +1,11 @@
+train_data/Gravitational_lensing_train
+Celestial_coordinate_system
+Constellation
+Extrasolar_planet
+Light-year
+Methods_of_detecting_extrasolar_planets#Gravitational_microlensing
+Microlensing_Observations_in_Astrophysics
+Red_dwarf
+Sagittarius_(constellation)
+Spectral_type
+Star

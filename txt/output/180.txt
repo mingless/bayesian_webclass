@@ -1,0 +1,10 @@
+train_data/Gravitational-wave_astronomy_train
+Argentina
+Brownian_motion
+C%C3%B3rdoba,_Argentina
+Gravitational-wave_astronomy
+Gravitational-wave_detector
+Gravitational_wave_observation
+LIGO
+LIGO_Scientific_Collaboration
+Louisiana_State_University

@@ -1,0 +1,11 @@
+train_data/Frames_of_reference_train
+Albert_Einstein
+Coordinate_system
+Frame_of_reference
+General_theory_of_relativity
+Gravitational_field
+Non-Euclidean
+Spacetime
+Special_relativity
+Theoretical_physics
+Tidal_forces

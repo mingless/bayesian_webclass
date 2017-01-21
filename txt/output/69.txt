@@ -1,0 +1,10 @@
+train_data/black_hole_train
+Black_hole_thermodynamics
+Ergosphere
+Event_horizon
+Frame-dragging
+Kerr_metric
+Roger_Penrose
+Rotating_black_hole
+Schwarzschild_black_hole
+Spacetime

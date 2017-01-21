@@ -1,0 +1,17 @@
+train_data/relativity_theorists_train
+American_Physical_Society
+Bogdanov_Affair
+Bronx
+Bronx_High_School_of_Science
+Einstein_Prize_(APS)
+Einstein_field_equation
+General_relativity
+Golden_age_of_general_relativity
+Gravitational_lens
+John_C._Baez
+Kerr%E2%80%93Newman_metric
+Newman%E2%80%93Penrose_formalism
+Roger_Penrose
+Spinor
+University_of_Alaska_Fairbanks
+University_of_Pittsburgh

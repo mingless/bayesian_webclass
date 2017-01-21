@@ -1,0 +1,12 @@
+train_data/Gravitational_lensing_train
+Academia_Sinica_Institute_of_Astronomy_and_Astrophysics
+Astrophysical_Journal_Letters
+College_Station,_Texas
+Galaxy_cluster
+Hubble_Space_Telescope
+Keck_telescope
+Redshift
+Strong_gravitational_lensing
+Taipei
+Taiwan
+Texas_A%26M_University

@@ -1,0 +1,14 @@
+train_data/Exact_solutions_in_general_relativity_train
+Chaos_theory
+Dimension
+Edward_Kasner
+Einstein
+Exact_solutions_in_general_relativity
+General_relativity
+Matter
+Metric_(mathematics)
+Plane_(geometry)
+Spacetime
+Sphere
+Universe
+Vacuum_solution

@@ -1,0 +1,12 @@
+train_data/Gravitational_lensing_train
+Apparent_magnitude
+Celestial_coordinate_system
+Constellation
+Galactic_bulge
+Light_year
+Methods_of_detecting_extrasolar_planets#Gravitational_microlensing
+Red_dwarf
+Scorpius
+Solar_System
+Star
+Sun

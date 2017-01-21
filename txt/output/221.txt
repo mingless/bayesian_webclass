@@ -1,0 +1,12 @@
+train_data/Gravitational_lensing_train
+Astronomical_unit
+Celestial_coordinate_system
+Constellation
+Earth
+K-type_star
+Light_year
+Microlensing_event
+Neptune
+Scorpius
+Solar_mass
+Star

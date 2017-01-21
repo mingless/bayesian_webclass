@@ -1,0 +1,13 @@
+train_data/Exact_solutions_in_general_relativity_train
+Conformally_flat
+Einstein_field_equations
+Engelbert_Sch%C3%BCcking
+Minkowski_metric
+Orthogonal
+Pp-wave_spacetime
+Ricci_flat
+Riemann_tensor
+Schwarzschild_metric
+Stationary_spacetime
+Tetrad_(general_relativity)
+Vacuum_solution_(general_relativity)

@@ -1,0 +1,10 @@
+train_data/Gravitational_lensing_train
+Astrophysical_Journal_Letters
+Germany
+Gravitational_lens
+Gravitational_lenses
+Heidelberg
+Hubble_Space_Telescope
+IRC_0218_lens
+Max_Planck_Institute
+NASA

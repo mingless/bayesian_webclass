@@ -1,0 +1,7 @@
+train_data/black_hole_train
+Carter_constant
+General_relativity
+Kerr%E2%80%93Newman_metric
+Kerr_black_hole
+Natural_units
+Schwarzschild_black_hole

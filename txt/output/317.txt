@@ -1,0 +1,4 @@
+train_data/Relativity_theorists_train
+Einstein%27s_equations
+Non-linear_partial_differential_equation
+Physicist

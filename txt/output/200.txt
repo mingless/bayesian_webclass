@@ -1,0 +1,6 @@
+train_data/Gravitational_lensing_train
+Black_hole
+Gravitational_lens
+Kyongae_Chang
+Quasar
+Sjur_Refsdal

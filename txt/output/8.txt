@@ -1,0 +1,4 @@
+train_data/black_hole_train
+Bosonic_field
+Rest_mass
+Rotating_black_hole

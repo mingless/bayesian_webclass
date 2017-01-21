@@ -1,0 +1,7 @@
+train_data/Gravitational-wave_astronomy_train
+Binary_star
+Chirp
+General_relativity
+Gravitational-wave_astronomy
+Gravitational_wave
+Post-Newtonian_expansion

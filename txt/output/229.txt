@@ -1,0 +1,3 @@
+train_data/Gravitational_lensing_train
+Angular_position
+Gravitational_lens

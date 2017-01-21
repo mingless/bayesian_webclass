@@ -1,0 +1,11 @@
+train_data/Gravitational_lensing_train
+Apparent_magnitude
+Astronomical_unit
+Constellation
+Jupiter
+K-type_star
+Light_year
+Microlensing_event
+Scorpius
+Solar_mass
+Star

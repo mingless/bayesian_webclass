@@ -1,0 +1,16 @@
+train_data/Gravitational_lensing_train
+Abell_1689
+Big_Bang
+Earth
+Electromagnetic_radiation
+Galaxy
+Galaxy_cluster
+Gravitational_lensing
+Hubble_Space_Telescope
+Infrared
+Near_Infrared_Camera_and_Multi-Object_Spectrometer
+Photometric_redshift
+Redshift#Extragalactic_observations
+Speed_of_light
+Spitzer_Space_Telescope
+Virgo_constellation

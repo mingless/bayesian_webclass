@@ -1,0 +1,7 @@
+train_data/Frames_of_reference_train
+Experiment
+Frame_of_reference
+Laboratory
+Measurement
+Particle_accelerator
+Particle_detector

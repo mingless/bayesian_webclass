@@ -1,0 +1,16 @@
+train_data/Relativity_theorists_train
+Astronomy
+Astrophysicist
+Caltech
+Cornell_University
+General_relativity
+Hans_A._Bethe
+Kip_Thorne
+LIGO
+Laser_Interferometer_Space_Antenna
+Numerical_Recipes
+Numerical_relativity
+Ph.D.
+Physics
+South_Africa
+University_of_the_Witwatersrand

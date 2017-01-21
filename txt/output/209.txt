@@ -1,0 +1,14 @@
+train_data/Gravitational_lensing_train
+Albert_Einstein
+Einstein_Cross
+Einstein_ring
+Fritz_Zwicky
+Galaxy
+General_relativity
+Gravitational_lens
+Mirage
+Optical_phenomena
+Refractive_index
+Solar_eclipse
+Telescope
+Twin_Quasar

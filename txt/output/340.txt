@@ -1,0 +1,11 @@
+train_data/Relativity_theorists_train
+Austria
+Doctorate
+Frame-dragging
+Hans_Thirring
+Munich
+Physicist
+Professor
+Samuel_Oppenheim
+Technical_University_of_Munich
+Vienna

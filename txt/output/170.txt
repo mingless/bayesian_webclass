@@ -1,0 +1,6 @@
+train_data/Frames_of_reference_train
+Elevator
+Frame_of_reference
+Free_fall
+Inertial_reference_frame
+Non-inertial_reference_frame

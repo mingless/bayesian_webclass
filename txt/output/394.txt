@@ -1,0 +1,17 @@
+train_data/relativity_theorists_train
+Accademia_dei_Lincei
+Carlos_Aragone
+Consiglio_Nazionale_delle_Ricerche
+Docent
+Elasticity_theory
+Fluid_mechanics
+General_relativity_theory
+James_Clerk_Maxwell
+Laurea
+Lille_University_of_Science_and_Technology
+Relativistic_heat_conduction#Hyperbolic_model
+Rome
+San_Giorgio_Piacentino
+Sapienza_University_of_Rome
+Tullio_Levi-Civita
+University_of_Pisa

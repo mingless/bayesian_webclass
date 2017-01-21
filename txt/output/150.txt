@@ -1,0 +1,15 @@
+train_data/Exact_solutions_in_general_relativity_train
+Astrophysics
+Einstein_field_equations
+Equation_of_state
+Fermi_gas
+General_relativity
+George_Volkoff
+Gravitational_binding_energy
+Hydrostatic_equation
+J._Robert_Oppenheimer
+Neutron_star
+Richard_C._Tolman
+Schwarzschild_metric
+Solar_mass
+Vacuum_field_equations

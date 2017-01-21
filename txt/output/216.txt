@@ -1,0 +1,13 @@
+train_data/Gravitational_lensing_train
+Australia
+Dark_matter
+Exoplanet
+Gravitational_microlensing
+Japan
+Mount_John_University_Observatory
+Nagoya_University
+New_Zealand
+Reflector_telescope
+Southern_Hemisphere
+Stellar_atmosphere
+United_States

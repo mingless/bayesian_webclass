@@ -1,0 +1,14 @@
+train_data/Exact_solutions_in_general_relativity_train
+Asymptotically_flat
+Brans%E2%80%93Dicke_theory
+Einstein_field_equation
+Fluid_solution
+General_relativity
+Isotropic
+Neutron_star
+Pressure
+Spacetime
+Star
+Tensor_field
+Vacuum_solution_(general_relativity)
+White_dwarf

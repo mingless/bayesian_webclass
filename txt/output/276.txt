@@ -1,0 +1,8 @@
+train_data/Mathematical_methods_in_general_relativity_train
+Causal_structure
+Einstein
+General_relativity
+Initial_value_formulation_(general_relativity)
+Manifold
+Mathematical_physics
+Spacetime

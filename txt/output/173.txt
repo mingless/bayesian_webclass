@@ -1,0 +1,3 @@
+train_data/Frames_of_reference_train
+Earth
+Frame_of_reference

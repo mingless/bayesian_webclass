@@ -1,0 +1,7 @@
+train_data/black_hole_train
+Black_hole
+Galactic_Center
+Gamma_ray
+Milky_Way
+Photon
+Sagittarius_A*

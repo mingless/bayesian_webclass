@@ -1,0 +1,10 @@
+train_data/Relativity_theorists_train
+Accelerator_physics
+Antiproton
+Ernest_Courant
+Maurice_Goldhaber
+Milton_Stanley_Livingston
+Physicist
+Robert_Oppenheimer
+Salt_Lake_City
+Strong_focusing

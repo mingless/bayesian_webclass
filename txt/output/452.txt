@@ -1,0 +1,9 @@
+train_data/relativity_theorists_train
+Dust_solution
+Einstein_field_equation
+General_relativity
+Inhomogeneous_cosmology
+Kantowski-Sachs_metric
+Physical_cosmology
+Rainer_K._Sachs
+University_of_Texas_at_Austin

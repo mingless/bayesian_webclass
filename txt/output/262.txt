@@ -1,0 +1,10 @@
+train_data/Lorentzian_manifolds_train
+Cartan%E2%80%93Karlhede_algorithm
+Curvature_invariant
+Kundt_spacetime
+Lorentzian_manifold
+Mathematical_physics
+Minkowski_spacetime
+Petrov_type
+Pp-wave_spacetime
+Riemannian_manifold

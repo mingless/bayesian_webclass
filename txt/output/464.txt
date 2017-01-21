@@ -1,0 +1,10 @@
+train_data/relativity_theorists_train
+Discrete_differential_geometry
+Doctor_of_Philosophy
+Florida_Atlantic_University
+General_relativity
+John_Archibald_Wheeler
+Las_Cruces,_New_Mexico
+Mathematical_physics
+The_University_of_Texas_at_Austin
+Theoretical_physicist

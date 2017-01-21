@@ -1,0 +1,11 @@
+train_data/black_hole_train
+Black_hole
+Boyer%E2%80%93Lindquist_coordinates
+Extremal_black_hole
+Intrinsic_metric
+Isothermal_coordinates
+Kerr%E2%80%93Newman_metric
+Kerr_metric
+Reissner%E2%80%93Nordstr%C3%B6m_metric
+Stationary_black_hole
+Topology

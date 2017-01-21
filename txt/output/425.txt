@@ -1,0 +1,14 @@
+train_data/relativity_theorists_train
+Caltech
+Einstein_field_equation
+Exact_solutions_in_general_relativity
+General_relativity
+Harvard
+John_Bardeen
+MIT
+National_Academy_of_Sciences
+Perimeter_Institute_for_Theoretical_Physics
+Richard_Feynman
+Seattle
+University_of_Washington
+William_A._Bardeen
