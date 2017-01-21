@@ -3,12 +3,12 @@
  * \brief the C++ file with example calculation library
  */
 #include "calc.hpp"
-
+#include <string>
 #include <mt4cpp/TickCommand.hpp>
 
 //implementation
-CALC_DLL( int getNumber() ) {
-	return 1234;
+CALC_DLL( std::string ping() ) {
+	return "ping";
 }
 
 CommandManager::CommandManager() : scheduler_(16), history_ () {

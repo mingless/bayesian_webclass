@@ -40,8 +40,7 @@ public:
     double getProgress(long id) { return CommandManager::getInstance().findCommandDesc(id).progress_; }
 };
 
-std::string greet(const std::string word)
-{   
+std::string greet(const std::string word) {   
    return word + " response from server";  
 }
 
@@ -50,10 +49,9 @@ std::string greet(const std::string word)
  */
 BOOST_PYTHON_MODULE( calc )
 {
-    //! exports getNumber to Python
-    boost::python::def( "getNumber", getNumber );
-
     using namespace boost::python;
+    
+    def("ping", ping );
     def("greet", greet);
 
     boost::python::enum_<mt4cpp::CommandDesc::State>("CommandState")

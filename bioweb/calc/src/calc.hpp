@@ -18,12 +18,16 @@
 #define CALC_DLL(X) X
 #endif
 
-//! Example C++ calculation. This function return a number.
-CALC_DLL( int getNumber(); )
+
 
 
 #include <mt4cpp/Scheduler.hpp>
 #include <mt4cpp/CommandHistory.hpp>
+#include <string>
+
+//! Example C++ calculation. This function return a string.
+CALC_DLL( std::string ping(); )
+
 
 /**
    singleton, active object design pattern
