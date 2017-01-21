@@ -57,12 +57,12 @@ elif(platform.system() == "Windows"):
 env_dll.Command(target, cpplib, copyLibBuilder )
 
 #build tests
-env_test = env.Clone()
+#env_test = env.Clone()
 
-if(platform.system() == "Linux"):
-   env_test.Append( LIBS = [ 'python2.7', 'boost_unit_test_framework' ] )
-   env_test.Prepend( LIBS = 'calc' )
-elif(platform.system() == "Windows"):
-   env_test.Prepend( LIBS = 'calc' )
-env_test.Program( target = "calc_test", source = 'tests/calc_test.cpp')
+#if(platform.system() == "Linux"):
+#   env_test.Append( LIBS = [ 'python2.7', 'boost_unit_test_framework' ] )
+#   env_test.Prepend( LIBS = 'calc' )
+#elif(platform.system() == "Windows"):
+#   env_test.Prepend( LIBS = 'calc' )
+#env_test.Program( target = "calc_test", source = 'tests/calc_test.cpp')
 
