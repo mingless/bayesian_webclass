@@ -9,23 +9,31 @@
 #include "faif/learning/NaiveBayesian.hpp"
 #include "faif/learning/Validator.hpp"
 
-typedef faif::ml::NaiveBayesian<faif::ValueNominal<std::string>> NB;
-typedef NB::AttrDomain AttrDomain;
-typedef NB::Domains Domains;
-typedef NB::ExampleTest ExampleTest;
-typedef NB::ExamplesTrain ExamplesTrain;
+typedef faif::ml::NaiveBayesian<faif::ValueNominal<std::string>> NBstr;
+typedef faif::ml::NaiveBayesian<faif::ValueNominal<int>> NBint;
+typedef NBint::AttrDomain AttrDomain;
+typedef NBint::Domains Domains;
+typedef NBint::ExampleTest ExampleTest;
+typedef NBint::ExamplesTrain ExamplesTrain;
 
 class Classifier {
     public:
-        Classifier(){};
-        void addAttribs(std::vector<std::string> val, const std::string& name);
-        void addExample(std::vector<std::string> val, const std::string& lbl);
-        void classify();
-        void train(std::string filename);
+        void init(std::string attributes,
+                  std::string categories,
+                  std::string examples);
+        void loadAttributes(std::string attributes);
+        void loadCategories(std::string categories);
+        void loadExamples(std::string examples);
+        std::string classify(std::string example);
 
     private:
+        AttrDomain _cat;
         Domains _attribs;
+        std::map<std::string, int> _attrib_index;
+        std::map<std::string, int> _cat_index;
+        std::vector<std::string> _cat_list;
         ExamplesTrain _ex;
+        NBint* _nb;
 };
 
 
