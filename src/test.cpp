@@ -1,7 +1,6 @@
-#include <bayesian_webclass/data_preprocessor.h>
+#include "bayesian_webclass/data_preprocessor.h"
 
 #include <iostream>
-#include "bayesian_webclass/http_downloader.h"
 #include "bayesian_webclass/dictionary.h"
 #include <boost/filesystem/operations.hpp>
 
@@ -34,7 +33,6 @@
 //      	count++;
 //
 //    }
- 
 
 
 int main() {

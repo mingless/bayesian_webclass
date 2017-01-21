@@ -90,6 +90,9 @@ add_library(Classifier STATIC include/bayesian_webclass/classifier.h src/classif
 add_executable(test_p src/test.cpp)
 target_link_libraries(test_p
         Dict
+        DataPrep
+        HTTP
+        CSV
         ${catkin_LIBRARIES}
         ${LIBS}
         )

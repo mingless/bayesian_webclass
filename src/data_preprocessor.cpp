@@ -116,7 +116,5 @@ bool DataPreprocessor::parse_htmls(
 
 void DataPreprocessor::get_attribs(const std::string &filename)
 {
-    parse_htmls("linki.txt","/html/body/div[@id='content']/div[@id='bodyContent']/div[@id='mw-content-text']/p"); //second argument is written i
+    parse_htmls(filename, "/html/body/div[@id='content']/div[@id='bodyContent']/div[@id='mw-content-text']/p"); //second argument is written i
 }
-
-
