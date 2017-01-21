@@ -1,0 +1,14 @@
+train_data/black_hole_train
+Event_horizon
+Frame-dragging
+Gamma_ray_burst
+John_Archibald_Wheeler
+Lense-Thirring_effect
+Negative_mass
+Penrose_process
+Quasar
+Remo_Ruffini
+Roger_Penrose
+Rotating_black_hole
+Schwarzschild_radius
+World_lines

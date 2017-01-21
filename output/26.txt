@@ -1,0 +1,6 @@
+train_data/black_hole_train
+Abhay_Ashtekar
+Black_hole
+Isolated_horizon
+Mass-energy
+Theoretical_physics

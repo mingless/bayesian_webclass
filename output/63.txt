@@ -1,0 +1,13 @@
+train_data/black_hole_train
+Alan_Dressler
+Alexei_Filippenko
+Hubble_Space_Telescope
+John_Kormendy
+John_Magorrian
+Princeton_University
+Richard_Green_(astronomer)
+Sandra_Faber
+Sandra_M._Faber
+Scott_Tremaine
+Supermassive_black_hole
+Tod_R._Lauer

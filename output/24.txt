@@ -1,0 +1,13 @@
+train_data/black_hole_train
+Einstein-Maxwell_equations
+Laplace_equation
+Laplace_operator
+Legendre_polynomials
+Multipole_expansion
+Multipole_moment
+Schwarzschild_metric
+Series_solution_of_differential_equations
+Spherical_coordinates
+Stress%E2%80%93energy_tensor
+Weyl_metrics
+Weyl_metrics#Weyl_vacuum_solutions_in_spherical_coordinates

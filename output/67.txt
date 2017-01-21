@@ -1,0 +1,5 @@
+train_data/black_hole_train
+Accretion_disc
+Astronomy_%26_Astrophysics
+Black_hole
+Bohdan_Paczy%C5%84ski

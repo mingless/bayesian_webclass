@@ -1,0 +1,7 @@
+train_data/black_hole_train
+Black_hole
+D-brane
+Entropy
+General_relativity
+P-brane
+String_theory

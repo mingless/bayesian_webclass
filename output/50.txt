@@ -1,0 +1,8 @@
+train_data/black_hole_train
+Active_galactic_nucleus
+Galaxy_filament
+Huge-LQG
+Light-year
+Quasar
+Supermassive_black_hole
+University_of_Central_Lancashire
