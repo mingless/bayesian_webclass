@@ -1,6 +1,0 @@
-train_data/relativity_theorists_train
-England
-Lovelock%27s_Theorem
-Lovelock_theory_of_gravity
-Mathematician
-Physics

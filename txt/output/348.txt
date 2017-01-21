@@ -1,6 +1,0 @@
-train_data/Relativity_theorists_train
-En_plein_air
-General_relativity
-Mathematician
-York_University
-Yorkshire

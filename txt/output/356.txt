@@ -1,5 +1,0 @@
-train_data/Relativity_theorists_train
-Canada
-Carminati%E2%80%93McLenaghan_invariants
-Mathematician
-Physics

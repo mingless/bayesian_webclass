@@ -1,4 +1,0 @@
-train_data/Gravitational_waves_train
-Gamma-ray_burst
-Gravitational_wave
-Gravitational_wave_astronomy

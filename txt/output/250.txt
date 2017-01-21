@@ -1,9 +1,0 @@
-train_data/Lorentzian_manifolds_train
-Lorentzian_manifold
-Mathematical_physics
-Optical_scalars
-Petrov_Type
-Petrov_type
-Pp-wave_spacetime
-Ricci-flat
-VSI_spacetime

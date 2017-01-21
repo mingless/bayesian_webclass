@@ -1,7 +1,0 @@
-train_data/Mathematical_methods_in_general_relativity_train
-Cosmological_constant
-Einstein_field_equations
-Electromagnetic_field
-Energy-momentum_tensor
-Killing_vector_field
-Vector_field

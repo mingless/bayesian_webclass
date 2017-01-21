@@ -1,7 +1,5 @@
-train_data/Frames_of_reference_train
-Experiment
-Frame_of_reference
-Laboratory
-Measurement
-Particle_accelerator
-Particle_detector
+train_data/Mathematical_methods_in_general_relativity_train
+AdS
+BTZ_black_hole
+Black_hole
+Scalar_field

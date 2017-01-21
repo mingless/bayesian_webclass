@@ -1,6 +1,11 @@
-train_data/Gravitational_lensing_train
-Black_hole
-Gravitational_lens
-Kyongae_Chang
-Quasar
-Sjur_Refsdal
+train_data/relativity_theorists_train
+Astroparticle_physics
+Baylor_University
+Cosmology
+Editorial_board
+Gravitation
+High-energy_astronomy
+Ho%C5%99ava-Lifshitz_gravity
+M_theory
+String_theory
+Theoretical_physics

@@ -1,4 +1,0 @@
-train_data/Mathematical_methods_in_general_relativity_train
-General_relativity
-Gravitational_singularity
-Projective_vector_field

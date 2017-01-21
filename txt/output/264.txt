@@ -1,4 +1,0 @@
-train_data/Mathematical_methods_in_general_relativity_train
-Affine_parameter
-Geodesic
-Projective_vector_field

@@ -1,9 +1,6 @@
-train_data/Gravitational-wave_astronomy_train
-Cosmic_string
-Gravitational_wave
-Hertz
-International_Pulsar_Timing_Array
-Millisecond_pulsar
-Pulsar
-Scutum
-Starquake_(astrophysics)
+train_data/Relativity_theorists_train
+England
+Lovelock%27s_Theorem
+Lovelock_theory_of_gravity
+Mathematician
+Physics

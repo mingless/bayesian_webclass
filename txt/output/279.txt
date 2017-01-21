@@ -1,5 +1,0 @@
-train_data/Mathematical_methods_in_general_relativity_train
-AdS
-BTZ_black_hole
-Black_hole
-Scalar_field

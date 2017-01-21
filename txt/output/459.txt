@@ -1,6 +1,0 @@
-train_data/relativity_theorists_train
-%C3%89cole_Normale_Sup%C3%A9rieure
-Alessandra_Buonanno
-France
-Institut_des_Hautes_%C3%89tudes_Scientifiques
-String_theory

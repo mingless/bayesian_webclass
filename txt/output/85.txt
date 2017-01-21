@@ -1,6 +1,7 @@
-train_data/black_hole_train
-Milky_Way_galaxy
-Soft_X-ray_transient
-Sun
-Swift_satellite
-X-ray_binary
+train_data/Gravitational-wave_astronomy_train
+Evolved_Laser_Interferometer_Space_Antenna
+Gravitational_wave_detector
+Gravitational_wave_observatory
+Japan
+LIGO
+Zero-drag_satellite

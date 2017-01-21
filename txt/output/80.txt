@@ -1,5 +1,5 @@
-train_data/black_hole_train
-Bill_DeSmedt
-Micro_black_hole
-Per_Aspera_Press
-Tunguska_Event
+train_data/Frames_of_reference_train
+General_theory_of_relativity
+Hamilton%E2%80%93Jacobi_equation
+Minkowski_metric
+Rotating_reference_frame

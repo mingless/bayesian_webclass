@@ -1,11 +1,6 @@
-train_data/Gravitational_lensing_train
-Celestial_coordinate_system
-Constellation
-Extrasolar_planet
-Light-year
-Methods_of_detecting_extrasolar_planets#Gravitational_microlensing
-Microlensing_Observations_in_Astrophysics
-Red_dwarf
-Sagittarius_(constellation)
-Spectral_type
-Star
+train_data/relativity_theorists_train
+England
+Lovelock%27s_Theorem
+Lovelock_theory_of_gravity
+Mathematician
+Physics
