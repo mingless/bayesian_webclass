@@ -1,5 +1,0 @@
-train_data/effects_of_gravitation_train
-Gifu_Prefecture
-KAGRA
-Kamioka_Observatory
-University_of_Tokyo

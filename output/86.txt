@@ -1,7 +1,0 @@
-train_data/black_hole_train
-Accretion_disc
-Black_hole
-Event_horizon
-Gravitational_waves
-Spacetime
-Vorticity#Vortex_lines_and_Vortex_Tubes

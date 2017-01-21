@@ -1,4 +1,0 @@
-train_data/black_hole_train
-Intermediate-mass_black_hole
-Messier_82
-Ultra-luminous_X-ray_source

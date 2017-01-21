@@ -1,8 +1,0 @@
-train_data/black_hole_train
-Black_hole
-Cosmos
-Galaxy
-Outer_space
-Photon
-Supernova
-Thermal_energy

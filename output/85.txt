@@ -1,6 +1,0 @@
-train_data/black_hole_train
-Milky_Way_galaxy
-Soft_X-ray_transient
-Sun
-Swift_satellite
-X-ray_binary

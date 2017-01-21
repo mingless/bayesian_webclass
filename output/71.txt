@@ -1,7 +1,0 @@
-train_data/black_hole_train
-Black_hole
-Geodesic
-Metric_tensor
-Naked_singularity
-Photon_sphere
-Timelike

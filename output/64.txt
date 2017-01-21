@@ -1,9 +1,0 @@
-train_data/black_hole_train
-Black_hole
-Bose%E2%80%93Einstein_condensate
-Classical_mechanics
-Event_horizon
-Hawking_radiation
-Quantum_mechanics
-Slow_light
-Sonic_black_hole

@@ -1,7 +1,0 @@
-train_data/black_hole_train
-Abhas_Mitra
-Black_hole
-Event_horizon
-General_relativity_theory
-Jayant_Narlikar
-Thanu_Padmanabhan

@@ -1,3 +1,0 @@
-train_data/black_hole_train
-Exotic_matter
-Stellar_black_hole

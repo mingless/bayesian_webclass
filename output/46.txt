@@ -1,5 +1,0 @@
-train_data/black_hole_train
-Asymptotically_flat
-Black_brane
-Black_hole
-Kaluza%E2%80%93Klein

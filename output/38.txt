@@ -1,9 +1,0 @@
-train_data/black_hole_train
-Allvar_Gullstrand
-Einstein_field_equations
-Geometrized_unit_system
-Georges_Lema%C3%AEtre
-Kruskal%E2%80%93Szekeres_coordinates
-Paul_Painlev%C3%A9
-Schwarzschild_metric
-Sign_convention
