@@ -10,7 +10,7 @@ apk.service('srvCommands', //commands
                 this.getDataServer = function(callback, value) {
                 	
                 	this.serverData =  $http.get(this.baseURL + 'classify?word=' + value).success(callback);
-                	return this.serverData; 
+                	return this.serverData; 	//standard GET method to get a response from the server
                 };
     }
 )

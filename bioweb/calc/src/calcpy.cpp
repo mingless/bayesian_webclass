@@ -25,30 +25,10 @@
 #include <stdexcept>
 #include <array>
 
-
-//using namespace boost::python;
-
 /** Python intreface to CommandManager
  */
-class CommandManagerPy {
 
-public:
-    std::vector<long> getIds() {
-		return CommandManager::getInstance().commandKeys();
-	}
-
-    long startTick() {
-		return CommandManager::getInstance().runTickCommand(200); //4 sec here! (in C++ tests 0.2 s. command is used)
-	}
-    void breakCmd(long) {
-        //TODO
-    }
-    mt4cpp::CommandDesc::State getState(long id) { return CommandManager::getInstance().findCommandDesc(id).state_; }
-    double getProgress(long id) { return CommandManager::getInstance().findCommandDesc(id).progress_; }
-};
-
-
-std::string exec(const char* cmd) {
+std::string exec(const char* cmd) { //system("") wrapper to execute command and get the output
     std::array<char, 128> buffer;
     std::string result;
     std::shared_ptr<FILE> pipe(popen(cmd, "r"), pclose);
@@ -63,10 +43,9 @@ std::string exec(const char* cmd) {
 std::string classify(const std::string word) 
 {   
 
-    std::string response;
-
+    std::string response;   //too complicated to export whole classifier as a python module.......
     std::string query =  std::string("/home/apiotro/zpr/catkin_ws/install/lib/bayesian_webclass/test_p ") + "\"" + std::string(word) + "\""; 
-    response = exec(query.c_str());
+    response = exec(query.c_str());         
     std::cout << response;
     return word + " " + response;  
 }
@@ -76,9 +55,6 @@ std::string classify(const std::string word)
  */
 BOOST_PYTHON_MODULE( calc )
 {
-    //! exports getNumber to Python
-    boost::python::def( "getNumber", getNumber );
-
     using namespace boost::python;
     def("classify", classify);
 }
