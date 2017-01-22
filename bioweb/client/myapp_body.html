@@ -19,9 +19,19 @@
 	<h3 class="w3-medium"><input type="text" ng-model="link" value="en.wikipedia.org/"/></h3>
 	<h3 class="w3-medium"><p><button ng-click="getData()">Run!</button></p></h3>
 
-	<h3 class="w3-medium"><p>{{dataFromServer}}</p></h3>
+	
+	<h3 class="w3-medium"><p>Classification: {{dataFromServer}}</p></h3>
+
+  	<p><h3 class="w3-medium"><p>History:</p></h3></p>
+
+	<ol>
+    	<h3 class="w3-medium">
+      	<p><div ng-repeat="n in history"><li>{{n}}</li></div></p>
+    	</h3>
+	</ol>
 	
 </div>
+
 
 <footer>
   <h3 class="w3-medium"><p>Powered by: <a href="http://bioweb.sourceforge.net/en/index.html">Bioweb </a>  </p></h3>

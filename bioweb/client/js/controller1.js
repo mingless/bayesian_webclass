@@ -1,6 +1,7 @@
 var apk = angular.module('apk',	[]);
 
 var link = "";
+//var history = new Array();
 apk.service('srvCommands', //commands
 
 	function($http) {
@@ -21,7 +22,7 @@ apk.service('srvCommands', //commands
 
 				$scope.link = "https://en.wikipedia.org/wiki/";
 				$scope.dataFromServer = "None";
-
+				$scope.history = new Array();
 				$scope.getData = function() {
 
 					$scope.dataFromServer = "Processing...";
@@ -36,6 +37,7 @@ apk.service('srvCommands', //commands
 							var word = data.classification.split("\n");
 							var token = word[0]+ " " + " kategoria:" + word[1];
 							$scope.dataFromServer=token;
+							$scope.history.unshift(token);
 						}
 						,link
 					);
