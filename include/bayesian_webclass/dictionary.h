@@ -7,6 +7,12 @@
 #include <vector>
 #include <map>
 
+/** \class Dictionary
+ *  \brief Dictionary class for word comparision.
+ * A simple class for comparing sets of words against the internal
+ * list of words.
+ */
+
 class Dictionary {
     public:
         Dictionary(){};

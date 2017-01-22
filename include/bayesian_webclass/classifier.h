@@ -16,6 +16,14 @@ typedef NBint::Domains Domains;
 typedef NBint::ExampleTest ExampleTest;
 typedef NBint::ExamplesTrain ExamplesTrain;
 
+
+/** \class Classifier
+ *  \brief Class containing a Naive Bayesian classifier.
+ *  Class contains a Naive Bayesian classifier from faif library
+ *  and provides methods for creating and training the classifier
+ *  and later classifyinf given examples.
+ */
+
 class Classifier {
     public:
         void init(std::string attributes,

@@ -1,6 +1,6 @@
 #include "bayesian_webclass/dictionary.h"
 
-/** Letter only struct for locale initialization.
+/** \struct Letter only struct for locale initialization.
  * Provided struct constructs std::ctype::ctype by supplying
  * the ctype<char> constructor with ctype::mask. Returned
  * std::ctype<char> is a locale::facet which can be used to filter

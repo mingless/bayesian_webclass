@@ -1,6 +1,17 @@
 #include "bayesian_webclass/classifier.h"
 
 
+/** Method for classifier initialization.
+ * Initializes the classifier with given attribute list,
+ * categories and trains the classifier on a number of examples
+ * in the given directory.
+ * @param attributes name of the file listing all attributes
+ * @param categories name of the file listing all categories
+ * @param examples_dir directory containing examples
+ * @param examples_num number of examples to be used (and available
+ *        in the examples_dir)
+ */
+
 void Classifier::init(std::string attributes,
                       std::string categories,
                       std::string examples_dir,
@@ -18,6 +29,13 @@ void Classifier::init(std::string attributes,
 
     _nb->train(_ex);
 }
+
+/** Method loading attributes from a given file.
+ * Loads attributes from the given file into the internal
+ * faif::ml::NaiveBayesian<faif::ValueNominal<int>>::Domains
+ * object.
+ * @param attributes name of the file listing all attributes
+ */
 
 void Classifier::loadAttributes(std::string attributes) {
     std::vector<std::string> word_list;
@@ -39,6 +57,13 @@ void Classifier::loadAttributes(std::string attributes) {
     }
 }
 
+/** Method loading categories from a given file.
+ * Loads categories from the given file into the internal
+ * faif::ml::NaiveBayesian<faif::ValueNominal<int>>::AttrDomain
+ * object.
+ * @param categories name of the file listing all categories
+ */
+
 void Classifier::loadCategories(std::string categories) {
     std::ifstream input;
     input.open(categories);
@@ -55,12 +80,19 @@ void Classifier::loadCategories(std::string categories) {
                                 // as such using ints seemed to be
                                 // a hasle free way to go)
 
-    for(int i = 0; i < _cat_list.size(); ++i) {
+    for(std::size_t i = 0; i < _cat_list.size(); ++i) {
         C[i] = i;
     }
 
     _cat = faif::createDomain("", C, C+_cat_list.size());
 }
+
+/** Method loading an example from a given file.
+ * Loads an example from the given file into the internal
+ * faif::ml::NaiveBayesian<faif::ValueNominal<int>>::ExamplesTrain
+ * object.
+ * @param example name of the file with the example
+ */
 
 void Classifier::loadExample(std::string example) {
     std::ifstream input;
@@ -80,6 +112,13 @@ void Classifier::loadExample(std::string example) {
     }
     _ex.push_back(faif::ml::createExample(E, E+_attrib_index.size(), cat, *_nb));
 }
+
+/** Method classifying a given test example.
+ * Loads the example from the given file into the internal
+ * faif::ml::NaiveBayesian<faif::ValueNominal<int>>::ExampleTest
+ * object.
+ * @param example name of the file with the test example
+ */
 
 std::string Classifier::classify(std::string example) {
     std::ifstream input;
