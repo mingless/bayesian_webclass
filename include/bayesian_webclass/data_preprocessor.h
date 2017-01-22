@@ -35,7 +35,7 @@ public:
     bool parse_htmls(const std::string &filename, const std::string &from_which_tags);
 
     void get_attribs(const std::string &filename);
-
+    bool get_attribs_from_link(const std::string& url);
     void choose_train_data(const std::string& filename);
 };
 

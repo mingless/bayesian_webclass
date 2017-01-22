@@ -13,7 +13,9 @@ DataPreprocessor::DataPreprocessor(std::string curl_out_folder) : ptr_csv(new Cs
 
 
 bool DataPreprocessor::filter_valid_domains(const std::string &input_filename, const std::string &output_filename) {
-    bool success = this->ptr_csv->csv2map(input_filename, 0, 1);
+
+    int csv_columns[2] = {0, 1};
+    bool success = this->ptr_csv->csv2map(input_filename, csv_columns[0],csv_columns[1]);
     Csv::map::iterator map_it;
     bool is_downloadable = true;
     int good_links = 0, all_links = 0; //counter of usable links
@@ -151,6 +153,49 @@ void DataPreprocessor::choose_train_data(const std::string &inFilename) {
 
 const std::set<std::string> &DataPreprocessor::getAll_atribs() const {
     return all_atribs;
+}
+
+bool DataPreprocessor::get_attribs_from_link(const std::string &url) {
+    std::string html_text, file_path;
+    std::string path_root("example/");
+    std::string from_which_tags("/html/body/div[@id='content']/div[@id='bodyContent']/div[@id='mw-content-text']/p");
+    bool success = false;
+    boost::filesystem::create_directories("example"); //create a directory for results
+    html_text = "";
+    success = ptr_http->download(url, html_text); //for every link from file download the html code
+    if (!success) {
+        return false;
+    }
+    file_path = path_root + "tmp.txt";
+    ptr_http->write_str_to_file(file_path, html_text);
+    std::string line, line1;
+    std::ifstream ifs(file_path);
+    html_text = "";
+    file_path = path_root + "attribs.txt";
+    while (!ifs.eof()) {
+        getline(ifs, line);
+
+        while (line.back() != '>') {
+            if (!ifs.eof()) {
+                getline(ifs, line1);
+                line += line1;
+            } else {
+                break;
+            }
+        }
+        html_text += line;
+        html_text += '\n';
+    }
+
+    std::string output_of_parsing;
+   // output_of_parsing.erase(0,11); //erase train_data
+    std::set<std::string> map_of_attribs;
+    /*atrybuty += */ptr_http->parse_html_and_save(html_text, from_which_tags,
+                                              output_of_parsing,
+                                              map_of_attribs);  //parse html_text and save to file in /output directory text from "html/body" node, that means only the text between <body></body>
+    //all_atribs.insert(map_of_attribs.begin(), map_of_attribs.end());
+    ptr_http->write_str_to_file(file_path, output_of_parsing); //write to file parsed html
+    return success;
 }
 
 
