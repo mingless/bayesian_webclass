@@ -1,6 +1,6 @@
 /**
  * \file calc.cpp
- * \brief the C++ file with example calculation library
+ * \brief the C++ file with a test method 
  */
 #include "calc.hpp"
 

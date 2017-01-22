@@ -18,8 +18,12 @@
 #define CALC_DLL(X) X
 #endif
 
+/** test function (?)
+ * 
+ */
+
 #include <string>
-CALC_DLL( std::string ping(); )	//test function???
+CALC_DLL( std::string ping(); )
 
 #include <mt4cpp/Scheduler.hpp>
 #include <mt4cpp/CommandHistory.hpp>

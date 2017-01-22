@@ -25,10 +25,14 @@
 #include <stdexcept>
 #include <array>
 
-/** Python intreface to CommandManager
+
+/** system("") wrapper to execute command and get the output
+ *  
+ * @param command to execute
  */
 
-std::string exec(const char* cmd) { //system("") wrapper to execute command and get the output
+
+std::string exec(const char* cmd) { 
     std::array<char, 128> buffer;
     std::string result;
     std::shared_ptr<FILE> pipe(popen(cmd, "r"), pclose);
@@ -39,6 +43,12 @@ std::string exec(const char* cmd) { //system("") wrapper to execute command and 
     }
     return std::string("") + static_cast<std::string>(result);
 }
+
+/** harsh adapter to use the classificator
+ *  
+ * @param web address to clasify
+ */
+
 
 std::string classify(const std::string word) 
 {   
