@@ -6,6 +6,16 @@
 #include <fstream>
 #include <iostream>
 
+
+/**  Parses csv file given with the filename to a map (int-string).
+ *  Takes name of the csv file and numbers of the columns in the csv
+ *  that will be used respectively as keys and values od the map.
+ *  Keys should be type compatible with ints and values with strings.
+ *  @param col1 csv column number holding keys for the map
+ *  @param col2 csv column number holding values for the map
+ *  @return boolean, true if function succeded
+ */
+
 bool Csv::csv2map(const std::string &filename,
         const int col1, const int col2) {
     // Input stream to read the csv. Each line should hold one url.

@@ -30,14 +30,6 @@ class Csv
 
         bool csv2map(const std::string &filename,
                      const int col1, const int col2);
-        /*  Parses csv file given with the filename to a map (int-string).
-         *  Takes name of the csv file and numbers of the columns in the csv
-         *  that will be used respectively as keys and values od the map.
-         *  Keys should be type compatible with ints and values with strings.
-         *  @param col1 csv column number holding keys for the map.
-         *  @param col2 csv column number holding values for the map.
-         *  @return Boolean, true if function succeded.
-         */
 
         void delete_disabled_urls(map &id_url_map);  // Remove invalid urls from a url map.
         void match_values();
