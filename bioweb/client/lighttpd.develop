@@ -1,5 +1,5 @@
 
-var.server_root = "/home/apiotro/zpr/bayesian_webclass/bioweb/client"
+var.server_root = "/home/apiotro/zpr/catkin_ws/src/bayesian_webclass/bioweb/client"
 var.log_root    = server_root
 var.state_dir   = server_root
 var.home_dir    = server_root

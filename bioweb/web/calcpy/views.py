@@ -8,32 +8,10 @@ export calculation results to client
 """
 import calc
 
-def greet(params):
-    """testestest params is instance of querydict"""
+def classify(params):
+    """params is instance of querydict"""
     query = dict(params.iterlists())
 
     return{
-        "pozdrowienie":calc.greet(query['word'][0].encode('ascii', 'ignore'))
+        "classification":calc.classify(query['word'][0].encode('ascii', 'ignore'))
     }
-
-def getNumber(params):
-    """the calculation from C++ library"""
-    return {
-        "number" : calc.getNumber()
-    }
-
-def getCommands(params):
-    """return the commands descriptors"""
-    cmdmgr = calc.CommandManager()
-    ids = cmdmgr.getIds()
-    out = dict()
-    for i in ids:
-        out[int(i)] = { "state" : str(cmdmgr.getState(i)), "progress": float(cmdmgr.getProgress(i)) }
-    return out
-
-def startCommand(params):
-    """start new tick command"""
-    cmdmgr = calc.CommandManager()
-    cmd_id = cmdmgr.start()
-    return cmd_id
-

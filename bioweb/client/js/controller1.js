@@ -9,7 +9,7 @@ apk.service('srvCommands', //commands
                 this.serverData = "";
                 this.getDataServer = function(callback, value) {
                 	
-                	this.serverData =  $http.get(this.baseURL + 'greet?word=' + value).success(callback);
+                	this.serverData =  $http.get(this.baseURL + 'classify?word=' + value).success(callback);
                 	return this.serverData; 
                 };
     }
@@ -19,21 +19,23 @@ apk.service('srvCommands', //commands
 	'srvCommands',
 	function($scope, srvCommands ) {
 
-				$scope.link = "en.wikipedia.org/";
+				$scope.link = "https://en.wikipedia.org/wiki/";
 				$scope.dataFromServer = "None";
 
 				$scope.getData = function() {
 
 					$scope.dataFromServer = "Processing...";
 					link = $scope.link;
-					if(!link.toLowerCase().startsWith("en.wikipedia.org")){
+					if(!link.startsWith("https://en.wikipedia.org/wiki/")){
 						$scope.dataFromServer="Wrong address!";
 						return;
 					}
 
 					return srvCommands.getDataServer(
 						function(data){
-							$scope.dataFromServer=data.pozdrowienie;
+							var word = data.classification.split("\n");
+							var token = word[0]+ " " + " kategoria:" + word[1];
+							$scope.dataFromServer=token;
 						}
 						,link
 					);

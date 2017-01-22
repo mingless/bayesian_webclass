@@ -1,8 +1,8 @@
 #include <bayesian_webclass/data_preprocessor.h>
 #include <bayesian_webclass/classifier.h>
 #include <iostream>
-
-int main() {
+#include <string>
+int main(int argc, char* argv[]) {
     /*
     DataPreprocessor dataPreprocessor;
     std::vector<std::string> categories = dataPreprocessor.ptr_http->get_lines_from_file("categories/list_of_categories.txt");
@@ -20,13 +20,16 @@ int main() {
 //    dataPreprocessor.parse_htmls("pages.txt", "/html/body/div[@id='content']/div[@id='bodyContent']/div[@id='mw-content-text']/div[@class='mw-category-generated']/div[@id='mw-pages']");
     */
     DataPreprocessor dataPrep;
-    dataPrep.get_attribs_from_link("https://en.wikipedia.org/wiki/Banesh_Hoffmann");
+    
+    std::string link(argv[1]);
+
+    dataPrep.get_attribs_from_link(link);
+
     Classifier c;
-    c.init("/home/m/catkin_ws/src/bayesian_webclass/txt/all_atributes.txt.txt",
-           "/home/m/catkin_ws/src/bayesian_webclass/txt/categories/list_of_categories.txt",
-           "/home/m/catkin_ws/src/bayesian_webclass/txt/output/",
+    c.init("/home/apiotro/zpr/catkin_ws/src/bayesian_webclass/txt/all_atributes.txt.txt",
+           "/home/apiotro/zpr/catkin_ws/src/bayesian_webclass/txt/categories/list_of_categories.txt",
+           "/home/apiotro/zpr/catkin_ws/src/bayesian_webclass/txt/output/",
            224);
-    std::cout<<"TEST"<<std::endl;
     std::cout<<c.classify("example/attribs.txt")<<std::endl;
 //    std::cout<<c.classify("/home/m/catkin_ws/src/bayesian_webclass/txt/output/1.txt")<<std::endl;
 //    std::cout<<c.classify("/home/m/catkin_ws/src/bayesian_webclass/txt/output/2.txt")<<std::endl;
