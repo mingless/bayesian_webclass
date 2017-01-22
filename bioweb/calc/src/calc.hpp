@@ -18,9 +18,8 @@
 #define CALC_DLL(X) X
 #endif
 
-//! Example C++ calculation. This function return a number.
-CALC_DLL( int getNumber(); )
-
+#include <string>
+CALC_DLL( std::string ping(); )	//test function???
 
 #include <mt4cpp/Scheduler.hpp>
 #include <mt4cpp/CommandHistory.hpp>
