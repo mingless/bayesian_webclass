@@ -1,0 +1,14 @@
+actions: []
+authors: ''
+brief: ''
+bugtracker: ''
+depends:
+- catkin
+description: The bayesian_webclass package
+license: TODO
+maintainers: m <m@todo.todo>
+msgs: []
+package_type: package
+repo_url: ''
+srvs: []
+url: ''

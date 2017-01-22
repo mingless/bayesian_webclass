@@ -1,0 +1,7 @@
+<map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
+<area shape="rect" id="node2" href="$structfaif_1_1DomainConcept.html" title="the domain concept " alt="" coords="224,136,367,177"/>
+<area shape="rect" id="node3" href="$structfaif_1_1ml_1_1BeliefConcept.html" title="the belief concept " alt="" coords="219,5,371,47"/>
+<area shape="rect" id="node4" href="$structfaif_1_1ValueConcept.html" title="the value concept " alt="" coords="230,71,361,112"/>
+<area shape="rect" id="node8" href="$structfaif_1_1search_1_1NodeWithChildrenConcept.html" title="the concept for node with children " alt="" coords="195,267,396,308"/>
+<area shape="rect" id="node9" href="$structfaif_1_1search_1_1NodeWithFinalFlagConcept.html" title="the concept for node with final flag for search in tree&#45;like structures The function &#39;searchDepthFirs..." alt="" coords="205,201,386,243"/>
+</map>

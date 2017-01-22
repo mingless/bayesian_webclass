@@ -1,0 +1,8 @@
+<map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
+<area shape="rect" id="node2" href="$classweb_1_1calcpy_1_1tests_1_1CalcPyLibraryTestCase.html" title="web.calcpy.tests.CalcPyLibrary\lTestCase" alt="" coords="132,5,339,47"/>
+<area shape="rect" id="node3" href="$classweb_1_1calcpy_1_1tests_1_1CalcPyViewTestCase.html" title="web.calcpy.tests.CalcPyView\lTestCase" alt="" coords="137,71,334,112"/>
+<area shape="rect" id="node4" href="$classweb_1_1current_1_1tests_1_1CurrentModelTestCase.html" title="web.current.tests.Current\lModelTestCase" alt="" coords="150,136,321,177"/>
+<area shape="rect" id="node5" href="$classweb_1_1current_1_1tests_1_1CurrentViewTestCase.html" title="web.current.tests.Current\lViewTestCase" alt="" coords="150,201,321,243"/>
+<area shape="rect" id="node6" href="$classweb_1_1version_1_1tests_1_1VersionModelTestCase.html" title="web.version.tests.Version\lModelTestCase" alt="" coords="149,267,322,308"/>
+<area shape="rect" id="node7" href="$classweb_1_1version_1_1tests_1_1VersionViewTestCase.html" title="web.version.tests.Version\lViewTestCase" alt="" coords="149,332,322,373"/>
+</map>

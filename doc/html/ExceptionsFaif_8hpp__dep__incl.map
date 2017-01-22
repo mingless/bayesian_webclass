@@ -1,0 +1,28 @@
+<map id="ExceptionsFaif.hpp" name="ExceptionsFaif.hpp">
+<area shape="rect" id="node2" href="$ExceptionsDna_8h.html" title="ExceptionsDna.h" alt="" coords="203,80,326,107"/>
+<area shape="rect" id="node12" href="$Value_8hpp.html" title="Value.hpp" alt="" coords="717,80,797,107"/>
+<area shape="rect" id="node27" href="$TimeseriesExceptions_8hpp.html" title="TimeseriesExceptions.hpp" alt="" coords="821,80,997,107"/>
+<area shape="rect" id="node3" href="$Nucleotide_8h.html" title="Nucleotide.h" alt="" coords="217,155,312,181"/>
+<area shape="rect" id="node9" href="$Codon_8h.html" title="Codon.h" alt="" coords="112,229,183,256"/>
+<area shape="rect" id="node4" href="$Chain_8h.html" title="Chain.h" alt="" coords="346,229,413,256"/>
+<area shape="rect" id="node11" href="$EnergyNucleo_8h.html" title="EnergyNucleo.h" alt="" coords="207,229,322,256"/>
+<area shape="rect" id="node5" href="$FoldedChain_8h.html" title="FoldedChain.h" alt="" coords="181,453,287,480"/>
+<area shape="rect" id="node6" href="$SecStruct_8h.html" title="SecStruct.h" alt="" coords="251,304,342,331"/>
+<area shape="rect" id="node7" href="$FoldedMatrix_8h.html" title="FoldedMatrix.h" alt="" coords="272,379,380,405"/>
+<area shape="rect" id="node8" href="$FoldedPair_8h.html" title="FoldedPair.h" alt="" coords="371,453,465,480"/>
+<area shape="rect" id="node10" href="$CodonAminoTable_8h.html" title="CodonAminoTable.h" alt="" coords="5,304,145,331"/>
+<area shape="rect" id="node13" href="$Loci_8hpp.html" title="Loci.hpp" alt="" coords="924,155,995,181"/>
+<area shape="rect" id="node14" href="$Belief_8hpp.html" title="Belief.hpp" alt="" coords="769,155,849,181"/>
+<area shape="rect" id="node15" href="$Classifier_8hpp.html" title="Classifier.hpp" alt="" coords="649,229,752,256"/>
+<area shape="rect" id="node25" href="$Svm_8hpp.html" title="The Support Vector Machine Classifier. " alt="" coords="777,229,851,256"/>
+<area shape="rect" id="node26" href="$Point_8hpp.html" title="Point.hpp" alt="" coords="667,155,745,181"/>
+<area shape="rect" id="node24" href="$Fusion_8hpp.html" title="Fusion.hpp" alt="" coords="876,229,963,256"/>
+<area shape="rect" id="node16" href="$DecisionTree_8hpp.html" title="The Decision Tree Classifier, inspired ID3 algorithm (Iterate Dichotomizer) " alt="" coords="557,304,681,331"/>
+<area shape="rect" id="node17" href="$RandomForest_8hpp.html" title="RandomForest.hpp" alt="" coords="530,379,663,405"/>
+<area shape="rect" id="node18" href="$KNearestNeighbor_8hpp.html" title="KNearestNeighbor.hpp" alt="" coords="705,304,859,331"/>
+<area shape="rect" id="node19" href="$NaiveBayesian_8hpp.html" title="NaiveBayesian.hpp" alt="" coords="884,304,1019,331"/>
+<area shape="rect" id="node23" href="$Validator_8hpp.html" title="Validator.hpp" alt="" coords="1043,304,1142,331"/>
+<area shape="rect" id="node20" href="$classifier_8h.html" title="classifier.h" alt="" coords="979,379,1065,405"/>
+<area shape="rect" id="node21" href="$classifier_8cpp.html" title="classifier.cpp" alt="" coords="918,453,1017,480"/>
+<area shape="rect" id="node22" href="$test_8cpp.html" title="test.cpp" alt="" coords="1041,453,1110,480"/>
+</map>

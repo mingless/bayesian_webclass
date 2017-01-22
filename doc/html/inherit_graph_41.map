@@ -1,0 +1,6 @@
+<map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
+<area shape="rect" id="node1" href="$structfaif_1_1nominal__tag.html" title="nominal attribute trait (equality comparable), modeled as element in unordered set ..." alt="" coords="5,5,124,32"/>
+<area shape="rect" id="node2" href="$structfaif_1_1ordinal__tag.html" title="ordered attribute trait (equality comparable, less than comparable) , modeled as element in ordered s..." alt="" coords="172,5,283,32"/>
+<area shape="rect" id="node3" href="$structfaif_1_1interval__tag.html" title="interval attribute trait (equality comparable, less than comparable, distance), integer numbers ..." alt="" coords="331,5,445,32"/>
+<area shape="rect" id="node4" href="$structfaif_1_1ratio__tag.html" title="nominal attribute trait (equality comparable, less than comparable, distance, continuous), real numbers " alt="" coords="493,5,592,32"/>
+</map>

@@ -1,0 +1,6 @@
+<map id="faif::FaifException" name="faif::FaifException">
+<area shape="rect" id="node3" href="$classfaif_1_1dna_1_1CodonStringTooShortException.html" title="the exception when chain representing codon is shorted than 3 nucleotides " alt="" coords="335,5,506,47"/>
+<area shape="rect" id="node4" href="$classfaif_1_1dna_1_1NucleotideBadCharException.html" title="the exception thrown when unknown nucleotide (bad letter) occures " alt="" coords="339,71,502,112"/>
+<area shape="rect" id="node5" href="$classfaif_1_1NotFoundException.html" title="the exception thrown when the value for given attribute is not found " alt="" coords="339,137,502,163"/>
+<area shape="rect" id="node6" href="$classfaif_1_1timeseries_1_1PredictionRangeException.html" title="bad prediction range exception " alt="" coords="333,188,508,229"/>
+</map>
