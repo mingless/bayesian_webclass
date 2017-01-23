@@ -8,7 +8,7 @@
 #include <map>
 
 /** \class Dictionary
- *  \brief Dictionary class for word comparision.
+ *  \brief Class for word comparision against a given "dictionary".
  * A simple class for comparing sets of words against the internal
  * list of words.
  */

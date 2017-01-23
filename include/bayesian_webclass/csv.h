@@ -10,6 +10,11 @@
 #include <boost/tokenizer.hpp>
 #include <bits/unique_ptr.h>
 
+/** \class Csv
+ *  \brief Class for managing csv files.
+ * A simple class for read/write operations on csv files.
+ */
+
 class Csv
 {
     public:
