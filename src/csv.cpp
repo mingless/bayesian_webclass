@@ -74,26 +74,17 @@ bool Csv::csv2map(const std::string &filename,
         }
     } else {
         std::cerr << "Cannot open file: " << filename
-            << std::endl; //TODO jakis plik z logami czy cos, nie wypisywanie bledow na konsole, ewentualnie wyjatek
-        return false; //TODO jakos tu rzucac wyjatek
+            << std::endl;
+        return false;
     }
     url_csv.close();
     return true;
 }
 
+/**Getter
+ */
 const std::unique_ptr<Csv::map,
       std::default_delete<Csv::map>> &Csv::getId_url_map() const {
           return _id_url_map;
       }
 
-//void Csv::delete_disabled_urls(Csv::map &id_url_map) { //delets from map records which urls cannot be opened
-//    std::unique_ptr<HTTPDownloader> d(new HTTPDownloader());
-//    bool is_downloadable = true; //flag used to tell if link works
-//    map::iterator map_it;
-//    for (map_it = id_url_map.begin(); map_it != id_url_map.end(); ++map_it) {
-//        d->download(map_it->second, is_downloadable);
-//        if (!is_downloadable) {
-//            id_url_map.erase(map_it);
-//        }
-//    }
-//}

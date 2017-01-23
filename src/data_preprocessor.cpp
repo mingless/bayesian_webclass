@@ -1,18 +1,22 @@
-//
-// Created by bartek on 15.01.17.
-//
-
 #include <iostream>
 #include <fstream>
 #include <boost/filesystem/operations.hpp>
 #include "bayesian_webclass/data_preprocessor.h"
 
-///Constructor
+/**Constructor
+ * @param curl_out_folder folder in which output of data preprocessing will be stored
+ */
 DataPreprocessor::DataPreprocessor(std::string curl_out_folder) : ptr_csv(new Csv()), ptr_http(new HTTPDownloader()),
-                                                                  _curl_output_folder(curl_out_folder), atrybuty(0),fileCounter(0){}
+                                                                  _curl_output_folder(curl_out_folder), fileCounter(0){}
 
-
-bool DataPreprocessor::filter_valid_domains(const std::string &input_filename, const std::string &output_filename) {
+/** Filter domains that return quick http response
+ * Filer domains that give http reponse in less than 5 seconds and save them
+ * in "output_filename" file
+ * @param input_filename name of file with links, every link in other line
+ * @param output_filename links that can be opened will be stored in this file
+ * @return false is cannot open file, otherwise return true
+ */
+bool DataPreprocessor::filterValidDomains(const std::string &input_filename, const std::string &output_filename) {
 
     int csv_columns[2] = {0, 1};
     bool success = this->ptr_csv->csv2map(input_filename, csv_columns[0],csv_columns[1]);
@@ -46,13 +50,16 @@ bool DataPreprocessor::filter_valid_domains(const std::string &input_filename, c
     return success;
 }
 
-///Parse html code.
-///@param filename - file where html code is
-///@param from_which_tags - from which tags from html (or xml) code structure the content should be
-bool DataPreprocessor::parse_htmls(const std::string &filename,
-                                   const std::string &from_which_tags) {
+/**Parse html code.
+ * Parse html code from all links in filename. Html code is parsed depending on fromWhickTags parameter
+ * which is a
+*@param filename - file where html code is
+*@param from_which_tags - from which tags from html (or xml) code structure the content should be
+ */
+bool DataPreprocessor::parseHtmls(const std::string &filename,
+                                  const std::string &from_which_tags) {
     //get html addresses from textfile to vector of string
-    string_vec addresses = ptr_http->get_lines_from_file(filename + ".txt");
+    string_vec addresses = ptr_http->getLinesFromFile(filename + ".txt");
     std::string html_text, file_path;
     std::string path_root(this->_curl_output_folder + "/");
 
@@ -66,7 +73,7 @@ bool DataPreprocessor::parse_htmls(const std::string &filename,
             break;
         }
         file_path = path_root + "tmp.txt";
-        ptr_http->write_str_to_file(file_path, html_text);
+        ptr_http->writeStrToFile(file_path, html_text);
         std::string line, line1;
         std::ifstream ifs(file_path);
         html_text = "";
@@ -89,11 +96,11 @@ bool DataPreprocessor::parse_htmls(const std::string &filename,
         std::string output_of_parsing(filename + "\n");
         output_of_parsing.erase(0,11); //erase train_data
         std::set<std::string> map_of_attribs;
-        atrybuty += ptr_http->parse_html_and_save(html_text, from_which_tags,
-                                                  output_of_parsing,
-                                                  map_of_attribs);  //parse html_text and save to file in /output directory text from "html/body" node, that means only the text between <body></body>
+        ptr_http->parseHtmlAndSave(html_text, from_which_tags,
+                                   output_of_parsing,
+                                   map_of_attribs);  //parse html_text and save to file in /output directory text from "html/body" node, that means only the text between <body></body>
         all_atribs.insert(map_of_attribs.begin(), map_of_attribs.end());
-        ptr_http->write_str_to_file(file_path, output_of_parsing); //write to file parsed html
+        ptr_http->writeStrToFile(file_path, output_of_parsing); //write to file parsed html
 
         this->fileCounter++;
         count++;
@@ -101,22 +108,28 @@ bool DataPreprocessor::parse_htmls(const std::string &filename,
             break;
         }
     }
-
-//    ptr_http->write_set_to_file(path_root + filename+"_all_attrib.txt", all_atribs, filename);
-   std::cout << "Ilosc wszystkich atrybutow: " << all_atribs.size() << std::endl;
+   std::cout << "All attributes" << all_atribs.size() << std::endl;
     return success;
 }
 
-void DataPreprocessor::get_attribs(const std::string &filename) {
-    parse_htmls(filename,
-                "/html/body/div[@id='content']/div[@id='bodyContent']/div[@id='mw-content-text']/p"); //second argument is written i
+/** Get attributes from all websites in file
+ * Get attribites from websites in "filename" file and save them
+ * in curl_output_folder. Output files will be named from 1 to number
+ * of links. Every output will have name of file in first line as a name of
+ * category and attributes as all links found in text of link listed every in next
+ * line below.
+ * @param filename file with links from en.wikipedia.org
+ */
+void DataPreprocessor::getAttribs(const std::string &filename) {
+    parseHtmls(filename,
+               "/html/body/div[@id='content']/div[@id='bodyContent']/div[@id='mw-content-text']/p"); //second argument is written i
 }
 
-long DataPreprocessor::getAtrybuty() const {
-    return atrybuty;
-}
-
-void DataPreprocessor::choose_train_data(const std::string &inFilename) {
+/**Split data to train and test
+ * Split data to training and testing set. 1/4 -testing, 3/4 training
+ * @param inFilename file with links, every in new line
+ */
+void DataPreprocessor::chooseTrainData(const std::string &inFilename) {
 
     std::ifstream file(inFilename + ".txt");
     int lineCount = 0;
@@ -147,14 +160,25 @@ void DataPreprocessor::choose_train_data(const std::string &inFilename) {
         lineCount++;
     }
 
-    ptr_http->write_str_to_file(trainFilename, train);
-    ptr_http->write_str_to_file(testFilename, test);
+    ptr_http->writeStrToFile(trainFilename, train);
+    ptr_http->writeStrToFile(testFilename, test);
 }
 
+/**Getter
+ *
+ * @return allAttribs
+ */
 const std::set<std::string> &DataPreprocessor::getAll_atribs() const {
     return all_atribs;
 }
 
+/**Get attributes from wiki link
+ * Get attributes from en.wikipedia.org article and save it
+ * in example/attribs.txt file. Attributes are links found in text of article.
+ * Every attribute is in new line.
+ * @param url url address of en.wikipedia.org article
+ * @return true - all went good, false - cannot open article/ no internet connection
+ */
 bool DataPreprocessor::get_attribs_from_link(const std::string &url) {
     std::string html_text, file_path;
     std::string path_root("example/");
@@ -167,12 +191,12 @@ bool DataPreprocessor::get_attribs_from_link(const std::string &url) {
         return false;
     }
     file_path = path_root + "tmp.txt";
-    ptr_http->write_str_to_file(file_path, html_text);
+    ptr_http->writeStrToFile(file_path, html_text);
     std::string line, line1;
     std::ifstream ifs(file_path);
     html_text = "";
     file_path = path_root + "attribs.txt";
-    while (!ifs.eof()) {
+    while (!ifs.eof()) { //prepare code for parsing
         getline(ifs, line);
 
         while (line.back() != '>') {
@@ -188,16 +212,13 @@ bool DataPreprocessor::get_attribs_from_link(const std::string &url) {
     }
 
     std::string output_of_parsing;
-   // output_of_parsing.erase(0,11); //erase train_data
     std::set<std::string> map_of_attribs;
-    /*atrybuty += */ptr_http->parse_html_and_save(html_text, from_which_tags,
-                                              output_of_parsing,
-                                              map_of_attribs);  //parse html_text and save to file in /output directory text from "html/body" node, that means only the text between <body></body>
-    //all_atribs.insert(map_of_attribs.begin(), map_of_attribs.end());
-    ptr_http->write_str_to_file(file_path, output_of_parsing); //write to file parsed html
+    ptr_http->parseHtmlAndSave(html_text, from_which_tags,
+                                output_of_parsing,
+                                map_of_attribs);  //parse html_text and save to file in /output directory text from "html/body" node, that means only the text between <body></body>
+    ptr_http->writeStrToFile(file_path, output_of_parsing); //write to file parsed html
     return success;
 }
-
 
 
 

@@ -16,7 +16,6 @@ struct csv_content
     bool success;
 };
 
-
 struct CsvTest : ::testing::Test, ::testing::WithParamInterface<csv_content>
 {
     std::unique_ptr<Csv> csv;
@@ -28,7 +27,10 @@ struct CsvTest : ::testing::Test, ::testing::WithParamInterface<csv_content>
 TEST_P(CsvTest, ValidCsvs)
 {
     auto as = GetParam();
-    bool res = csv->csv2map(as.filename, as.col1, as.col2);
+    int column_numbers[2];
+    column_numbers[0] = as.col1;
+    column_numbers[1] = as.col2;
+    bool res = csv->csv2map(as.filename, column_numbers[0],column_numbers[1]);
     auto rec = csv->getId_url_map()->begin(); //each testing csv has one line
     if (!as.success)
     {
@@ -56,11 +58,11 @@ struct input
 {
     std::string filename;
     bool success;
+
     int id;
     std::string address;
 
 };
-
 
 struct DataPrepTest : ::testing::Test, ::testing::WithParamInterface<input>
 {
@@ -69,11 +71,12 @@ struct DataPrepTest : ::testing::Test, ::testing::WithParamInterface<input>
     DataPrepTest() : data_prep(new DataPreprocessor()) {};
 };
 
+
 TEST_P(DataPrepTest, DataPrepTest_GoodProcessing_Test)
 {
     auto as = GetParam();
     std::string output("output");
-    EXPECT_EQ(as.success, data_prep->filter_valid_domains(as.filename,output));
+    EXPECT_EQ(as.success, data_prep->filterValidDomains(as.filename, output));
 }
 
 INSTANTIATE_TEST_CASE_P(Default, DataPrepTest, ::testing::Values(
@@ -82,6 +85,30 @@ INSTANTIATE_TEST_CASE_P(Default, DataPrepTest, ::testing::Values(
 ));
 
 
+
+struct inputUrl
+{
+    std::string url;
+    bool urlSuccess;
+};
+
+struct DataPrepTestUrl : ::testing::Test, ::testing::WithParamInterface<inputUrl>
+{
+    std::unique_ptr<DataPreprocessor> data_prepa;
+
+    DataPrepTestUrl() : data_prepa(new DataPreprocessor()) {};
+};
+TEST_P(DataPrepTestUrl, DataPrepTestUrl_Data_Test)
+{
+    auto as = GetParam();
+    std::string output("output");
+    EXPECT_EQ(as.urlSuccess, data_prepa->get_attribs_from_link(as.url));
+}
+
+INSTANTIATE_TEST_CASE_P(Default, DataPrepTestUrl, ::testing::Values(
+        inputUrl {"wrong_url", false},
+        inputUrl {"https://pl.wikipedia.org/wiki/XPath", true}
+));
 int main(int argc, char **argv)
 {
     try
