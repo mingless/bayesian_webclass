@@ -2,4 +2,5 @@
    name: C++ API
    output_dir: c++
    file_patterns: '*.c *.cpp *.h *.cc *.hh *.dox'
-   exclude_patterns: 'test txt bioweb faif'
+   exclude_patterns: '*/cmake/* */csv/* */test/* */txt/* */bioweb/* */faif/* CMakeLists'
+   javadoc_autobrief: yes

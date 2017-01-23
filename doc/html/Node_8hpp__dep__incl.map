@@ -1,8 +1,0 @@
-<map id="Node.hpp" name="Node.hpp">
-<area shape="rect" id="node2" href="$TreeNodeImpl_8hpp.html" title="TreeNodeImpl.hpp" alt="" coords="145,80,274,107"/>
-<area shape="rect" id="node7" href="$HillClimbing_8hpp.html" title="HillClimbing.hpp" alt="" coords="297,80,415,107"/>
-<area shape="rect" id="node3" href="$AStar_8h.html" title="AStar.h" alt="" coords="5,155,72,181"/>
-<area shape="rect" id="node4" href="$BreadthFirst_8h.html" title="BreadthFirst.h" alt="" coords="96,155,200,181"/>
-<area shape="rect" id="node5" href="$DepthFirst_8h.html" title="DepthFirst.h" alt="" coords="225,155,319,181"/>
-<area shape="rect" id="node6" href="$UnifiedCost_8h.html" title="UnifiedCost.h" alt="" coords="343,155,446,181"/>
-</map>

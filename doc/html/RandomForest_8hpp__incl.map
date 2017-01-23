@@ -1,9 +1,0 @@
-<map id="RandomForest.hpp" name="RandomForest.hpp">
-<area shape="rect" id="node2" href="$Classifier_8hpp.html" title="Classifier.hpp" alt="" coords="851,162,954,189"/>
-<area shape="rect" id="node26" href="$DecisionTree_8hpp.html" title="The Decision Tree Classifier, inspired ID3 algorithm (Iterate Dichotomizer) " alt="" coords="1711,80,1835,107"/>
-<area shape="rect" id="node39" href="$Random_8hpp.html" title="../utils/Random.hpp" alt="" coords="3329,80,3465,107"/>
-<area shape="rect" id="node12" href="$Value_8hpp.html" title="../Value.hpp" alt="" coords="643,326,735,353"/>
-<area shape="rect" id="node22" href="$Point_8hpp.html" title="../Point.hpp" alt="" coords="727,244,817,271"/>
-<area shape="rect" id="node25" href="$Belief_8hpp.html" title="Belief.hpp" alt="" coords="565,244,645,271"/>
-<area shape="rect" id="node18" href="$ExceptionsFaif_8hpp.html" title="ExceptionsFaif.hpp" alt="" coords="501,415,635,442"/>
-</map>

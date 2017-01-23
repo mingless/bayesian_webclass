@@ -30,6 +30,9 @@
 </div><!--header-->
 <div class="contents">
 
+<p>Class for downloading and cleaning html code Class contain methods to download and clean html code from given urls.  
+ <a href="classHTTPDownloader.html#details">More...</a></p>
+
 <p><code>#include &lt;<a class="el" href="http__downloader_8h_source.html">http_downloader.h</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
@@ -37,20 +40,26 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:ab2a2ad47d55b4e7266ea0ee5eef7c75d"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classHTTPDownloader.html#ab2a2ad47d55b4e7266ea0ee5eef7c75d">check_link</a> (const std::string &amp;url)</td></tr>
 <tr class="separator:ab2a2ad47d55b4e7266ea0ee5eef7c75d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa1ba7116ecfcba1f617bf7a8e5cda2c4"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classHTTPDownloader.html#aa1ba7116ecfcba1f617bf7a8e5cda2c4">cleanhtml</a> (const std::string &amp;html)</td></tr>
+<tr class="memdesc:aa1ba7116ecfcba1f617bf7a8e5cda2c4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Clean html.  <a href="#aa1ba7116ecfcba1f617bf7a8e5cda2c4">More...</a><br /></td></tr>
 <tr class="separator:aa1ba7116ecfcba1f617bf7a8e5cda2c4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a904140d7d77cacc2f3d679b3d03e2f68"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classHTTPDownloader.html#a904140d7d77cacc2f3d679b3d03e2f68">download</a> (const std::string &amp;url, std::string &amp;output)</td></tr>
+<tr class="memdesc:a904140d7d77cacc2f3d679b3d03e2f68"><td class="mdescLeft">&#160;</td><td class="mdescRight">Download html code Downloads html text from given website, waits 5 seconds for response otherwise returns false.  <a href="#a904140d7d77cacc2f3d679b3d03e2f68">More...</a><br /></td></tr>
 <tr class="separator:a904140d7d77cacc2f3d679b3d03e2f68"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa4deb33a5cffa167c395576a7ab78bcb"><td class="memItemLeft" align="right" valign="top">std::vector&lt; std::string &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classHTTPDownloader.html#aa4deb33a5cffa167c395576a7ab78bcb">get_lines_from_file</a> (std::string filename)</td></tr>
-<tr class="separator:aa4deb33a5cffa167c395576a7ab78bcb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aed3adb6a87e71c2403041835538ff564"><td class="memItemLeft" align="right" valign="top">std::vector&lt; std::string &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classHTTPDownloader.html#aed3adb6a87e71c2403041835538ff564">getLinesFromFile</a> (std::string filename)</td></tr>
+<tr class="memdesc:aed3adb6a87e71c2403041835538ff564"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get lines from file and save them in vector of string.  <a href="#aed3adb6a87e71c2403041835538ff564">More...</a><br /></td></tr>
+<tr class="separator:aed3adb6a87e71c2403041835538ff564"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae2755dc1dd22d7dba5a7add7c629fd9e"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classHTTPDownloader.html#ae2755dc1dd22d7dba5a7add7c629fd9e">HTTPDownloader</a> ()</td></tr>
 <tr class="memdesc:ae2755dc1dd22d7dba5a7add7c629fd9e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor.  <a href="#ae2755dc1dd22d7dba5a7add7c629fd9e">More...</a><br /></td></tr>
 <tr class="separator:ae2755dc1dd22d7dba5a7add7c629fd9e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afbc1f4241bfa0aebca0677288c863714"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classHTTPDownloader.html#afbc1f4241bfa0aebca0677288c863714">parse_html_and_save</a> (const std::string &amp;html_text, const std::string &amp;node_of_html_tree, std::string &amp;output, std::set&lt; std::string &gt; &amp;unique_attribs)</td></tr>
-<tr class="separator:afbc1f4241bfa0aebca0677288c863714"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a087efa8e9f679d19ccd52f9c15d0a7f1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classHTTPDownloader.html#a087efa8e9f679d19ccd52f9c15d0a7f1">write_set_to_file</a> (const std::string &amp;filename, const std::set&lt; std::string &gt; &amp;set)</td></tr>
-<tr class="separator:a087efa8e9f679d19ccd52f9c15d0a7f1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1fd8cafb8bba00fb020bea97fd8f0723"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classHTTPDownloader.html#a1fd8cafb8bba00fb020bea97fd8f0723">write_str_to_file</a> (const std::string &amp;filename, const std::string &amp;str)</td></tr>
-<tr class="separator:a1fd8cafb8bba00fb020bea97fd8f0723"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afc3e7796620d0882f7bdfaa579b54b53"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classHTTPDownloader.html#afc3e7796620d0882f7bdfaa579b54b53">parseHtmlAndSave</a> (const std::string &amp;htmlText, const std::string &amp;nodeOfHtmlTree, std::string &amp;output, std::set&lt; std::string &gt; &amp;uniqueAttributes)</td></tr>
+<tr class="memdesc:afc3e7796620d0882f7bdfaa579b54b53"><td class="mdescLeft">&#160;</td><td class="mdescRight">Parse html code and get attributes parse html code and get unique attributes as a set.  <a href="#afc3e7796620d0882f7bdfaa579b54b53">More...</a><br /></td></tr>
+<tr class="separator:afc3e7796620d0882f7bdfaa579b54b53"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adebb97b5c00e44a15173801b2cd78de3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classHTTPDownloader.html#adebb97b5c00e44a15173801b2cd78de3">writeSetToFile</a> (const std::string &amp;filename, const std::set&lt; std::string &gt; &amp;set)</td></tr>
+<tr class="memdesc:adebb97b5c00e44a15173801b2cd78de3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Save set of strings to file.  <a href="#adebb97b5c00e44a15173801b2cd78de3">More...</a><br /></td></tr>
+<tr class="separator:adebb97b5c00e44a15173801b2cd78de3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a81b3997536bb6aa72c560942956e1a96"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classHTTPDownloader.html#a81b3997536bb6aa72c560942956e1a96">writeStrToFile</a> (const std::string &amp;filename, const std::string &amp;str)</td></tr>
+<tr class="memdesc:a81b3997536bb6aa72c560942956e1a96"><td class="mdescLeft">&#160;</td><td class="mdescRight">Save string to file.  <a href="#a81b3997536bb6aa72c560942956e1a96">More...</a><br /></td></tr>
+<tr class="separator:a81b3997536bb6aa72c560942956e1a96"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac3269bab732a448d95982c48db3fe120"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classHTTPDownloader.html#ac3269bab732a448d95982c48db3fe120">~HTTPDownloader</a> ()</td></tr>
 <tr class="memdesc:ac3269bab732a448d95982c48db3fe120"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destructor.  <a href="#ac3269bab732a448d95982c48db3fe120">More...</a><br /></td></tr>
 <tr class="separator:ac3269bab732a448d95982c48db3fe120"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -61,8 +70,10 @@ Private Attributes</h2></td></tr>
 <tr class="separator:af19d26054e7487abaa0fc8c945c2d5e5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock">
-<p>Definition at line <a class="el" href="http__downloader_8h_source.html#l00015">15</a> of file <a class="el" href="http__downloader_8h_source.html">http_downloader.h</a>.</p>
+<div class="textblock"><p>Class for downloading and cleaning html code Class contain methods to download and clean html code from given urls. </p>
+<p>It has also tools for parsing html code. </p>
+
+<p>Definition at line <a class="el" href="http__downloader_8h_source.html#l00013">13</a> of file <a class="el" href="http__downloader_8h_source.html">http_downloader.h</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" id="ae2755dc1dd22d7dba5a7add7c629fd9e"></a>
 <div class="memitem">
@@ -79,7 +90,7 @@ Private Attributes</h2></td></tr>
 
 <p>Constructor. </p>
 
-<p>Definition at line <a class="el" href="http__downloader_8cpp_source.html#l00016">16</a> of file <a class="el" href="http__downloader_8cpp_source.html">http_downloader.cpp</a>.</p>
+<p>Definition at line <a class="el" href="http__downloader_8cpp_source.html#l00018">18</a> of file <a class="el" href="http__downloader_8cpp_source.html">http_downloader.cpp</a>.</p>
 
 </div>
 </div>
@@ -106,7 +117,7 @@ Private Attributes</h2></td></tr>
 
 <p>Destructor. </p>
 
-<p>Definition at line <a class="el" href="http__downloader_8cpp_source.html#l00021">21</a> of file <a class="el" href="http__downloader_8cpp_source.html">http_downloader.cpp</a>.</p>
+<p>Definition at line <a class="el" href="http__downloader_8cpp_source.html#l00025">25</a> of file <a class="el" href="http__downloader_8cpp_source.html">http_downloader.cpp</a>.</p>
 
 </div>
 </div>
@@ -140,7 +151,9 @@ Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Clean html. That means close open tags and reformat dirty html code. Detailed informations cout be found on libtidy library. <a href="http://tidy.sourceforge.net/">website</a> </p><dl class="params"><dt>Parameters</dt><dd>
+
+<p>Clean html. </p>
+<p>That means close open tags and reformat dirty html code. Detailed informations cout be found on libtidy library <a href="http://tidy.sourceforge.net/">website</a> </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">html</td><td>- string with html code to clean </td></tr>
   </table>
@@ -148,7 +161,7 @@ Private Attributes</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Cleand html code. </dd></dl>
 
-<p>Definition at line <a class="el" href="http__downloader_8cpp_source.html#l00088">88</a> of file <a class="el" href="http__downloader_8cpp_source.html">http_downloader.cpp</a>.</p>
+<p>Definition at line <a class="el" href="http__downloader_8cpp_source.html#l00095">95</a> of file <a class="el" href="http__downloader_8cpp_source.html">http_downloader.cpp</a>.</p>
 
 </div>
 </div>
@@ -175,7 +188,9 @@ Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Downloads html text from given website, waits 5 seconds for response otherwise returns false </p><dl class="params"><dt>Parameters</dt><dd>
+
+<p>Download html code Downloads html text from given website, waits 5 seconds for response otherwise returns false. </p>
+<dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">url</td><td>- url address of website to curl </td></tr>
     <tr><td class="paramdir">[out]</td><td class="paramname">output</td><td>- html code from given url will be saved here </td></tr>
@@ -184,16 +199,16 @@ Private Attributes</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>true if everything went right, false if not </dd></dl>
 
-<p>Definition at line <a class="el" href="http__downloader_8cpp_source.html#l00037">37</a> of file <a class="el" href="http__downloader_8cpp_source.html">http_downloader.cpp</a>.</p>
+<p>Definition at line <a class="el" href="http__downloader_8cpp_source.html#l00041">41</a> of file <a class="el" href="http__downloader_8cpp_source.html">http_downloader.cpp</a>.</p>
 
 </div>
 </div>
-<a class="anchor" id="aa4deb33a5cffa167c395576a7ab78bcb"></a>
+<a class="anchor" id="aed3adb6a87e71c2403041835538ff564"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">std::vector&lt; std::string &gt; HTTPDownloader::get_lines_from_file </td>
+          <td class="memname">std::vector&lt; std::string &gt; HTTPDownloader::getLinesFromFile </td>
           <td>(</td>
           <td class="paramtype">std::string&#160;</td>
           <td class="paramname"><em>filename</em></td><td>)</td>
@@ -201,7 +216,9 @@ Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Get lines from file and save them in vector of string </p><dl class="params"><dt>Parameters</dt><dd>
+
+<p>Get lines from file and save them in vector of string. </p>
+<dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">filename</td><td>- name of file </td></tr>
   </table>
@@ -209,25 +226,25 @@ Private Attributes</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>vector of strings </dd></dl>
 
-<p>Definition at line <a class="el" href="http__downloader_8cpp_source.html#l00122">122</a> of file <a class="el" href="http__downloader_8cpp_source.html">http_downloader.cpp</a>.</p>
+<p>Definition at line <a class="el" href="http__downloader_8cpp_source.html#l00130">130</a> of file <a class="el" href="http__downloader_8cpp_source.html">http_downloader.cpp</a>.</p>
 
 </div>
 </div>
-<a class="anchor" id="afbc1f4241bfa0aebca0677288c863714"></a>
+<a class="anchor" id="afc3e7796620d0882f7bdfaa579b54b53"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">int HTTPDownloader::parse_html_and_save </td>
+          <td class="memname">int HTTPDownloader::parseHtmlAndSave </td>
           <td>(</td>
           <td class="paramtype">const std::string &amp;&#160;</td>
-          <td class="paramname"><em>html_text</em>, </td>
+          <td class="paramname"><em>htmlText</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">const std::string &amp;&#160;</td>
-          <td class="paramname"><em>node_of_html_tree</em>, </td>
+          <td class="paramname"><em>nodeOfHtmlTree</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -239,7 +256,7 @@ Private Attributes</h2></td></tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">std::set&lt; std::string &gt; &amp;&#160;</td>
-          <td class="paramname"><em>unique_attribs</em>&#160;</td>
+          <td class="paramname"><em>uniqueAttributes</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -249,16 +266,28 @@ Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="http__downloader_8cpp_source.html#l00259">259</a> of file <a class="el" href="http__downloader_8cpp_source.html">http_downloader.cpp</a>.</p>
+<p>Parse html code and get attributes parse html code and get unique attributes as a set. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">htmlText</td><td>text of html code </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">nodeOfHtmlTree</td><td>xpath from which get the content and attributes </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">output</td><td>content of node given in nde_of_html_tree </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">uniqueAttributes</td><td>set of unique attributes </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>number of unique attributes </dd></dl>
+
+<p>Definition at line <a class="el" href="http__downloader_8cpp_source.html#l00276">276</a> of file <a class="el" href="http__downloader_8cpp_source.html">http_downloader.cpp</a>.</p>
 
 </div>
 </div>
-<a class="anchor" id="a087efa8e9f679d19ccd52f9c15d0a7f1"></a>
+<a class="anchor" id="adebb97b5c00e44a15173801b2cd78de3"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void HTTPDownloader::write_set_to_file </td>
+          <td class="memname">void HTTPDownloader::writeSetToFile </td>
           <td>(</td>
           <td class="paramtype">const std::string &amp;&#160;</td>
           <td class="paramname"><em>filename</em>, </td>
@@ -276,24 +305,26 @@ Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Save set of strings to file. Every string in new line. If file given as argument does not exist it will be created </p><dl class="params"><dt>Parameters</dt><dd>
+
+<p>Save set of strings to file. </p>
+<p>Every string in new line. If file given as argument does not exist it will be created </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">filename[in]</td><td>- name of file </td></tr>
+    <tr><td class="paramname">filename</td><td>- name of file </td></tr>
     <tr><td class="paramname">set</td><td>- set of strings to save in file </td></tr>
   </table>
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="http__downloader_8cpp_source.html#l00060">60</a> of file <a class="el" href="http__downloader_8cpp_source.html">http_downloader.cpp</a>.</p>
+<p>Definition at line <a class="el" href="http__downloader_8cpp_source.html#l00065">65</a> of file <a class="el" href="http__downloader_8cpp_source.html">http_downloader.cpp</a>.</p>
 
 </div>
 </div>
-<a class="anchor" id="a1fd8cafb8bba00fb020bea97fd8f0723"></a>
+<a class="anchor" id="a81b3997536bb6aa72c560942956e1a96"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void HTTPDownloader::write_str_to_file </td>
+          <td class="memname">void HTTPDownloader::writeStrToFile </td>
           <td>(</td>
           <td class="paramtype">const std::string &amp;&#160;</td>
           <td class="paramname"><em>filename</em>, </td>
@@ -311,15 +342,17 @@ Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Save string to file. If file given as argument does not exist it will be created </p><dl class="params"><dt>Parameters</dt><dd>
+
+<p>Save string to file. </p>
+<p>If file given as argument does not exist it will be created </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">filename[in]</td><td>- name of file </td></tr>
+    <tr><td class="paramname">filename</td><td>- name of file </td></tr>
     <tr><td class="paramname">str</td><td>- string to save in file </td></tr>
   </table>
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="http__downloader_8cpp_source.html#l00075">75</a> of file <a class="el" href="http__downloader_8cpp_source.html">http_downloader.cpp</a>.</p>
+<p>Definition at line <a class="el" href="http__downloader_8cpp_source.html#l00081">81</a> of file <a class="el" href="http__downloader_8cpp_source.html">http_downloader.cpp</a>.</p>
 
 </div>
 </div>
@@ -342,7 +375,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="http__downloader_8h_source.html#l00039">39</a> of file <a class="el" href="http__downloader_8h_source.html">http_downloader.h</a>.</p>
+<p>Definition at line <a class="el" href="http__downloader_8h_source.html#l00033">33</a> of file <a class="el" href="http__downloader_8h_source.html">http_downloader.h</a>.</p>
 
 </div>
 </div>
@@ -356,7 +389,7 @@ Private Attributes</h2></td></tr>
 <hr size="1"><div style="align: right;">
 <a href="http://wiki.ros.org/bayesian_webclass">bayesian_webclass</a><br />
 Author(s): </br />
-<small>autogenerated on Sun Jan 22 2017 18:03:00</small>
+<small>autogenerated on Mon Jan 23 2017 10:12:31</small>
 </div>
 </body>
 </html>

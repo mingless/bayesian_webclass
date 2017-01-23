@@ -1,7 +1,7 @@
 #include "bayesian_webclass/classifier.h"
 
 
-/** Method for classifier initialization.
+/** \brief Method for classifier initialization.
  * Initializes the classifier with given attribute list,
  * categories and trains the classifier on a number of examples
  * in the given directory.
@@ -30,7 +30,7 @@ void Classifier::init(std::string attributes,
     _nb->train(_ex);
 }
 
-/** Method loading attributes from a given file.
+/** \brief Method loading attributes from a given file.
  * Loads attributes from the given file into the internal
  * faif::ml::NaiveBayesian<faif::ValueNominal<int>>::Domains
  * object.
@@ -57,7 +57,7 @@ void Classifier::loadAttributes(std::string attributes) {
     }
 }
 
-/** Method loading categories from a given file.
+/** \brief Method loading categories from a given file.
  * Loads categories from the given file into the internal
  * faif::ml::NaiveBayesian<faif::ValueNominal<int>>::AttrDomain
  * object.
@@ -87,7 +87,7 @@ void Classifier::loadCategories(std::string categories) {
     _cat = faif::createDomain("", C, C+_cat_list.size());
 }
 
-/** Method loading an example from a given file.
+/** \brief Method loading an example from a given file.
  * Loads an example from the given file into the internal
  * faif::ml::NaiveBayesian<faif::ValueNominal<int>>::ExamplesTrain
  * object.
@@ -113,7 +113,7 @@ void Classifier::loadExample(std::string example) {
     _ex.push_back(faif::ml::createExample(E, E+_attrib_index.size(), cat, *_nb));
 }
 
-/** Method classifying a given test example.
+/** \brief Method classifying a given test example.
  * Loads the example from the given file into the internal
  * faif::ml::NaiveBayesian<faif::ValueNominal<int>>::ExampleTest
  * object.

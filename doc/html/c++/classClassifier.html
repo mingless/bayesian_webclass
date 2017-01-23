@@ -30,7 +30,7 @@
 </div><!--header-->
 <div class="contents">
 
-<p>Class containing a Naive Bayesian classifier. Class contains a Naive Bayesian classifier from faif library and provides methods for creating and training the classifier and later classifyinf given examples.  
+<p>Class containing a Naive Bayesian classifier.  
  <a href="classClassifier.html#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="classifier_8h_source.html">classifier.h</a>&gt;</code></p>
@@ -38,14 +38,19 @@
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:af8cfec47f48a7f50f0de5e040ab63069"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classClassifier.html#af8cfec47f48a7f50f0de5e040ab63069">classify</a> (std::string example)</td></tr>
+<tr class="memdesc:af8cfec47f48a7f50f0de5e040ab63069"><td class="mdescLeft">&#160;</td><td class="mdescRight">Method classifying a given test example.  <a href="#af8cfec47f48a7f50f0de5e040ab63069">More...</a><br /></td></tr>
 <tr class="separator:af8cfec47f48a7f50f0de5e040ab63069"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad3e8f3abdbb4d5ec2de95bbd5fdd5adb"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classClassifier.html#ad3e8f3abdbb4d5ec2de95bbd5fdd5adb">init</a> (std::string attributes, std::string categories, std::string examples_dir, int examples_num)</td></tr>
+<tr class="memdesc:ad3e8f3abdbb4d5ec2de95bbd5fdd5adb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Method for classifier initialization.  <a href="#ad3e8f3abdbb4d5ec2de95bbd5fdd5adb">More...</a><br /></td></tr>
 <tr class="separator:ad3e8f3abdbb4d5ec2de95bbd5fdd5adb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a87345e50d80be0edd0fc5ec64924754f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classClassifier.html#a87345e50d80be0edd0fc5ec64924754f">loadAttributes</a> (std::string attributes)</td></tr>
+<tr class="memdesc:a87345e50d80be0edd0fc5ec64924754f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Method loading attributes from a given file.  <a href="#a87345e50d80be0edd0fc5ec64924754f">More...</a><br /></td></tr>
 <tr class="separator:a87345e50d80be0edd0fc5ec64924754f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aaf4fb57e45990c166d9c88d5b906220f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classClassifier.html#aaf4fb57e45990c166d9c88d5b906220f">loadCategories</a> (std::string categories)</td></tr>
+<tr class="memdesc:aaf4fb57e45990c166d9c88d5b906220f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Method loading categories from a given file.  <a href="#aaf4fb57e45990c166d9c88d5b906220f">More...</a><br /></td></tr>
 <tr class="separator:aaf4fb57e45990c166d9c88d5b906220f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7e33c30fb3f01bb21df75094b057ecc6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classClassifier.html#a7e33c30fb3f01bb21df75094b057ecc6">loadExample</a> (std::string example)</td></tr>
+<tr class="memdesc:a7e33c30fb3f01bb21df75094b057ecc6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Method loading an example from a given file.  <a href="#a7e33c30fb3f01bb21df75094b057ecc6">More...</a><br /></td></tr>
 <tr class="separator:a7e33c30fb3f01bb21df75094b057ecc6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
@@ -66,7 +71,8 @@ Private Attributes</h2></td></tr>
 <tr class="separator:a4fa0bac135bcfa3837f1a84528962434"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Class containing a Naive Bayesian classifier. Class contains a Naive Bayesian classifier from faif library and provides methods for creating and training the classifier and later classifyinf given examples. </p>
+<div class="textblock"><p>Class containing a Naive Bayesian classifier. </p>
+<p>Class contains a Naive Bayesian classifier from faif library and provides methods for creating and training the classifier and later classifyinf given examples. </p>
 
 <p>Definition at line <a class="el" href="classifier_8h_source.html#l00027">27</a> of file <a class="el" href="classifier_8h_source.html">classifier.h</a>.</p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
@@ -83,7 +89,9 @@ Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Method classifying a given test example. Loads the example from the given file into the internal faif::ml::NaiveBayesian&lt;faif::ValueNominal&lt;int&gt;&gt;<a class="el" href="classifier_8h.html#a1d35bf280dcfad6db42a9ac0153e0ff6">ExampleTest</a> object. </p><dl class="params"><dt>Parameters</dt><dd>
+
+<p>Method classifying a given test example. </p>
+<p>Loads the example from the given file into the internal faif::ml::NaiveBayesian&lt;faif::ValueNominal&lt;int&gt;&gt;<a class="el" href="classifier_8h.html#a1d35bf280dcfad6db42a9ac0153e0ff6">ExampleTest</a> object. </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">example</td><td>name of the file with the test example </td></tr>
   </table>
@@ -129,7 +137,9 @@ Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Method for classifier initialization. Initializes the classifier with given attribute list, categories and trains the classifier on a number of examples in the given directory. </p><dl class="params"><dt>Parameters</dt><dd>
+
+<p>Method for classifier initialization. </p>
+<p>Initializes the classifier with given attribute list, categories and trains the classifier on a number of examples in the given directory. </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">attributes</td><td>name of the file listing all attributes </td></tr>
     <tr><td class="paramname">categories</td><td>name of the file listing all categories </td></tr>
@@ -156,7 +166,9 @@ Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Method loading attributes from a given file. Loads attributes from the given file into the internal faif::ml::NaiveBayesian&lt;faif::ValueNominal&lt;int&gt;&gt;<a class="el" href="classifier_8h.html#a9343db739f6d3e144e57bf7ba26a852a">Domains</a> object. </p><dl class="params"><dt>Parameters</dt><dd>
+
+<p>Method loading attributes from a given file. </p>
+<p>Loads attributes from the given file into the internal faif::ml::NaiveBayesian&lt;faif::ValueNominal&lt;int&gt;&gt;<a class="el" href="classifier_8h.html#a9343db739f6d3e144e57bf7ba26a852a">Domains</a> object. </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">attributes</td><td>name of the file listing all attributes </td></tr>
   </table>
@@ -180,7 +192,9 @@ Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Method loading categories from a given file. Loads categories from the given file into the internal faif::ml::NaiveBayesian&lt;faif::ValueNominal&lt;int&gt;&gt;<a class="el" href="classifier_8h.html#ace54f1272ee8e29c21223904655addaf">AttrDomain</a> object. </p><dl class="params"><dt>Parameters</dt><dd>
+
+<p>Method loading categories from a given file. </p>
+<p>Loads categories from the given file into the internal faif::ml::NaiveBayesian&lt;faif::ValueNominal&lt;int&gt;&gt;<a class="el" href="classifier_8h.html#ace54f1272ee8e29c21223904655addaf">AttrDomain</a> object. </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">categories</td><td>name of the file listing all categories </td></tr>
   </table>
@@ -204,7 +218,9 @@ Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Method loading an example from a given file. Loads an example from the given file into the internal faif::ml::NaiveBayesian&lt;faif::ValueNominal&lt;int&gt;&gt;<a class="el" href="classifier_8h.html#ac69b83e200f909b4d3ff870bbcb3c90c">ExamplesTrain</a> object. </p><dl class="params"><dt>Parameters</dt><dd>
+
+<p>Method loading an example from a given file. </p>
+<p>Loads an example from the given file into the internal faif::ml::NaiveBayesian&lt;faif::ValueNominal&lt;int&gt;&gt;<a class="el" href="classifier_8h.html#ac69b83e200f909b4d3ff870bbcb3c90c">ExamplesTrain</a> object. </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">example</td><td>name of the file with the example </td></tr>
   </table>
@@ -380,7 +396,7 @@ Private Attributes</h2></td></tr>
 <hr size="1"><div style="align: right;">
 <a href="http://wiki.ros.org/bayesian_webclass">bayesian_webclass</a><br />
 Author(s): </br />
-<small>autogenerated on Sun Jan 22 2017 18:03:00</small>
+<small>autogenerated on Mon Jan 23 2017 10:12:31</small>
 </div>
 </body>
 </html>

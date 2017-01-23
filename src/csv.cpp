@@ -11,6 +11,7 @@
  *  Takes name of the csv file and numbers of the columns in the csv
  *  that will be used respectively as keys and values od the map.
  *  Keys should be type compatible with ints and values with strings.
+ *  @param filename name of the csv file
  *  @param col1 csv column number holding keys for the map
  *  @param col2 csv column number holding values for the map
  *  @return boolean, true if function succeded

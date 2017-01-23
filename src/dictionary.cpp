@@ -1,6 +1,7 @@
 #include "bayesian_webclass/dictionary.h"
 
-/** \struct Letter only struct for locale initialization.
+/** \struct letter_only
+ *  \brief Struct for locale initialization.
  * Provided struct constructs std::ctype::ctype by supplying
  * the ctype<char> constructor with ctype::mask. Returned
  * std::ctype<char> is a locale::facet which can be used to filter
@@ -20,7 +21,7 @@ struct letter_only : std::ctype<char> {
     }
 };
 
-/** Write string to file method.
+/** \brief Write string to file method.
  * Mostly intended for debugging, appends given string to a file
  * with supplied filename.
  * @param filename name of the file to write to
@@ -34,7 +35,7 @@ void Dictionary::write_str_to_file(std::string filename, std::string str) {
     myfile.close();
 }
 
-/** Fetch (dictionary word list) from file method.
+/** \brief Fetch (dictionary word list) from file method.
  * Method used to fetch the list of words used by the dictionary
  * for comparisions from a file given with filename.
  * @param filename name of the file to read the list from
@@ -51,7 +52,7 @@ void Dictionary::fetch_from_file(std::string filename) {
     }
 }
 
-/** Compare words in given file with the current word_list.
+/** \brief Compare words in given file with the current word_list.
  * Method intended for comparing words in the given file with
  * the current word_list.
  * @param filename name of the file to be compared with the word_list

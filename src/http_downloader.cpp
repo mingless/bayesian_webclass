@@ -59,7 +59,7 @@ bool HTTPDownloader::download(const std::string &url,
 
 /**Save set of strings to file. Every string in new line. If file given as argument does not exist
 *it will be created
-*@param filename[in] - name of file
+*@param filename - name of file
 *@param set - set of strings to save in file
 */
 void HTTPDownloader::writeSetToFile(const std::string &filename, const std::set<std::string> &set) {
@@ -73,9 +73,9 @@ void HTTPDownloader::writeSetToFile(const std::string &filename, const std::set<
 }
 
 /**Save string to file.
- * If file given as argument does not exist
+* If file given as argument does not exist
 *it will be created
-*@param filename[in] - name of file
+*@param filename - name of file
 *@param str - string to save in file
 */
 void HTTPDownloader::writeStrToFile(const std::string &filename, const std::string &str) {
@@ -114,7 +114,7 @@ std::string HTTPDownloader::cleanhtml(const std::string &html) {
     if (tidy_rescode >= 0)
         tidy_rescode = tidySaveBuffer(tidy_doc, &output_buffer);
     if (tidy_rescode < 0)
-        throw ("tidy has a error: " + tidy_rescode);
+        throw ("Tidy error: " + tidy_rescode);
 
     std::string result = (char *) output_buffer.bp;
     tidyBufFree(&output_buffer);
@@ -147,7 +147,7 @@ std::vector<std::string> HTTPDownloader::getLinesFromFile(std::string filename) 
 
 /**Get node of parsed html code and its children
  * Gets unique attribues from html text. These attributes are
- * hrefs from <a href="">. This function is recursive.
+ * hrefs from "<a href="">". This function is recursive.
  * @param node of xml/html structure
  * @param textFromBodyFile html code
  * @param indentation
